@@ -1,0 +1,260 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/ghdl/oscar/vhdl3.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 346,
+    "sha256": "326244e90ca4b9190a98edb5af37e49b140b0578c16b8ae2cba7cc5aeb7d1851"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/ghdl/oscar/vhdl3.fst",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "150000000"
+      },
+      "writer": "nvc 1.9.2",
+      "date": "Tue Nov 28 12:09:00 2023\n"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "test"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "test",
+            "rr"
+          ],
+          "kind": "record"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "test",
+            "ee"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "E",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "a"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "STD_LOGIC",
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "b[5:2]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "STD_LOGIC_VECTOR",
+          "signal": "signal_003"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "c[1:4]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "STD_LOGIC_VECTOR",
+          "signal": "signal_004"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "d"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "E",
+          "signal": "signal_005"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "foo"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "string": "bar"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "string": "foo"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_003": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuu"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "hlz-"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_004": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuu"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "wx10"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0101"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_005": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "foo"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "string": "bar"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/nvc/shortstring.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 417,
+    "sha256": "a1ed37cd2f7baee59e5f9fb7d4f08189eaf670f0b019ee8ddb7b346fa7a6778d"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/nvc/shortstring.fst",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "30000000"
+      },
+      "writer": "nvc 1.13-devel",
+      "date": "Sat Jan 10 14:00:37 2026\n"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "string_test"
+          ],
+          "kind": "architecture"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "string_test",
+            "test_string[1:50]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "STRING",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "string_test",
+            "str_length"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "INTEGER",
+          "signal": "signal_002"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "30000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "                                                  "
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "string": "En lång röd räv                                   "
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "string": "Viel \"spaß\" und überraschung¡                     "
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "string": "3±0.3°C and ½×¾ cup of sugar                      "
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "30000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000001111"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "00000000000000000000000000011101"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "00000000000000000000000000011100"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

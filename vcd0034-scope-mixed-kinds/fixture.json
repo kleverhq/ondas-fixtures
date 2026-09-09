@@ -1,0 +1,175 @@
+{
+  "schema": 1,
+  "description": "kleverhq/wavepeek: tests/fixtures/hand/scope_mixed_kinds.vcd.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 360,
+    "sha256": "a24b9abcf7d00293737060ac2aaee5d8004583902aad6886b0199d45e03ca210"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/kleverhq/wavepeek/blob/8d25f5b660b90813e60a062e466e435415280474/tests/fixtures/hand/scope_mixed_kinds.vcd",
+    "license": "Apache-2.0"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "5"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "top",
+            "cpu"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "top",
+            "helper"
+          ],
+          "kind": "function"
+        },
+        {
+          "path": [
+            "top",
+            "worker"
+          ],
+          "kind": "task"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "cpu",
+            "clk"
+          ],
+          "kind": "wire",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "top",
+            "helper",
+            "helper_flag"
+          ],
+          "kind": "wire",
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "top",
+            "worker",
+            "done"
+          ],
+          "kind": "wire",
+          "signal": "signal_003"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "5",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "5",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_003": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "5",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

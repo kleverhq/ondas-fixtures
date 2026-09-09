@@ -1,0 +1,82 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/ghdl/oscar/ghdl.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 192,
+    "sha256": "aa00e8c3f6873d40f0b7e2315495c47e082b6b8bc6834da5670e40e65f739e0b"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/ghdl/oscar/ghdl.fst",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "150000000"
+      },
+      "writer": "GHDL FST v0",
+      "date": "Mon Nov 27 19:00:15 2023\n"
+    },
+    "hierarchy": {
+      "scopes": [],
+      "variables": [
+        {
+          "path": [
+            "ee"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "e",
+          "signal": "signal_001"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "foo"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "string": "bar"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "string": "foo"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

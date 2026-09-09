@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "description": "kleverhq/wavepeek: tests/fixtures/hand/verilator_pack_array.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 522,
+    "sha256": "90f5810c3e8d8c1eceb47eef6a6a1c3af5c5811d25ac5ed7cbdc877b24b686d8"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/kleverhq/wavepeek/blob/8d25f5b660b90813e60a062e466e435415280474/tests/fixtures/hand/verilator_pack_array.fst",
+    "license": "Apache-2.0"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "1"
+      },
+      "writer": "minimal PACK/ARRAY reproducer",
+      "date": ""
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "top",
+            "s"
+          ],
+          "kind": "struct"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "s",
+            "x"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "signal_001"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

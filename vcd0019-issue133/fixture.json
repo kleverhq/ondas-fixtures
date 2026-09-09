@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/github_issues/issue133.vcd. Issue-derived VCD.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 119,
+    "sha256": "a1936a9a2952661fd767aed94458e471d4518cf2f434ec501ffa7df46d0ccd60"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/github_issues/issue133.vcd",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "20"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "a"
+          ],
+          "kind": "wire",
+          "signal": "signal_001"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "20",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

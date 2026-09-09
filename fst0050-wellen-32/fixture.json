@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "description": "Xcodo/MRE: wellen-32/wellen_32.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 250,
+    "sha256": "07334c36767f6d8877d2109f2b3f087b2985dac01dd7e3868a439f10493e039a"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/Xcodo/MRE/blob/ade2dd42b0c4ab43acb09e860edb78107c338cec/wellen-32/wellen_32.fst",
+    "license": "unknown"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "2000000000"
+      },
+      "writer": "GHDL FST v0",
+      "date": "Fri Dec 20 14:22:12 2024\n"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "wellen_32"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "wellen_32",
+            "spisub_s"
+          ],
+          "kind": "record"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "wellen_32",
+            "spisub_s",
+            "sclk"
+          ],
+          "kind": "logic",
+          "direction": "implicit",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "wellen_32",
+            "spisub_s",
+            "mosi"
+          ],
+          "kind": "logic",
+          "direction": "implicit",
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "wellen_32",
+            "spisub_s",
+            "miso"
+          ],
+          "kind": "logic",
+          "direction": "implicit",
+          "signal": "signal_003"
+        },
+        {
+          "path": [
+            "wellen_32",
+            "spisub_s",
+            "cs_n"
+          ],
+          "kind": "logic",
+          "direction": "implicit",
+          "signal": "signal_004"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "2000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "2000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_003": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "2000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_004": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "2000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2000000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

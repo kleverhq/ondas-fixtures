@@ -1,0 +1,187 @@
+{
+  "schema": 1,
+  "description": "gokeshenzhen/TraceWeave: tests/fixtures/cycle_test.vcd.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 252,
+    "sha256": "0c62e70c285d1bdc6c3cbff5a1fbc51506c6130576a9bb048a166da78ad1be74"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/gokeshenzhen/TraceWeave/blob/0847f43d960055e48877c0ef1e182d1252a2ef64/tests/fixtures/cycle_test.vcd",
+    "license": "unknown"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "3000"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top_tb"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top_tb",
+            "clk"
+          ],
+          "kind": "wire",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "top_tb",
+            "data"
+          ],
+          "kind": "wire",
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "top_tb",
+            "const_high"
+          ],
+          "kind": "wire",
+          "signal": "signal_003"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "500",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1500",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2500",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "500",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "1500",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "2500",
+                "value": {
+                  "bits": "0011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_003": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

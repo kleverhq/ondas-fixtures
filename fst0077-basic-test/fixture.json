@@ -1,0 +1,302 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/verilator/basic_test.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 595,
+    "sha256": "10926721d4ff4571dcaf09c86807d1df975d66840a1cf5c12f1717af8c930347"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/verilator/basic_test.fst",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "7"
+      },
+      "writer": "fstWriter",
+      "date": "Mon Sep 25 15:12:31 2023\n"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "TOP"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "TOP",
+            "VerilatorBasicTests_Anon"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "TOP",
+            "clock"
+          ],
+          "kind": "wire",
+          "direction": "input",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "TOP",
+            "reset"
+          ],
+          "kind": "wire",
+          "direction": "input",
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "TOP",
+            "io_out"
+          ],
+          "kind": "wire",
+          "direction": "output",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal_003"
+        },
+        {
+          "path": [
+            "TOP",
+            "VerilatorBasicTests_Anon",
+            "clock"
+          ],
+          "kind": "wire",
+          "direction": "input",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "TOP",
+            "VerilatorBasicTests_Anon",
+            "reset"
+          ],
+          "kind": "wire",
+          "direction": "input",
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "TOP",
+            "VerilatorBasicTests_Anon",
+            "io_out"
+          ],
+          "kind": "wire",
+          "direction": "output",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal_003"
+        },
+        {
+          "path": [
+            "TOP",
+            "VerilatorBasicTests_Anon",
+            "counter"
+          ],
+          "kind": "logic",
+          "direction": "implicit",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal_004"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "7",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "4",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "6",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "7",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "7",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_003": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "7",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "3",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "00000010"
+                }
+              },
+              {
+                "time": "7",
+                "value": {
+                  "bits": "00000011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_004": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "7",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "3",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "00000010"
+                }
+              },
+              {
+                "time": "7",
+                "value": {
+                  "bits": "00000011"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

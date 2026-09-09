@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "description": "kleverhq/wavepeek: tests/fixtures/hand/change_property_real_output.vcd.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 284,
+    "sha256": "70e08c59014f970b2ba76c4b1ed244789c7f59059defc51305436035b2ead55c"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/kleverhq/wavepeek/blob/8d25f5b660b90813e60a062e466e435415280474/tests/fixtures/hand/change_property_real_output.vcd",
+    "license": "Apache-2.0"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "10"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "clk"
+          ],
+          "kind": "wire",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "top",
+            "temp"
+          ],
+          "kind": "real",
+          "signal": "signal_002"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "10",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "real"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "10",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "real_bits": "3fe0000000000000"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "real_bits": "3ff8000000000000"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "real_bits": "4004000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

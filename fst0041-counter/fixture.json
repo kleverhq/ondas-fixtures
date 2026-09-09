@@ -1,0 +1,306 @@
+{
+  "schema": 1,
+  "description": "cxzzzz/wavekit: tests/readers/fixtures/fst/counter.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 620,
+    "sha256": "97ff8154f2d300bb764db32d17503c27a489a7f5d88450d4a0be31facb9c3b97"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/cxzzzz/wavekit/blob/3496cf271be91694be58dd6eb9c4bc4f242f2221/tests/readers/fixtures/fst/counter.fst",
+    "license": "MIT"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "s"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "800"
+      },
+      "writer": "Icarus Verilog",
+      "date": "Fri May 13 20:46:14 2022\n"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "tb"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "tb",
+            "dut"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "tb",
+            "overflow"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "overflow"
+        },
+        {
+          "path": [
+            "tb",
+            "clk"
+          ],
+          "kind": "reg",
+          "direction": "implicit",
+          "signal": "clock"
+        },
+        {
+          "path": [
+            "tb",
+            "reset"
+          ],
+          "kind": "reg",
+          "direction": "implicit",
+          "signal": "reset"
+        },
+        {
+          "path": [
+            "tb",
+            "dut",
+            "clk"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "clock"
+        },
+        {
+          "path": [
+            "tb",
+            "dut",
+            "reset"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "reset"
+        },
+        {
+          "path": [
+            "tb",
+            "dut",
+            "overflow"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "overflow"
+        },
+        {
+          "path": [
+            "tb",
+            "dut",
+            "counter"
+          ],
+          "kind": "reg",
+          "direction": "implicit",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "counter"
+        }
+      ]
+    },
+    "signals": {
+      "counter": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "samples": [
+          {
+            "time": "710",
+            "value": {
+              "bits": "1111"
+            },
+            "changed_at": "710"
+          },
+          {
+            "time": "730",
+            "value": {
+              "bits": "0000"
+            },
+            "changed_at": "730"
+          },
+          {
+            "time": "801",
+            "value": {
+              "bits": "0011"
+            },
+            "changed_at": "790"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "120",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "110",
+                "value": {
+                  "bits": "0001"
+                }
+              }
+            ]
+          },
+          {
+            "start": "380",
+            "end": "420",
+            "initial": {
+              "value": {
+                "bits": "1110"
+              },
+              "changed_at": "370"
+            },
+            "changes": [
+              {
+                "time": "390",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "410",
+                "value": {
+                  "bits": "0000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "overflow": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "710",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "710"
+          },
+          {
+            "time": "730",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "730"
+          }
+        ],
+        "windows": [
+          {
+            "start": "380",
+            "end": "420",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "390",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "410",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "clock": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "95",
+            "end": "115",
+            "initial": {
+              "value": {
+                "bits": "1"
+              },
+              "changed_at": "90"
+            },
+            "changes": [
+              {
+                "time": "100",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "110",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "reset": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "99",
+            "end": "101",
+            "initial": {
+              "value": {
+                "bits": "1"
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "100",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

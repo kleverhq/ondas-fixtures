@@ -1,0 +1,953 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/nvc/xwb_fofb_shaper_filt_tb_arrays.fst.vcd.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 1245154,
+    "sha256": "b4f562d552326f1e5548d9a7266a543235f809ea7321590ff0ec69167e25ddf1"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/nvc/xwb_fofb_shaper_filt_tb_arrays.fst.vcd",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "6555000000"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "wb_slave_i"
+          ],
+          "kind": "record"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "wb_fofb_shaper_filt_regs_coeffs_ifc_arr[0]"
+          ],
+          "kind": "record"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "coeffs[0][0]"
+          ],
+          "kind": "record"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "cascade_ifcs[0]"
+          ],
+          "kind": "record"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "gen_biquads(0)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "gen_biquads(0)",
+            "cmp_biquad"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "cmp_wb_fofb_shaper_filt_regs"
+          ],
+          "kind": "architecture"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "clk"
+          ],
+          "kind": "logic",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "rst_n"
+          ],
+          "kind": "logic",
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "busy_arr"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 11,
+            "lsb": 0
+          },
+          "signal": "signal_004"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_arr[0]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal_005"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_arr[1]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal_019"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_arr[2]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal_020"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_arr[3]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal_021"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_arr[4]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal_022"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_arr[5]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal_023"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_arr[6]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal_024"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "sp_valid_arr"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 11,
+            "lsb": 0
+          },
+          "signal": "signal_003"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "wb_slave_i",
+            "adr"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal_006"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "wb_slave_i",
+            "sel"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal_007"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "iir_filts_x[0]"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": -1
+          },
+          "signal": "signal_008"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "wb_fofb_shaper_filt_regs_coeffs_ifc_arr[0]",
+            "addr"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 7,
+            "lsb": 2
+          },
+          "signal": "signal_009"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "coeffs[0][0]",
+            "b0"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 1,
+            "lsb": -16
+          },
+          "signal": "signal_010"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "cascade_ifcs[0]",
+            "x"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 15,
+            "lsb": -5
+          },
+          "signal": "signal_011"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "busy"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 4,
+            "lsb": 0
+          },
+          "signal": "signal_012"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "gen_biquads(0)",
+            "cmp_biquad",
+            "w"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 17,
+            "lsb": -21
+          },
+          "signal": "signal_013"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "gen_biquads(0)",
+            "cmp_biquad",
+            "b0_times_w_tmp"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 19,
+            "lsb": -37
+          },
+          "signal": "signal_014"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "gen_biquads(0)",
+            "cmp_biquad",
+            "w_tmp"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 18,
+            "lsb": -21
+          },
+          "signal": "signal_015"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "gen_biquads(0)",
+            "cmp_biquad",
+            "aux_a_tmp"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 19,
+            "lsb": -21
+          },
+          "signal": "signal_016"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "gen_iir_filts(0)",
+            "cmp_iir_filt",
+            "gen_biquads(0)",
+            "cmp_biquad",
+            "state"
+          ],
+          "kind": "integer",
+          "signal": "signal_017"
+        },
+        {
+          "path": [
+            "xwb_fofb_shaper_filt_tb",
+            "uut",
+            "cmp_wb_fofb_shaper_filt_regs",
+            "adr_int"
+          ],
+          "kind": "logic",
+          "range": {
+            "msb": 12,
+            "lsb": 2
+          },
+          "signal": "signal_018"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_003": {
+        "encoding": {
+          "kind": "bits",
+          "width": 12
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_004": {
+        "encoding": {
+          "kind": "bits",
+          "width": 12
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_005": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_006": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_007": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_008": {
+        "encoding": {
+          "kind": "bits",
+          "width": 17
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_009": {
+        "encoding": {
+          "kind": "bits",
+          "width": 6
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_010": {
+        "encoding": {
+          "kind": "bits",
+          "width": 18
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_011": {
+        "encoding": {
+          "kind": "bits",
+          "width": 21
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_012": {
+        "encoding": {
+          "kind": "bits",
+          "width": 5
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_013": {
+        "encoding": {
+          "kind": "bits",
+          "width": 39
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000000000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_014": {
+        "encoding": {
+          "kind": "bits",
+          "width": 57
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000000000000000000000000000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_015": {
+        "encoding": {
+          "kind": "bits",
+          "width": 40
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_016": {
+        "encoding": {
+          "kind": "bits",
+          "width": 41
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_017": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_018": {
+        "encoding": {
+          "kind": "bits",
+          "width": 11
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_019": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_020": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_021": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_022": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_023": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_024": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

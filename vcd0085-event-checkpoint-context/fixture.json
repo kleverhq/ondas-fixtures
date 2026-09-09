@@ -1,0 +1,353 @@
+{
+  "schema": 1,
+  "description": "Event records interleaved with persistent writes and dump checkpoints.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 294,
+    "sha256": "b3fd7f350f9cdb6269aee6a1760af2e65fa9989012d8f40c70708e7db9736295"
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "https://doi.org/10.1109/IEEESTD.2001.93352",
+    "license": "unknown",
+    "simulation": {
+      "project": "Ondas diagnostic VCD cases",
+      "tests": [
+        "vcd0085-event-checkpoint-context"
+      ],
+      "method": "Hand-constructed record sequence; no HDL simulation."
+    },
+    "generator": {
+      "tool": "Python"
+    },
+    "notes": "Authored format test, not a waveform imported from the standard. No format conversion."
+  },
+  "tags": [
+    "bits",
+    "conformance",
+    "events",
+    "hierarchy",
+    "metadata",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "12"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "pulse"
+          ],
+          "kind": "event",
+          "signal": "pulse"
+        },
+        {
+          "path": [
+            "top",
+            "bit_value"
+          ],
+          "kind": "wire",
+          "signal": "bit_value"
+        }
+      ]
+    },
+    "signals": {
+      "pulse": {
+        "encoding": {
+          "kind": "event"
+        },
+        "samples": [
+          {
+            "time": "1",
+            "occurrences": "0"
+          },
+          {
+            "time": "2",
+            "occurrences": "3"
+          },
+          {
+            "time": "3",
+            "occurrences": "0"
+          },
+          {
+            "time": "5",
+            "occurrences": "0"
+          },
+          {
+            "time": "11",
+            "occurrences": "2"
+          },
+          {
+            "time": "12",
+            "occurrences": "0"
+          }
+        ],
+        "windows": [
+          {
+            "start": "1",
+            "end": "3",
+            "initial": null,
+            "changes": [
+              {
+                "time": "2",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "event": true
+                }
+              }
+            ]
+          },
+          {
+            "start": "5",
+            "end": "5",
+            "initial": null,
+            "changes": []
+          },
+          {
+            "start": "11",
+            "end": "12",
+            "initial": null,
+            "changes": [
+              {
+                "time": "11",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "11",
+                "value": {
+                  "event": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "bit_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "3",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "2"
+          },
+          {
+            "time": "4",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "4"
+          },
+          {
+            "time": "5",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "4"
+          },
+          {
+            "time": "6",
+            "value": {
+              "bits": "x"
+            },
+            "changed_at": "6"
+          },
+          {
+            "time": "7",
+            "value": {
+              "bits": "x"
+            },
+            "changed_at": "6"
+          },
+          {
+            "time": "9",
+            "value": {
+              "bits": "x"
+            },
+            "changed_at": "6"
+          },
+          {
+            "time": "10",
+            "value": {
+              "bits": "1"
+            }
+          },
+          {
+            "time": "11",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "11"
+          },
+          {
+            "time": "12",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "11"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "12",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "4",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "6",
+                "value": {
+                  "bits": "x"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "11",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "3",
+            "end": "5",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "2"
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "5",
+            "end": "7",
+            "initial": {
+              "value": {
+                "bits": "1"
+              },
+              "changed_at": "4"
+            },
+            "changes": [
+              {
+                "time": "6",
+                "value": {
+                  "bits": "x"
+                }
+              }
+            ]
+          },
+          {
+            "start": "9",
+            "end": "11",
+            "initial": {
+              "value": {
+                "bits": "x"
+              },
+              "changed_at": "6"
+            },
+            "changes": [
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "11",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

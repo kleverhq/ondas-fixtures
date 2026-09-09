@@ -1,0 +1,90 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/nvc/vhdl_test_bool_issue_16.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 263,
+    "sha256": "2d8c48929137eb25d0fb9c320619aca5ea3c141a4a68900409aa202ca79e572a"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/nvc/vhdl_test_bool_issue_16.fst",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "3000000000"
+      },
+      "writer": "nvc 1.13-devel",
+      "date": "Fri May 17 08:41:51 2024\n"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "test_bool"
+          ],
+          "kind": "architecture"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "test_bool",
+            "bool"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "BOOLEAN",
+          "signal": "signal_001"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "false"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "string": "true"
+                }
+              },
+              {
+                "time": "2000000000",
+                "value": {
+                  "string": "false"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

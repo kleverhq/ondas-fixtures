@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "description": "A dump block ends at EOF without its closing keyword.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 120,
+    "sha256": "d8a7b567aad7b2d933ae9c6e9b7d07bae698067863c3b4cbc37ffc38c54bc62f"
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "https://doi.org/10.1109/IEEESTD.2001.93352",
+    "license": "unknown",
+    "simulation": {
+      "project": "Ondas diagnostic VCD cases",
+      "tests": [
+        "vcd0095-truncated-dump-block"
+      ],
+      "method": "Hand-constructed record sequence; no HDL simulation."
+    },
+    "generator": {
+      "tool": "Python"
+    },
+    "notes": "Authored format test, not a waveform imported from the standard. No format conversion."
+  },
+  "tags": [
+    "malformed"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "error",
+      "kind": "malformed"
+    }
+  }
+}

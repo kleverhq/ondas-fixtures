@@ -1,0 +1,218 @@
+{
+  "schema": 1,
+  "description": "kleverhq/wavepeek: tests/fixtures/hand/same_time_updates.vcd.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 282,
+    "sha256": "c395109b6956fc521e3f1b2a1a6eea902a52d30ec01ae0fa9534f3fca5b0cb3d"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/kleverhq/wavepeek/blob/8d25f5b660b90813e60a062e466e435415280474/tests/fixtures/hand/same_time_updates.vcd",
+    "license": "Apache-2.0"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "10"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "glitch"
+          ],
+          "kind": "wire",
+          "signal": "glitch"
+        },
+        {
+          "path": [
+            "top",
+            "bus"
+          ],
+          "kind": "wire",
+          "signal": "bus"
+        },
+        {
+          "path": [
+            "top",
+            "clk"
+          ],
+          "kind": "wire",
+          "signal": "clock"
+        }
+      ]
+    },
+    "signals": {
+      "glitch": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "4",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "5",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "5"
+          },
+          {
+            "time": "6",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "5"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "10",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "bus": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "samples": [
+          {
+            "time": "5",
+            "value": {
+              "bits": "10"
+            },
+            "changed_at": "5"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "10",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "clock": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "4",
+            "end": "6",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

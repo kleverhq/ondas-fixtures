@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "description": "ekiwi/wellen: wellen/inputs/icarus/pull_67_event_example.fst.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 497,
+    "sha256": "a66e97a876c78dd4aff03606d474a8084c06cc3158d4e3bee606651fbf3bdfae"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/icarus/pull_67_event_example.fst",
+    "license": "BSD-3-Clause"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "s"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "80"
+      },
+      "writer": "Icarus Verilog",
+      "date": "Sun Jul 20 21:37:32 2025\n"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "event_example"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "event_example",
+            "event2"
+          ],
+          "kind": "event",
+          "direction": "implicit",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "event_example",
+            "event1"
+          ],
+          "kind": "event",
+          "direction": "implicit",
+          "signal": "signal_002"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "event"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "30",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "70",
+                "value": {
+                  "event": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "event"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "10",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "45",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "70",
+                "value": {
+                  "event": true
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

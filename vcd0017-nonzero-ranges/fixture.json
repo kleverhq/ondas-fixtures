@@ -1,0 +1,369 @@
+{
+  "schema": 1,
+  "description": "cxzzzz/wavekit: tests/readers/fixtures/vcd/nonzero_ranges.vcd.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 575,
+    "sha256": "0fb2aa52fa8ba3517c4349dc77c6c2dceaf388754116ce1fe5773d1274e2abae"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/cxzzzz/wavekit/blob/3496cf271be91694be58dd6eb9c4bc4f242f2221/tests/readers/fixtures/vcd/nonzero_ranges.vcd",
+    "license": "MIT"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "25"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "TOP"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "TOP",
+            "tb"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "TOP",
+            "tb",
+            "clk"
+          ],
+          "kind": "wire",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "TOP",
+            "tb",
+            "packed_vec"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal_002"
+        },
+        {
+          "path": [
+            "TOP",
+            "tb",
+            "packed_nonzero"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 7,
+            "lsb": 4
+          },
+          "signal": "signal_003"
+        },
+        {
+          "path": [
+            "TOP",
+            "tb",
+            "packed_arr[10]"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal_004"
+        },
+        {
+          "path": [
+            "TOP",
+            "tb",
+            "arr_elem[10][0]"
+          ],
+          "kind": "wire",
+          "signal": "signal_005"
+        },
+        {
+          "path": [
+            "TOP",
+            "tb",
+            "arr_elem[10][1]"
+          ],
+          "kind": "wire",
+          "signal": "signal_006"
+        },
+        {
+          "path": [
+            "TOP",
+            "tb",
+            "zero_range"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 0,
+            "lsb": 0
+          },
+          "signal": "signal_007"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "25",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "25",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1010"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "1111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_003": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "25",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1100"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1010"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "0101"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_004": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "25",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "101"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "110"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_005": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "25",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_006": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "25",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_007": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "25",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

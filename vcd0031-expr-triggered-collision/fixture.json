@@ -1,0 +1,123 @@
+{
+  "schema": 1,
+  "description": "kleverhq/wavepeek: tests/fixtures/hand/expr_triggered_collision.vcd.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 258,
+    "sha256": "27e5e165ba2f457801cb71db84e949f56161adbe09fce2dc8deaa3bd1b60bd52"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/kleverhq/wavepeek/blob/8d25f5b660b90813e60a062e466e435415280474/tests/fixtures/hand/expr_triggered_collision.vcd",
+    "license": "Apache-2.0"
+  },
+  "tags": [],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "20"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "top",
+            "ev"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "ev"
+          ],
+          "kind": "event",
+          "signal": "signal_001"
+        },
+        {
+          "path": [
+            "top",
+            "ev",
+            "triggered"
+          ],
+          "kind": "wire",
+          "signal": "signal_002"
+        }
+      ]
+    },
+    "signals": {
+      "signal_001": {
+        "encoding": {
+          "kind": "event"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": null,
+            "changes": [
+              {
+                "time": "10",
+                "value": {
+                  "event": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal_002": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "20",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

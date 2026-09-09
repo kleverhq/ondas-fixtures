@@ -1,0 +1,227 @@
+{
+  "schema": 1,
+  "description": "Latin-1 octets, escaped NUL and padding with real-declared string storage.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 205,
+    "sha256": "7199fe34be69c5d1a13525f0f71d1be42f4f7d4607d8712735559ad054d7a388"
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "https://doi.org/10.1109/IEEESTD.2001.93352",
+    "license": "unknown",
+    "simulation": {
+      "project": "Ondas diagnostic VCD cases",
+      "tests": [
+        "vcd0089-latin1-string-octets"
+      ],
+      "method": "Hand-constructed record sequence; no HDL simulation."
+    },
+    "generator": {
+      "tool": "Python"
+    },
+    "notes": "Authored format test, not a waveform imported from the standard. No format conversion."
+  },
+  "tags": [
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "strings",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "4"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "octets"
+          ],
+          "kind": "string",
+          "signal": "octets"
+        },
+        {
+          "path": [
+            "top",
+            "state"
+          ],
+          "kind": "real",
+          "signal": "state"
+        }
+      ]
+    },
+    "signals": {
+      "octets": {
+        "encoding": {
+          "kind": "string"
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "string": "Ã©\u0000ÿ  "
+            },
+            "changed_at": null
+          },
+          {
+            "time": "1",
+            "value": {
+              "string": "Ã©\u0000ÿ  "
+            },
+            "changed_at": null
+          },
+          {
+            "time": "2",
+            "value": {
+              "string": "A\tB\nC\\\"\u0000 "
+            },
+            "changed_at": "2"
+          },
+          {
+            "time": "4",
+            "value": {
+              "string": "A\tB\nC\\\"\u0000 "
+            },
+            "changed_at": "2"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "Ã©\u0000ÿ  "
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "string": "A\tB\nC\\\"\u0000 "
+                }
+              }
+            ]
+          },
+          {
+            "start": "1",
+            "end": "3",
+            "initial": {
+              "value": {
+                "string": "Ã©\u0000ÿ  "
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "2",
+                "value": {
+                  "string": "A\tB\nC\\\"\u0000 "
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "state": {
+        "encoding": {
+          "kind": "string"
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "string": "123"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "1",
+            "value": {
+              "string": "123"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "2",
+            "value": {
+              "string": "-0"
+            },
+            "changed_at": "2"
+          },
+          {
+            "time": "4",
+            "value": {
+              "string": "-0"
+            },
+            "changed_at": "2"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "123"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "string": "-0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "1",
+            "end": "3",
+            "initial": {
+              "value": {
+                "string": "123"
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "2",
+                "value": {
+                  "string": "-0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

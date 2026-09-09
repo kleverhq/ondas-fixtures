@@ -1,0 +1,346 @@
+{
+  "schema": 1,
+  "description": "Delayed first observations and a complete final token without a newline.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 189,
+    "sha256": "7bbeb059ce23189f3e095044957aaedb8a1fc4f3ee22ea79bb3f1152027efdc0"
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "https://doi.org/10.1109/IEEESTD.2001.93352",
+    "license": "unknown",
+    "simulation": {
+      "project": "Ondas diagnostic VCD cases",
+      "tests": [
+        "vcd0087-absent-initial-clean-eof"
+      ],
+      "method": "Hand-constructed record sequence; no HDL simulation."
+    },
+    "generator": {
+      "tool": "Python"
+    },
+    "notes": "Authored format test, not a waveform imported from the standard. No format conversion."
+  },
+  "tags": [
+    "bits",
+    "conformance",
+    "events",
+    "hierarchy",
+    "metadata",
+    "real",
+    "same-time",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "5",
+        "last": "8"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "late"
+          ],
+          "kind": "wire",
+          "signal": "late"
+        },
+        {
+          "path": [
+            "top",
+            "late_real"
+          ],
+          "kind": "real",
+          "signal": "late_real"
+        },
+        {
+          "path": [
+            "top",
+            "pulse"
+          ],
+          "kind": "event",
+          "signal": "pulse"
+        }
+      ]
+    },
+    "signals": {
+      "late": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "missing": true
+          },
+          {
+            "time": "4",
+            "missing": true
+          },
+          {
+            "time": "5",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "6",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "8",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "8"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": []
+          },
+          {
+            "start": "4",
+            "end": "6",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "5",
+            "end": "5",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "6",
+            "end": "8",
+            "initial": {
+              "value": {
+                "bits": "1"
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "8",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "late_real": {
+        "encoding": {
+          "kind": "real"
+        },
+        "samples": [
+          {
+            "time": "0",
+            "missing": true
+          },
+          {
+            "time": "4",
+            "missing": true
+          },
+          {
+            "time": "5",
+            "value": {
+              "real_bits": "3ff4000000000000"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "6",
+            "value": {
+              "real_bits": "3ff4000000000000"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "8",
+            "value": {
+              "real_bits": "8000000000000000"
+            },
+            "changed_at": "8"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": []
+          },
+          {
+            "start": "4",
+            "end": "6",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "real_bits": "3ff4000000000000"
+                }
+              }
+            ]
+          },
+          {
+            "start": "5",
+            "end": "5",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "real_bits": "3ff4000000000000"
+                }
+              }
+            ]
+          },
+          {
+            "start": "6",
+            "end": "8",
+            "initial": {
+              "value": {
+                "real_bits": "3ff4000000000000"
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "8",
+                "value": {
+                  "real_bits": "8000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "pulse": {
+        "encoding": {
+          "kind": "event"
+        },
+        "samples": [
+          {
+            "time": "0",
+            "occurrences": "0"
+          },
+          {
+            "time": "4",
+            "occurrences": "0"
+          },
+          {
+            "time": "5",
+            "occurrences": "2"
+          },
+          {
+            "time": "6",
+            "occurrences": "0"
+          },
+          {
+            "time": "8",
+            "occurrences": "0"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": []
+          },
+          {
+            "start": "4",
+            "end": "6",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "event": true
+                }
+              }
+            ]
+          },
+          {
+            "start": "5",
+            "end": "5",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "event": true
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "event": true
+                }
+              }
+            ]
+          },
+          {
+            "start": "6",
+            "end": "8",
+            "initial": null,
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}
