@@ -25,6 +25,8 @@ python3 install.py
 
 The installer looks for matching gzip assets in the repository's releases. It checks each waveform's uncompressed size and SHA-256 checksum before saving it as `waveform.<format>`. It leaves existing files alone if they pass those checks.
 
+For each downloaded file, the log shows the gzip asset size, unpacked size, and time spent downloading, unpacking, and verifying it. The final summary reports the total compressed MB downloaded (1 MB = 1,000,000 bytes) and elapsed installation time, including checks of existing files and release lookup. Both report average MB/s: compressed size divided by the corresponding elapsed time, including that processing time.
+
 Use `--dry-run` to list missing assets without accessing GitHub. By default, the installer stops before downloading anything if a release asset is missing. With `--ignore-missing`, it installs the available assets and reports what it skipped. Set `GITHUB_TOKEN` when you need authenticated GitHub API access.
 
 ## Publishing assets

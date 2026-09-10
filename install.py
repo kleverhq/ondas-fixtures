@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import re
 import sys
+import time
 from urllib.request import Request, urlopen
 
 REPOSITORY = "kleverhq/ondas-fixtures"
@@ -27,9 +28,9 @@ def arguments():
     return parser.parse_args()
 
 
-def request(url):
+def request(url, accept="application/vnd.github+json"):
     headers = {
-        "Accept": "application/vnd.github+json",
+        "Accept": accept,
         "User-Agent": "ondas-fixtures-installer",
         "X-GitHub-Api-Version": "2022-11-28",
     }
@@ -86,7 +87,7 @@ def find_assets(names):
         for asset in page(f"{release['assets_url']}?per_page=100"):
             name = asset["name"]
             if name in names and name not in found:
-                found[name] = asset["browser_download_url"]
+                found[name] = {"url": asset["url"], "size": asset["size"]}
         if len(found) == len(names):
             break
     return found
@@ -109,7 +110,7 @@ def install(fixture, url):
     digest = hashlib.sha256()
     size = 0
     try:
-        with request(url) as response, gzip.GzipFile(fileobj=response) as source, temporary.open("wb") as output:
+        with request(url, "application/octet-stream") as response, gzip.GzipFile(fileobj=response) as source, temporary.open("wb") as output:
             while chunk := source.read(1024 * 1024):
                 output.write(chunk)
                 digest.update(chunk)
@@ -126,10 +127,11 @@ def install(fixture, url):
 
 def main():
     args = arguments()
+    started = time.monotonic()
     fixtures = load_fixtures()
     missing = [fixture for fixture in fixtures if not file_matches(fixture)]
     if not missing:
-        print(f"All {len(fixtures)} fixtures are installed.")
+        print(f"All {len(fixtures)} fixtures are installed. Downloaded 0 MB; total time {time.monotonic() - started:.2f} s.")
         return
     if args.dry_run:
         for fixture in missing:
@@ -148,11 +150,26 @@ def main():
             print(f"  {name}", file=sys.stderr)
         missing = [fixture for fixture in missing if asset_name(fixture) in assets]
 
+    downloaded = 0
     for index, fixture in enumerate(missing, 1):
-        name = asset_name(fixture)
-        print(f"[{index}/{len(missing)}] {fixture['name']}")
-        install(fixture, assets[name])
-    print(f"Installed {len(missing)} fixtures; skipped {len(unavailable)} missing assets.")
+        asset = assets[asset_name(fixture)]
+        print(f"[{index}/{len(missing)}] {fixture['name']}", flush=True)
+        file_started = time.monotonic()
+        install(fixture, asset["url"])
+        elapsed = time.monotonic() - file_started
+        downloaded += asset["size"]
+        print(
+            f"  {asset['size']} bytes gzip ({asset['size'] / 1_000_000:.3f} MB), "
+            f"{fixture['size']} bytes unpacked; download and verification {elapsed:.2f} s; "
+            f"average {asset['size'] / 1_000_000 / elapsed if elapsed > 0 else 0:.3f} MB/s.",
+            flush=True,
+        )
+    elapsed = time.monotonic() - started
+    print(
+        f"Installed {len(missing)} fixtures; skipped {len(unavailable)} missing assets. "
+        f"Downloaded {downloaded / 1_000_000:.3f} MB; total time {elapsed:.2f} s; "
+        f"average {downloaded / 1_000_000 / elapsed if elapsed > 0 else 0:.3f} MB/s."
+    )
 
 
 if __name__ == "__main__":
