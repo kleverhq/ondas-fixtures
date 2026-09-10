@@ -32,4 +32,5 @@ This repository is the `kleverhq.ondas-fixtures` waveform provider. Use `README.
 
 - Limit `README.md` to the corpus purpose, layout, and usage.
 - Follow SemVer in `catalog.json`: patch for metadata fixes, minor for new fixtures, and major for incompatible contract changes.
+- When bumping the version in `catalog.json`, tag that same commit as `v<version>` and push both the commit and the tag.
 - Before finishing, validate the JSON files and directory layout. Check for duplicate hashes, verify artifact sizes and checksums, and check source links. Confirm that Git ignores the waveform files and that the metadata is in English.
