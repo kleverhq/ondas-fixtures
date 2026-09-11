@@ -12,6 +12,250 @@
     "source": "https://github.com/gokeshenzhen/TraceWeave/blob/0847f43d960055e48877c0ef1e182d1252a2ef64/tests/fixtures/scale_100fs.fsdb",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 100,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "1100000"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "scale_100fs_tb"
+          ],
+          "kind": "module",
+          "definition_name": "scale_100fs_tb"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "scale_100fs_tb",
+            "clk"
+          ],
+          "kind": "reg",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "scale_100fs_tb",
+            "addr"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1100000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "50000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "150000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "250000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "300000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "350000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "400000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "450000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "500000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "550000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "600000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "650000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "700000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "750000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "800000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "850000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "900000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "950000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1050000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1100000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "10101010101010100000000000000000"
+                }
+              },
+              {
+                "time": "1001000",
+                "value": {
+                  "bits": "10111011101110110000000000000000"
+                }
+              },
+              {
+                "time": "1001005",
+                "value": {
+                  "bits": "11001100110011000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

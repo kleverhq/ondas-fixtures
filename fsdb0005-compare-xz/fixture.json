@@ -12,6 +12,329 @@
     "source": "https://github.com/cxzzzz/wavekit/blob/3496cf271be91694be58dd6eb9c4bc4f242f2221/tests/readers/fixtures/fsdb/compare_xz.fsdb",
     "license": "MIT"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "s"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "55"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "compare_xz_tb"
+          ],
+          "kind": "module",
+          "definition_name": "compare_xz_tb"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "compare_xz_tb",
+            "clk"
+          ],
+          "kind": "reg",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "compare_xz_tb",
+            "bus"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "compare_xz_tb",
+            "data_0"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "compare_xz_tb",
+            "data_1"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "55",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "45",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "50",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "55",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "55",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "xxxx"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "zzzz"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "10x1"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "1z0x"
+                }
+              },
+              {
+                "time": "45",
+                "value": {
+                  "bits": "1010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "55",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "x010"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "101z"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "45",
+                "value": {
+                  "bits": "0000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "55",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "zzzz"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "1010"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "0x0z"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "45",
+                "value": {
+                  "bits": "1111"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
