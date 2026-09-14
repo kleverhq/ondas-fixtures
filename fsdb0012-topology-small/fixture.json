@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "description": "Sparse and constant probes with few unrelated histories.",
+  "artifact": {
+    "file": "waveform.fsdb",
+    "format": "fsdb",
+    "size": 8445,
+    "sha256": "5c1b6112e68e7a1af3dd60339626c83f34df6045d759bd39e654e1b14115f6e1"
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "unknown",
+    "license": "unknown"
+  },
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "1048576"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "probe_sparse"
+          ],
+          "kind": "reg",
+          "signal": "probe_sparse"
+        },
+        {
+          "path": [
+            "top",
+            "probe_constant"
+          ],
+          "kind": "reg",
+          "signal": "probe_constant"
+        },
+        {
+          "path": [
+            "top",
+            "noise_00000"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "noise_00000"
+        },
+        {
+          "path": [
+            "top",
+            "noise_00013"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "noise_00013"
+        }
+      ]
+    },
+    "signals": {
+      "probe_sparse": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1048576",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "4096",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1048576",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "probe_constant": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1048576",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "noise_00000": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "2",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          },
+          {
+            "start": "255",
+            "end": "257",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000000"
+              },
+              "changed_at": null
+            },
+            "changes": [
+              {
+                "time": "256",
+                "value": {
+                  "bits": "10000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "noise_00013": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "00000000000000000000000000001101"
+            },
+            "changed_at": null
+          }
+        ]
+      }
+    }
+  }
+}
