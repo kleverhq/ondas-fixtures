@@ -16,6 +16,7 @@ This repository is the `kleverhq.ondas-fixtures` waveform provider. Use `README.
 
 - Write repository content and commit messages in English.
 - For imported GitHub files, use a permalink with the full 40-character commit SHA. Check that the linked file matches `artifact.sha256`.
+- Generate fixtures authored from scratch in a neutral temporary workspace (for example, `/tmp/fixture-XXXXXX`), with neutral source, build, and output paths that reveal no project, user, host, or system identity. Check the resulting dump for embedded identifying paths before accepting it.
 - Mark generated waveforms as `authored`. Record the source project commit, simulation test, generator, and any format conversion.
 - When both a source waveform and its derived waveform are present, link them in both sidecars.
 - For files outside Git commits, record a stable source URL.
