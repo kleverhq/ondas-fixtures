@@ -1,0 +1,497 @@
+{
+  "schema": 1,
+  "description": "Sparse and dense 64-signal toggle banks with escaped declarations and a shared-ID alias.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 994,
+    "sha256": "874893b1212f6596169bc3106bdcbb35e226353709335d6d2c1df643ec00ffb3"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "CC0-1.0",
+    "simulation": {
+      "project": "Ondas waveform fixtures",
+      "commit": "98d4e8f5add9dc2095f050d912fbf49b91efe78b",
+      "tests": [
+        "sparse-dense-active"
+      ],
+      "method": "Deterministic Python VCD source; no HDL simulation."
+    },
+    "generator": {
+      "tool": "GTKWave vcd2fst 3.3.116",
+      "commit": "74301348450701727776c1a0522a3f512738e9ae",
+      "source_sha256": "4a34bf1f3faf26700522b83498c3f6078beb39fbdd2f427132ec130e609b6953",
+      "conversion": "vcd2fst source.vcd waveform.fst",
+      "input_sha256": "7de3c3b56ed94b2ca9823e290a0d927e70e9a7ad0b039bee74380b2ef871ee85"
+    }
+  },
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "4096"
+      },
+      "writer": "Ondas deterministic sparse/dense source",
+      "date": "2026-09-25"
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "top",
+            "sparse"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "top",
+            "dense"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "sparse",
+            "bit_00"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "sparse_00"
+        },
+        {
+          "path": [
+            "top",
+            "sparse",
+            "bit_01"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "sparse_01"
+        },
+        {
+          "path": [
+            "top",
+            "sparse",
+            "bit_63"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "sparse_63"
+        },
+        {
+          "path": [
+            "top",
+            "dense",
+            "bit_00"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "dense_00"
+        },
+        {
+          "path": [
+            "top",
+            "dense",
+            "bit_01"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "dense_01"
+        },
+        {
+          "path": [
+            "top",
+            "dense",
+            "bit_63"
+          ],
+          "kind": "wire",
+          "direction": "implicit",
+          "signal": "dense_63"
+        }
+      ]
+    },
+    "signals": {
+      "sparse_00": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "255",
+            "end": "257",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "254"
+            },
+            "changes": [
+              {
+                "time": "255",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "256",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "257",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "4095",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "4094"
+            },
+            "changes": [
+              {
+                "time": "4095",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "4096",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "sparse_01": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "256",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "4096",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          }
+        ],
+        "windows": [
+          {
+            "start": "4095",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": null
+            },
+            "changes": []
+          }
+        ]
+      },
+      "sparse_63": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "256",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "4096",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          }
+        ],
+        "windows": [
+          {
+            "start": "4095",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": null
+            },
+            "changes": []
+          }
+        ]
+      },
+      "dense_00": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "255",
+            "end": "257",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "254"
+            },
+            "changes": [
+              {
+                "time": "255",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "256",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "257",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "4095",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "4094"
+            },
+            "changes": [
+              {
+                "time": "4095",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "4096",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dense_01": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "256",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "256"
+          },
+          {
+            "time": "4096",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "4096"
+          }
+        ],
+        "windows": [
+          {
+            "start": "4095",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "4094"
+            },
+            "changes": [
+              {
+                "time": "4095",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "4096",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "dense_63": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "256",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "256"
+          },
+          {
+            "time": "4096",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "4096"
+          }
+        ],
+        "windows": [
+          {
+            "start": "4095",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "4094"
+            },
+            "changes": [
+              {
+                "time": "4095",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "4096",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
