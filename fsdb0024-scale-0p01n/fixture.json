@@ -1,0 +1,95 @@
+{
+  "schema": 1,
+  "description": "FSDB timescale 0.01n.",
+  "artifact": {
+    "file": "waveform.fsdb",
+    "format": "fsdb",
+    "size": 7942,
+    "sha256": "b37f001967dc603a8e91d09b69c6753602c9880264bb519d264d5dcffc0352d3"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "unknown",
+    "simulation": {
+      "tests": [
+        "top.clk at ticks 0 (0) and 10 (1); scale 0.01n"
+      ],
+      "method": ""
+    },
+    "generator": {
+      "tool": "FSDB Writer SDK"
+    }
+  },
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 10,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "10"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "clk"
+          ],
+          "kind": "reg",
+          "signal": "clk"
+        }
+      ]
+    },
+    "signals": {
+      "clk": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "10",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
