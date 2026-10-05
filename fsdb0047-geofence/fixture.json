@@ -12,6 +12,76 @@
     "source": "https://github.com/derek8955/ic_contest/blob/dfb6cc65753f994ef89d4ade054c0bf228de5e1d/2021_univ_geo/geofence.fsdb",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 10,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "13422000"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "testfixture"
+          ],
+          "kind": "module",
+          "definition_name": "testfixture"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "testfixture",
+            "fd"
+          ],
+          "kind": "integer",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "13422000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "10000000000000000000000000000011"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

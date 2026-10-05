@@ -11,13 +11,26 @@
     "kind": "authored",
     "license": "unknown",
     "simulation": {
-      "tests": ["conflicting-scope"],
+      "tests": [
+        "conflicting-scope"
+      ],
       "method": "Neutral VCD declarations converted to FSDB; no HDL simulation."
     },
     "generator": {
       "tool": "vcd2fsdb"
     }
   },
-  "tags": ["bits", "hierarchy", "metadata"],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "hierarchy",
+    "malformed",
+    "metadata"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "error",
+      "kind": "malformed"
+    }
+  }
 }
