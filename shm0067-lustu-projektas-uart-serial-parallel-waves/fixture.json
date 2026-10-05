@@ -28,6 +28,225 @@
       "waves.trn": "https://github.com/Mantvydas-AAA/Lustu_projektas/blob/69e7dd0add4697f4eb1259eee9ce2852a9fb18a2/uart_serial_parallel/waves.shm/waves.trn"
     }
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "uart_8bitserial_tb"
+          ]
+        },
+        {
+          "path": [
+            "uart_8bitserial_tb",
+            "dut"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "uart_8bitserial_tb",
+            "dut",
+            "clk"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "uart_8bitserial_tb",
+            "dut",
+            "parallel_out"
+          ],
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "uart_8bitserial_tb",
+            "dut",
+            "reset"
+          ],
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "uart_8bitserial_tb",
+            "dut",
+            "serial_in"
+          ],
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "uart_8bitserial_tb",
+            "dut",
+            "shift"
+          ],
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "uart_8bitserial_tb",
+            "dut",
+            "shift_register"
+          ],
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-6"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "110000",
+            "end": "110000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "110000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "110000",
+            "end": "110000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "110000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "110000",
+            "end": "110000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "110000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "110000",
+            "end": "110000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "110000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "110000",
+            "end": "110000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "110000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "110000",
+            "end": "110000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "110000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

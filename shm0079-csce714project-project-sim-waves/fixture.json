@@ -28,6 +28,64 @@
       "waves.trn": "https://github.com/habrit/csce714Project/blob/f4d1f2c8b5fc745540967b97051a3f0c3351c502/project/sim/waves.shm/waves.trn"
     }
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "trans_global"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "trans_global",
+            "error_count"
+          ],
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "10945000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

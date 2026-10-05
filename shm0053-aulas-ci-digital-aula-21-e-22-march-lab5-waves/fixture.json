@@ -28,6 +28,295 @@
       "waves.trn": "https://github.com/S4nt1b0y/aulas-ci-digital/blob/c93f397a8efce61ecec722de083e659698fb0d90/aula_%2821_e_22%29_march/lab5/waves.shm/waves.trn"
     }
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "alu_test"
+          ]
+        },
+        {
+          "path": [
+            "alu_test",
+            "alu_inst"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "alu_test",
+            "alu_inst",
+            "a_is_zero"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "alu_test",
+            "alu_inst",
+            "alu_out"
+          ],
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "alu_test",
+            "alu_inst",
+            "in_a"
+          ],
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "alu_test",
+            "alu_inst",
+            "in_b"
+          ],
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "alu_test",
+            "alu_inst",
+            "opcode"
+          ],
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "9",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "8",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "9",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "01000010"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "11001000"
+                }
+              },
+              {
+                "time": "3",
+                "value": {
+                  "bits": "00000010"
+                }
+              },
+              {
+                "time": "4",
+                "value": {
+                  "bits": "11000100"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "10000110"
+                }
+              },
+              {
+                "time": "6",
+                "value": {
+                  "bits": "01000010"
+                }
+              },
+              {
+                "time": "8",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "9",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "01000010"
+                }
+              },
+              {
+                "time": "8",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "9",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "10000110"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "9",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "1",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "3",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "4",
+                "value": {
+                  "bits": "100"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "101"
+                }
+              },
+              {
+                "time": "6",
+                "value": {
+                  "bits": "110"
+                }
+              },
+              {
+                "time": "7",
+                "value": {
+                  "bits": "111"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

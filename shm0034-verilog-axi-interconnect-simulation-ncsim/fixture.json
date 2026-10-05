@@ -40,6 +40,83 @@
       "ncsim-2.trn": "https://github.com/seonskim/verilog_axi-interconnect/blob/bd734255ba0cbda7143286160c3e4e526bd09cc7/simulation/ncsim.shm/ncsim-2.trn"
     }
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "tb"
+          ]
+        },
+        {
+          "path": [
+            "tb",
+            "dump_file"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "tb",
+            "dump_file",
+            "dump"
+          ],
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000110",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "3000010",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

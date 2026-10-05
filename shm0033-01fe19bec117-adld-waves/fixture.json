@@ -28,6 +28,150 @@
       "waves.trn": "https://github.com/01fe19bec117/01fe19bec117_ADLD/blob/8938813eda82ef1d5e3c2dace223ba770f52b0dc/waves.shm/waves.trn"
     }
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "or_gate1_tb"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "or_gate1_tb",
+            "a"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "or_gate1_tb",
+            "b"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "or_gate1_tb",
+            "c"
+          ],
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

@@ -28,6 +28,210 @@
       "waves.trn": "https://github.com/valmyr/VeriRISC_CPU_Design/blob/9f21a39b582fe4a4a77fb13a7a6b961eb6172a55/lab3-mux/waves.shm/waves.trn"
     }
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "multiplexor_test"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "multiplexor_test",
+            "in0"
+          ],
+          "range": {
+            "msb": 4,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "multiplexor_test",
+            "in1"
+          ],
+          "range": {
+            "msb": 4,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "multiplexor_test",
+            "mux_out"
+          ],
+          "range": {
+            "msb": 4,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "multiplexor_test",
+            "sel"
+          ],
+          "signal": "signal-4"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 5
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "10101"
+                }
+              },
+              {
+                "time": "1",
+                "value": {
+                  "bits": "01010"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "00000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 5
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "10101"
+                }
+              },
+              {
+                "time": "3",
+                "value": {
+                  "bits": "01010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 5
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "10101"
+                }
+              },
+              {
+                "time": "1",
+                "value": {
+                  "bits": "01010"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "10101"
+                }
+              },
+              {
+                "time": "3",
+                "value": {
+                  "bits": "01010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
