@@ -12,6 +12,277 @@
     "source": "https://github.com/MohamedReda2003/FPGA-Tutorials/blob/8cc01d40570ad362595c724a51bb6f983fcbfa70/1-tuto_modelsim/Coders/vsim.wlf",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "50000"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "decoder_tb"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "decoder_tb",
+            "uut"
+          ],
+          "kind": "architecture"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "decoder_tb",
+            "tb_data_in"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "decoder_tb",
+            "tb_data_out"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "decoder_tb",
+            "uut",
+            "data_in"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "decoder_tb",
+            "uut",
+            "data_out"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "50000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "xx"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "50000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0xxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "0100"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "1100"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "x000"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "xx00"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "xxx0"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "xxxx"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

@@ -12,6 +12,808 @@
     "source": "https://github.com/S-Nikhil-Prince/VLSI-School/blob/1de26489af29144fc8e87b33c7d9a49cab625b08/Class%20Programs/Calculator/vsim.wlf",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "80"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "tb_calculator"
+          ],
+          "kind": "module",
+          "definition_name": "tb_calculator"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator"
+          ],
+          "kind": "module",
+          "definition_name": "calculator"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "tb_calculator",
+            "a"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "b"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "sel"
+          ],
+          "kind": "reg",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "y"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "a"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "b"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "sel"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "y"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "and_out"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "or_out"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "xor_out"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "xnor_out"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "tb_calculator",
+            "u_calculator",
+            "not_out"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-12"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "40",
+                "value": {
+                  "bits": "100"
+                }
+              },
+              {
+                "time": "50",
+                "value": {
+                  "bits": "101"
+                }
+              },
+              {
+                "time": "60",
+                "value": {
+                  "bits": "110"
+                }
+              },
+              {
+                "time": "70",
+                "value": {
+                  "bits": "111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "40",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "40",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x00"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "40",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "40",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "40",
+                "value": {
+                  "bits": "100"
+                }
+              },
+              {
+                "time": "50",
+                "value": {
+                  "bits": "101"
+                }
+              },
+              {
+                "time": "60",
+                "value": {
+                  "bits": "100"
+                }
+              },
+              {
+                "time": "60",
+                "value": {
+                  "bits": "110"
+                }
+              },
+              {
+                "time": "70",
+                "value": {
+                  "bits": "111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "80",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

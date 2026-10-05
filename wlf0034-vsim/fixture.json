@@ -12,6 +12,313 @@
     "source": "https://github.com/MohamedReda2003/FPGA-Tutorials/blob/8cc01d40570ad362595c724a51bb6f983fcbfa70/1-tuto_modelsim/multiplexeur/vsim.wlf",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "40000"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "multiplexer_tb"
+          ],
+          "kind": "architecture"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "uut"
+          ],
+          "kind": "architecture"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "multiplexer_tb",
+            "tb_sel"
+          ],
+          "kind": "signal",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "tb_data_0"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "tb_data_1"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "tb_data_out"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "uut",
+            "i_sel"
+          ],
+          "kind": "signal",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "uut",
+            "i_data_0"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "uut",
+            "i_data_1"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "multiplexer_tb",
+            "uut",
+            "o_data"
+          ],
+          "kind": "signal",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "x1"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "xx"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
