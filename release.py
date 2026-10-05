@@ -5,6 +5,7 @@ import gzip
 from pathlib import Path
 import shutil
 import subprocess
+import tarfile
 import tempfile
 
 from install import REPOSITORY, asset_name, file_matches, load_fixtures
@@ -36,9 +37,19 @@ def selected_fixtures(names):
 
 def compress(fixture, directory):
     target = directory / asset_name(fixture)
-    with fixture["path"].open("rb") as source, target.open("wb") as output:
+    with target.open("wb") as output:
         with gzip.GzipFile(filename="", mode="wb", fileobj=output, mtime=0) as archive:
-            shutil.copyfileobj(source, archive, 1024 * 1024)
+            if fixture["format"] == "shm":
+                with tarfile.open(fileobj=archive, mode="w|", format=tarfile.USTAR_FORMAT) as bundle:
+                    for component in sorted(fixture["files"], key=lambda item: item["file"]):
+                        member = tarfile.TarInfo(component["file"])
+                        member.size = component["size"]
+                        member.mode = 0o644
+                        with (fixture["path"] / member.name).open("rb") as source:
+                            bundle.addfile(member, source)
+            else:
+                with fixture["path"].open("rb") as source:
+                    shutil.copyfileobj(source, archive, 1024 * 1024)
     return target
 
 

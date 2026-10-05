@@ -8,6 +8,8 @@ import os
 from pathlib import Path
 import re
 import sys
+import tarfile
+import tempfile
 import time
 from urllib.request import Request, urlopen
 
@@ -15,6 +17,32 @@ REPOSITORY = "kleverhq/ondas-fixtures"
 API_URL = f"https://api.github.com/repos/{REPOSITORY}"
 ROOT = Path(__file__).resolve().parent
 SHA256 = re.compile(r"[0-9a-f]{64}")
+
+
+def directory_sha256(files):
+    manifest = json.dumps(sorted(files, key=lambda item: item["file"]),
+                          sort_keys=True, separators=(",", ":"), ensure_ascii=True)
+    return hashlib.sha256(manifest.encode("utf-8")).hexdigest()
+
+
+def validate_components(artifact):
+    files = artifact["files"]
+    names = set()
+    if not isinstance(files, list) or not files:
+        raise ValueError("empty SHM component manifest")
+    for component in files:
+        name = component["file"]
+        if (set(component) != {"file", "size", "sha256"}
+                or not isinstance(name, str) or Path(name).name != name
+                or "\\" in name or name in {".", ".."} or name in names
+                or Path(name).suffix not in {".dsn", ".trn"}
+                or type(component["size"]) is not int or component["size"] <= 0
+                or not SHA256.fullmatch(component["sha256"])):
+            raise ValueError("invalid SHM component manifest")
+        names.add(name)
+    if (sum(item["size"] for item in files) != artifact["size"]
+            or directory_sha256(files) != artifact["sha256"]):
+        raise ValueError("SHM directory checksum mismatch")
 
 
 def arguments():
@@ -48,6 +76,10 @@ def load_fixtures():
         digest = artifact["sha256"]
         if Path(filename).name != filename or not SHA256.fullmatch(digest):
             raise ValueError(f"invalid artifact metadata in {sidecar}")
+        if artifact["format"] == "shm":
+            if filename != "waveform.shm":
+                raise ValueError(f"invalid SHM artifact name in {sidecar}")
+            validate_components(artifact)
         fixtures.append(
             {
                 "name": sidecar.parent.name,
@@ -55,6 +87,7 @@ def load_fixtures():
                 "format": artifact["format"],
                 "size": artifact["size"],
                 "sha256": digest,
+                **({"files": artifact["files"]} if artifact["format"] == "shm" else {}),
             }
         )
     return fixtures
@@ -95,6 +128,15 @@ def find_assets(names):
 
 def file_matches(fixture):
     path = fixture["path"]
+    if fixture["format"] == "shm":
+        if not path.is_dir() or path.is_symlink():
+            return False
+        if {item.name for item in path.iterdir()} != {item["file"] for item in fixture["files"]}:
+            return False
+        return all(file_matches({**item, "path": path / item["file"], "format": "component"})
+                   for item in fixture["files"])
+    if path.is_symlink():
+        return False
     if not path.is_file() or path.stat().st_size != fixture["size"]:
         return False
     digest = hashlib.sha256()
@@ -104,7 +146,51 @@ def file_matches(fixture):
     return digest.hexdigest() == fixture["sha256"]
 
 
+def install_directory(fixture, source):
+    target = fixture["path"]
+    expected = {item["file"]: item for item in fixture["files"]}
+    with tempfile.TemporaryDirectory(prefix=".waveform-shm-", dir=target.parent) as work:
+        work = Path(work)
+        directory = work / "new"
+        directory.mkdir()
+        seen = set()
+        with tarfile.open(fileobj=source, mode="r|") as archive:
+            for member in archive:
+                if (member.name not in expected or member.name in seen or not member.isfile()
+                        or member.size != expected[member.name]["size"]):
+                    raise ValueError(f"invalid SHM archive member: {member.name}")
+                seen.add(member.name)
+                digest = hashlib.sha256()
+                size = 0
+                with archive.extractfile(member) as stream, (directory / member.name).open("wb") as output:
+                    while chunk := stream.read(1024 * 1024):
+                        output.write(chunk)
+                        digest.update(chunk)
+                        size += len(chunk)
+                component = expected[member.name]
+                if size != component["size"] or digest.hexdigest() != component["sha256"]:
+                    raise ValueError(f"checksum mismatch for {fixture['name']}/{member.name}")
+        # Read through the gzip trailer so truncated/corrupt streams cannot be accepted.
+        while source.read(1024 * 1024):
+            pass
+        if seen != expected.keys():
+            raise ValueError(f"missing SHM archive components for {fixture['name']}")
+        backup = work / "old"
+        if target.exists() or target.is_symlink():
+            os.replace(target, backup)
+        try:
+            os.replace(directory, target)
+        except Exception:
+            if backup.exists() or backup.is_symlink():
+                os.replace(backup, target)
+            raise
+
+
 def install(fixture, url):
+    if fixture["format"] == "shm":
+        with request(url, "application/octet-stream") as response, gzip.GzipFile(fileobj=response) as source:
+            install_directory(fixture, source)
+        return
     target = fixture["path"]
     temporary = target.with_name(target.name + ".part")
     digest = hashlib.sha256()

@@ -6,13 +6,112 @@ import io
 import json
 from pathlib import Path
 import tempfile
+import tarfile
 import unittest
 from unittest.mock import patch
 
 import install
+import release
 
 
 class InstallTests(unittest.TestCase):
+    def directory_fixture(self, root):
+        payloads = {"waves.dsn": b"design bytes", "waves.trn": b"transaction bytes",
+                    "waves-1.trn": b"continued transactions"}
+        directory = root / "waveform.shm"
+        directory.mkdir()
+        files = []
+        for name, payload in payloads.items():
+            (directory / name).write_bytes(payload)
+            files.append({"file": name, "size": len(payload),
+                          "sha256": hashlib.sha256(payload).hexdigest()})
+        return {"name": "shm0000-test", "path": directory, "file": directory.name,
+                "format": "shm", "size": sum(item["size"] for item in files),
+                "sha256": install.directory_sha256(files), "files": files}, payloads
+
+    def tar_asset(self, members):
+        output = io.BytesIO()
+        with tarfile.open(fileobj=output, mode="w") as archive:
+            for name, payload, kind in members:
+                member = tarfile.TarInfo(name)
+                member.type = kind
+                if kind == tarfile.REGTYPE:
+                    member.size = len(payload)
+                    archive.addfile(member, io.BytesIO(payload))
+                else:
+                    member.linkname = "../outside"
+                    archive.addfile(member)
+        return gzip.compress(output.getvalue())
+
+    def test_directory_round_trip_and_content_validation(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "shm0000-test"
+            root.mkdir()
+            fixture, payloads = self.directory_fixture(root)
+            sidecar = {"artifact": {key: value for key, value in fixture.items()
+                                    if key not in {"name", "path"}}}
+            (root / "fixture.json").write_text(json.dumps(sidecar))
+            with patch.object(install, "ROOT", root.parent):
+                loaded = next(item for item in install.load_fixtures() if item["path"] == fixture["path"])
+            self.assertEqual(loaded["files"], fixture["files"])
+            self.assertTrue(install.file_matches(loaded))
+            compressed = release.compress(fixture, root).read_bytes()
+            self.assertEqual(compressed, release.compress(fixture, root).read_bytes())
+            with tarfile.open(fileobj=io.BytesIO(compressed), mode="r:gz") as archive:
+                self.assertEqual(archive.getnames(), sorted(payloads))
+                for member in archive:
+                    self.assertEqual(archive.extractfile(member).read(), payloads[member.name])
+                    self.assertEqual((member.uid, member.gid, member.mtime), (0, 0, 0))
+            (fixture["path"] / "waves.trn").write_bytes(b"broken")
+            self.assertFalse(install.file_matches(fixture))
+            with patch.object(install, "request", return_value=io.BytesIO(compressed)):
+                install.install(fixture, "https://example.com/shm.gz")
+            self.assertTrue(install.file_matches(fixture))
+            (fixture["path"] / "extra.trn").write_bytes(b"extra")
+            self.assertFalse(install.file_matches(fixture))
+            (fixture["path"] / "extra.trn").unlink()
+            (fixture["path"] / "waves.trn").unlink()
+            (fixture["path"] / "waves.trn").symlink_to(fixture["path"] / "waves-1.trn")
+            self.assertFalse(install.file_matches(fixture))
+
+    def test_directory_rejects_invalid_archives_and_preserves_existing_data(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            fixture, payloads = self.directory_fixture(root)
+            good = [(name, payload, tarfile.REGTYPE) for name, payload in payloads.items()]
+            corrupt = [(name, b"!" * len(payload), tarfile.REGTYPE) for name, payload in payloads.items()]
+            archives = {
+                "corrupt": self.tar_asset(corrupt),
+                "missing": self.tar_asset(good[:-1]),
+                "duplicate": self.tar_asset(good + good[:1]),
+                "unexpected": self.tar_asset(good + [("extra.trn", b"!", tarfile.REGTYPE)]),
+                "traversal": self.tar_asset([("../outside", b"!", tarfile.REGTYPE)]),
+                "symlink": self.tar_asset([("waves.dsn", b"", tarfile.SYMTYPE)]),
+                "hardlink": self.tar_asset([("waves.dsn", b"", tarfile.LNKTYPE)]),
+                "wrong-size": self.tar_asset([("waves.dsn", b"!", tarfile.REGTYPE)]),
+                "truncated": self.tar_asset(good)[:-4],
+            }
+            for label, compressed in archives.items():
+                with self.subTest(label=label):
+                    with patch.object(install, "request", return_value=io.BytesIO(compressed)), \
+                         self.assertRaises((ValueError, EOFError, tarfile.TarError)):
+                        install.install(fixture, "https://example.com/shm.gz")
+                    self.assertTrue(install.file_matches(fixture))
+                    self.assertEqual(sorted(item.name for item in root.iterdir()), ["waveform.shm"])
+
+    def test_directory_manifest_rejects_unsafe_names_and_inconsistent_hashes(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture, _ = self.directory_fixture(Path(temporary))
+            install.validate_components(fixture)
+            self.assertEqual(install.directory_sha256(fixture["files"]),
+                             install.directory_sha256(list(reversed(fixture["files"]))))
+            with self.assertRaisesRegex(ValueError, "directory checksum"):
+                install.validate_components({**fixture, "sha256": "0" * 64})
+            for name in ["../waves.dsn", "/waves.dsn", "..", "waves\\bad.dsn"]:
+                with self.subTest(name=name), self.assertRaisesRegex(ValueError, "component manifest"):
+                    files = [{**fixture["files"][0], "file": name}]
+                    install.validate_components({**fixture, "files": files})
+
     def test_download_statistics_and_checksum_failure(self):
         payload = b"waveform data\n" * 100
         compressed = gzip.compress(payload)
