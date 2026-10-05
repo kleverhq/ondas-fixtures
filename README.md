@@ -13,7 +13,7 @@ catalog.json
 
 `catalog.json` records the provider name and corpus version. Each fixture directory contains one waveform and a `fixture.json` sidecar that records its format, size, SHA-256 checksum, source, license, tags, and optional test oracle.
 
-For SHM, `waveform.shm` is a directory containing the original `.dsn` and `.trn` files, including numbered transaction segments. Each entry in `artifact.files` records a component's `file`, `size`, and `sha256`. The artifact size is the sum of component sizes. Its SHA-256 identifies the component list sorted by `file`, serialized as UTF-8 JSON with sorted object keys, ASCII escapes, no whitespace, and no trailing newline. In Python, this is `json.dumps(sorted(files, key=lambda item: item["file"]), sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode("utf-8")`.
+For SHM, `waveform.shm` is a directory containing the original `.dsn` and `.trn` files.
 
 Git tracks the metadata needed to download and verify waveforms, but ignores the waveform files themselves.
 
@@ -25,7 +25,7 @@ Clone the repository at `$ONDAS_FIXTURES/kleverhq.ondas-fixtures`, then install 
 python3 install.py
 ```
 
-The installer looks for matching gzip assets in the repository's releases. It checks each waveform's uncompressed size and SHA-256 checksum before saving it as `waveform.<format>`. For SHM, it also verifies every component and the directory contents. It leaves existing artifacts alone if they pass those checks.
+The installer looks for matching gzip assets in the repository's releases. It checks each waveform's uncompressed size and SHA-256 checksum before saving it as `waveform.<format>`. It leaves existing artifacts alone if they pass those checks.
 
 For each downloaded file, the log shows the gzip asset size, unpacked size, and time spent downloading, unpacking, and verifying it. The final summary reports the total compressed MB downloaded (1 MB = 1,000,000 bytes) and elapsed installation time, including checks of existing files and release lookup. Both report average MB/s: compressed size divided by the corresponding elapsed time, including that processing time.
 
@@ -33,7 +33,7 @@ Use `--dry-run` to list missing assets without accessing GitHub. By default, the
 
 ## Publishing assets
 
-Release assets use the name `<fixture>.<sha256>.<format>.gz`. For file artifacts, each gzip stream contains the raw waveform. For SHM directory artifacts, it contains a tar archive of the original component files at the archive root.
+Release assets use the name `<fixture>.<sha256>.<format>.gz`. They contain gzipped waveform bytes, or a gzipped tar archive for SHM directories.
 
 Authenticate the GitHub CLI, then pass the fixture directories you want to publish:
 
