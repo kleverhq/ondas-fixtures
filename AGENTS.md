@@ -4,7 +4,7 @@ This repository is the `kleverhq.ondas-fixtures` waveform provider. Use `README.
 
 ## Fixture format
 
-- Put each fixture in a directory directly under the repository root. It must contain only `fixture.json` and `waveform.<format>`.
+- Put each fixture under `<format>/` at the repository root, using the lowercase artifact format. Each fixture directory must contain only `fixture.json` and `waveform.<format>`.
 - For SHM, `waveform.shm` is a directory containing unchanged DSN/TRN components. Record each component's name, size, and SHA-256 in `artifact.files`; the artifact size is their sum. Hash the component list sorted by `file`, serialized as UTF-8 JSON with sorted keys, ASCII escapes, no whitespace, and no trailing newline, for the directory's `artifact.sha256`.
 - Name directories `<format><NNNN>-<slug>`, for example `vcd0000-counter` or `fst0000-counter`. Use the lowercase artifact format, a zero-padded sequence number for that format, and the existing readable slug. Assign the next unused number. Never renumber fixtures or repeat the format at the end of the slug.
 - Do not keep duplicate waveform content.
@@ -33,6 +33,7 @@ This repository is the `kleverhq.ondas-fixtures` waveform provider. Use `README.
 ## Checks
 
 - Limit `README.md` to the corpus purpose, layout, and usage.
+- Update the corpus statistics in `README.md` whenever the corpus changes, including fixture additions, removals, and metadata updates. Run `python3 stats.py` and copy its output into the Corpus table. Round sizes to whole megabytes without thousands separators.
 - Follow SemVer in `catalog.json`: patch for metadata fixes, minor for new fixtures, and major for incompatible contract changes.
 - When bumping the version in `catalog.json`, tag that same commit as `v<version>` and push both the commit and the tag.
 - Before finishing, validate the JSON files and directory layout. Check for duplicate hashes, verify artifact sizes and checksums, and check source links. Confirm that Git ignores the waveform files and that the metadata is in English.

@@ -69,9 +69,11 @@ def request(url, accept="application/vnd.github+json"):
 
 def load_fixtures():
     fixtures = []
-    for sidecar in sorted(ROOT.glob("*/fixture.json")):
+    for sidecar in sorted(ROOT.glob("*/*/fixture.json")):
         data = json.loads(sidecar.read_text())
         artifact = data["artifact"]
+        if sidecar.parent.parent.name != artifact["format"]:
+            raise ValueError(f"format directory mismatch in {sidecar}")
         filename = artifact["file"]
         digest = artifact["sha256"]
         if Path(filename).name != filename or not SHA256.fullmatch(digest):

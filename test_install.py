@@ -15,6 +15,36 @@ import release
 
 
 class InstallTests(unittest.TestCase):
+    def test_format_directories_and_release_selection(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            expected = {}
+            for format in ("vcd", "fst"):
+                name = f"{format}0000-test"
+                directory = root / format / name
+                directory.mkdir(parents=True)
+                payload = f"{format} waveform".encode()
+                artifact = {"file": f"waveform.{format}", "format": format,
+                            "size": len(payload), "sha256": hashlib.sha256(payload).hexdigest()}
+                (directory / artifact["file"]).write_bytes(payload)
+                (directory / "fixture.json").write_text(json.dumps({"artifact": artifact, "tags": []}))
+                expected[name] = directory / artifact["file"]
+            with patch.object(install, "ROOT", root):
+                loaded = install.load_fixtures()
+                self.assertEqual({item["name"]: item["path"] for item in loaded}, expected)
+                selected = release.selected_fixtures(["vcd/vcd0000-test", "fst0000-test"])
+                self.assertEqual([item["name"] for item in selected], ["vcd0000-test", "fst0000-test"])
+                for fixture in selected:
+                    self.assertEqual(install.asset_name(fixture),
+                                     f"{fixture['name']}.{fixture['sha256']}.{fixture['format']}.gz")
+                with self.assertRaisesRegex(ValueError, "duplicates"):
+                    release.selected_fixtures(["vcd0000-test", "vcd/vcd0000-test"])
+                with self.assertRaisesRegex(ValueError, "unknown fixture directories"):
+                    release.selected_fixtures(["fst/vcd0000-test"])
+                (root / "vcd" / "vcd0000-test").rename(root / "fst" / "vcd0000-test")
+                with self.assertRaisesRegex(ValueError, "format directory mismatch"):
+                    install.load_fixtures()
+
     def directory_fixture(self, root):
         payloads = {"waves.dsn": b"design bytes", "waves.trn": b"transaction bytes",
                     "waves-1.trn": b"continued transactions"}
@@ -45,13 +75,13 @@ class InstallTests(unittest.TestCase):
 
     def test_directory_round_trip_and_content_validation(self):
         with tempfile.TemporaryDirectory() as temporary:
-            root = Path(temporary) / "shm0000-test"
-            root.mkdir()
+            root = Path(temporary) / "shm" / "shm0000-test"
+            root.mkdir(parents=True)
             fixture, payloads = self.directory_fixture(root)
             sidecar = {"artifact": {key: value for key, value in fixture.items()
                                     if key not in {"name", "path"}}}
             (root / "fixture.json").write_text(json.dumps(sidecar))
-            with patch.object(install, "ROOT", root.parent):
+            with patch.object(install, "ROOT", root.parent.parent):
                 loaded = next(item for item in install.load_fixtures() if item["path"] == fixture["path"])
             self.assertEqual(loaded["files"], fixture["files"])
             self.assertTrue(install.file_matches(loaded))
@@ -117,8 +147,8 @@ class InstallTests(unittest.TestCase):
         compressed = gzip.compress(payload)
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            directory = root / "vcd0000-test"
-            directory.mkdir()
+            directory = root / "vcd" / "vcd0000-test"
+            directory.mkdir(parents=True)
             artifact = {"file": "waveform.vcd", "format": "vcd", "size": len(payload),
                         "sha256": hashlib.sha256(payload).hexdigest()}
             (directory / "fixture.json").write_text(json.dumps({"artifact": artifact}))
