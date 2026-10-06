@@ -17,7 +17,7 @@ install *args:
 stats:
     @python3 -B scripts/stats.py
 
-# Validate all repository JSON against local schemas.
+# Validate all repository JSON against the fixture schema.
 validate:
     @.venv/bin/python -B scripts/validate.py
 
@@ -29,6 +29,6 @@ check:
 test:
     @.venv/bin/python -B -m unittest discover -s scripts -p 'test_*.py'
 
-# Publish an explicit fixture list; accepts publisher flags.
+# Publish an explicit fixture list; accepts --target and --dry-run.
 release tag +fixtures:
     @python3 -B scripts/release.py "$@"

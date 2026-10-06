@@ -1,6 +1,6 @@
 # Repository rules
 
-This repository is the `kleverhq.ondas-fixtures` waveform provider. Use `README.md` for usage instructions and `catalog.json` for the provider name and version.
+This repository contains the Ondas waveform fixtures. Use `README.md` for usage instructions. Consumers pin a Git commit, typically through a submodule, rather than a separate corpus version.
 
 ## Commands
 
@@ -11,17 +11,17 @@ Use the root `justfile` for all repository operations. Do not invoke scripts dir
 | `just setup` | Create `.venv` and install validation dependencies. |
 | `just install` | Download and verify waveform payloads. |
 | `just install --dry-run` | List missing payloads without downloading. |
-| `just validate` | Validate all repository JSON against local schemas. |
+| `just validate` | Validate all repository JSON against the fixture schema. |
 | `just check` | Validate metadata, layout, hashes, installed payloads, README statistics, and script tests. |
 | `just test` | Run script tests. |
 | `just stats` | Print the README corpus table. |
-| `just release TAG FORMAT/FIXTURE...` | Publish only the selected fixtures. |
+| `just release TAG FORMAT/FIXTURE... --target COMMIT` | Publish only the selected fixtures at a specific commit. |
 
 Run `just setup` before validation, checks, or tests. `just check` also works without installed waveform payloads.
 
 ## Schemas
 
-`schemas/` is the source of truth for the catalog, fixture sidecars, and sparse oracle contract. Maintain the schemas here; Ondas consumers must follow this contract. The oracle schema's Apache-2.0 license text is in `LICENSES/Apache-2.0-ondas.txt`.
+`schemas/fixture.schema.json` is the source of truth for fixture sidecars and the sparse oracle contract. Maintain this schema here; Ondas consumers must follow this contract. Its oracle definitions are available at `#/$defs/oracle`; their Apache-2.0 license text is in `LICENSES/Apache-2.0-ondas.txt`. Preserve the `schema: 1` markers in sidecars and nonempty oracles independently of commit pinning.
 
 ## Fixture format
 
@@ -54,10 +54,10 @@ Run `just setup` before validation, checks, or tests. `just check` also works wi
 
 Publishing requires an authenticated GitHub CLI and valid local waveform payloads for the selected fixtures.
 
-1. Bump `catalog.json` following SemVer: patch for metadata fixes, minor for new fixtures, major for incompatible contract changes.
-2. Run `just check`. For waveform uploads, preview the explicit fixture list with `just release v<version> FORMAT/FIXTURE... --dry-run`.
-3. Commit the changes without waveform payloads, tag that same commit as `v<version>`, and push both the commit and the tag.
-4. Publish the selected assets with `just release v<version> FORMAT/FIXTURE...`. Never publish all working-tree directories by default. Skip uploads for metadata-only releases.
+1. Run `just setup` and `just check`, then commit the changes without waveform payloads and push the commit.
+2. For waveform uploads, use a tag named `files-<first 12 characters of the full commit SHA>`. Preview the explicit fixture list with `just release files-<short-sha> FORMAT/FIXTURE... --target <full-commit-sha> --dry-run`.
+3. Publish the selected assets from a clean checkout of that commit with `just release files-<short-sha> FORMAT/FIXTURE... --target <full-commit-sha>`. The publisher resolves `--target` to a full SHA (default: `HEAD`) and requires it to match `HEAD`, with no tracked changes or untracked files; ignored waveform payloads are allowed. Dry runs enforce the same checkout requirements. It verifies any existing remote tag's commit and passes the SHA to `gh release create --target` to create an absent tag at that commit.
+4. Never publish all working-tree directories by default. Metadata-only changes need only a pushed commit. Preserve existing tags, releases, and assets.
 
 ## Checks
 

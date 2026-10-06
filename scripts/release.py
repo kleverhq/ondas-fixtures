@@ -17,8 +17,33 @@ def arguments():
     parser = argparse.ArgumentParser(description="Publish selected waveform fixtures as gzip release assets.")
     parser.add_argument("tag", help="GitHub release tag")
     parser.add_argument("fixtures", nargs="+", help="fixture directories to publish")
+    parser.add_argument("--target", default="HEAD", help="target commit (default: HEAD)")
     parser.add_argument("--dry-run", action="store_true", help="validate and print assets without publishing")
     return parser.parse_args()
+
+
+def release_target(tag, revision):
+    target = subprocess.check_output(
+        ["git", "rev-parse", "--verify", "--end-of-options", f"{revision}^{{commit}}"],
+        cwd=ROOT, text=True,
+    ).strip()
+    expected = f"files-{target[:12]}"
+    if tag != expected:
+        raise ValueError(f"release tag must be {expected} for target {target}")
+    return target
+
+
+def check_checkout(target):
+    head = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
+    ).strip()
+    if head != target:
+        raise ValueError(f"checkout HEAD is {head}, expected target {target}")
+    changes = subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=normal"], cwd=ROOT, text=True,
+    )
+    if changes:
+        raise ValueError("release requires a clean checkout; commit or remove local changes first")
 
 
 def selected_fixtures(names):
@@ -64,7 +89,20 @@ def release_exists(tag):
     ).returncode == 0
 
 
-def publish(tag, assets):
+def check_tag_target(tag, target):
+    ref = f"refs/tags/{tag}"
+    output = subprocess.check_output(
+        ["git", "ls-remote", f"https://github.com/{REPOSITORY}.git", ref, ref + "^{}"],
+        text=True,
+    )
+    refs = dict(line.split()[::-1] for line in output.splitlines())
+    actual = refs.get(ref + "^{}", refs.get(ref))
+    if actual is not None and actual != target:
+        raise ValueError(f"remote tag {tag} points to {actual}, expected {target}")
+
+
+def publish(tag, assets, target):
+    check_tag_target(tag, target)
     if not release_exists(tag):
         subprocess.run(
             [
@@ -74,6 +112,8 @@ def publish(tag, assets):
                 tag,
                 "--repo",
                 REPOSITORY,
+                "--target",
+                target,
                 "--title",
                 tag,
                 "--notes",
@@ -89,8 +129,11 @@ def publish(tag, assets):
 
 def main():
     args = arguments()
+    target = release_target(args.tag, args.target)
+    check_checkout(target)
     fixtures = selected_fixtures(args.fixtures)
     if args.dry_run:
+        print(f"Release {args.tag} at {target}:")
         for fixture in fixtures:
             print(asset_name(fixture))
         return
@@ -98,7 +141,7 @@ def main():
         raise RuntimeError("gh is required to publish a release")
     with tempfile.TemporaryDirectory(prefix="ondas-fixtures-release-") as temporary:
         assets = [compress(fixture, Path(temporary)) for fixture in fixtures]
-        publish(args.tag, assets)
+        publish(args.tag, assets, target)
     print(f"Published {len(fixtures)} assets to {args.tag}.")
 
 
