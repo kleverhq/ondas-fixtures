@@ -15,6 +15,38 @@ import release
 
 
 class InstallTests(unittest.TestCase):
+    def test_metadata_requests_accept_http_gzip_without_changing_asset_requests(self):
+        with patch.object(install, "urlopen") as urlopen:
+            install.request("https://example.com/releases")
+            request = urlopen.call_args.args[0]
+            self.assertEqual(request.get_header("Accept-encoding"), "gzip")
+            install.request("https://example.com/asset", "application/octet-stream")
+            request = urlopen.call_args.args[0]
+            self.assertIsNone(request.get_header("Accept-encoding"))
+
+    def test_metadata_pagination_reads_gzip_and_plain_responses(self):
+        first = io.BytesIO(gzip.compress(json.dumps([{"name": "first"}]).encode()))
+        first.headers = {"Content-Encoding": "gzip", "Link": '<https://example.com/page2>; rel="next"'}
+        second = io.BytesIO(json.dumps([{"name": "second"}]).encode())
+        second.headers = {}
+        with patch.object(install, "request", side_effect=[first, second]) as request:
+            self.assertEqual(list(install.page("https://example.com/page1")),
+                             [{"name": "first"}, {"name": "second"}])
+        self.assertEqual([call.args[0] for call in request.call_args_list],
+                         ["https://example.com/page1", "https://example.com/page2"])
+
+    def test_asset_lookup_searches_releases_without_version_or_tag_filtering(self):
+        name = "vcd0000-test." + "a" * 64 + ".vcd.gz"
+        releases = [
+            {"tag_name": "files-0123456789ab", "assets_url": "https://example.com/new"},
+            {"tag_name": "v6.0.0", "assets_url": "https://example.com/old"},
+        ]
+        asset = {"name": name, "url": "https://example.com/asset", "size": 42}
+        with patch.object(install, "page", side_effect=[releases, [], [asset]]) as page:
+            self.assertEqual(install.find_assets({name}), {name: {"url": asset["url"], "size": 42}})
+        self.assertEqual(page.call_count, 3)
+        self.assertEqual(page.call_args_list[-1].args, ("https://example.com/old?per_page=100",))
+
     def test_format_directories_and_release_selection(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -176,6 +208,15 @@ class InstallTests(unittest.TestCase):
                 f"average {len(compressed) / 1_000_000 / 7:.3f} MB/s",
                 output.getvalue(),
             )
+
+            repeated = io.StringIO()
+            with patch.object(install, "ROOT", root), patch.object(install, "arguments", return_value=args), \
+                 patch.object(install, "page") as page, patch.object(install, "request") as request, \
+                 contextlib.redirect_stdout(repeated):
+                install.main()
+            page.assert_not_called()
+            request.assert_not_called()
+            self.assertIn("All 1 fixtures are installed. Downloaded 0 MB", repeated.getvalue())
 
             fixture = {**artifact, "name": directory.name, "path": directory / artifact["file"]}
             corrupt = b"!" * len(payload)

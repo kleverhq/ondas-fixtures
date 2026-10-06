@@ -6,15 +6,17 @@ Most waveforms were collected from public sources and retain their original lice
 
 ## Installation
 
-The repository contains only metadata; waveforms are stored in [GitHub releases](https://github.com/kleverhq/ondas-fixtures/releases). With Python 3 and `just` installed, clone the repository and install the waveforms:
+The repository contains only metadata; waveforms are stored in [GitHub releases](https://github.com/kleverhq/ondas-fixtures/releases). With Python 3 and `just` installed, add the repository as a submodule and install the waveforms:
 
 ```sh
-git clone https://github.com/kleverhq/ondas-fixtures.git
-cd ondas-fixtures
+git submodule add https://github.com/kleverhq/ondas-fixtures.git fixtures
+cd fixtures
 just install
 ```
 
-The installer downloads waveforms into their fixture directories and verifies their sizes and SHA-256 checksums. Use `just install --dry-run` to list missing assets without downloading.
+The parent repository pins the submodule commit. After cloning the parent, run `git submodule update --init fixtures` before installation. A standalone clone works too; run `just install` at its root.
+
+The installer downloads waveforms into their fixture directories and verifies their sizes and SHA-256 checksums. It searches all releases by asset name and checksum, regardless of release tag. Repeated installation verifies and reuses matching local waveforms. Use `just install --dry-run` at the fixture repository root to list missing assets without downloading.
 
 ## Corpus
 
@@ -31,14 +33,14 @@ The installer downloads waveforms into their fixture directories and verifies th
 ## Layout
 
 ```text
-catalog.json
+schemas/fixture.schema.json
 <format>/
 └── <format><NNNN>-<slug>/
     ├── fixture.json
     └── waveform.<format>
 ```
 
-`catalog.json` records the provider name and corpus version. Fixtures are grouped by format. Each `fixture.json` records the waveform's format, size, SHA-256 checksum, source, license, tags, and optional test oracle.
+Fixtures are grouped by format. Each `fixture.json` records the waveform's format, size, SHA-256 checksum, source, license, tags, and optional test oracle. The shared [fixture schema](schemas/fixture.schema.json) includes the oracle definitions. The `schema: 1` markers identify the sidecar and oracle data contract.
 
 ## Development
 

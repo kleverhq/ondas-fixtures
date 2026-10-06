@@ -6,7 +6,6 @@ from pathlib import Path
 import sys
 
 from jsonschema import Draft202012Validator, SchemaError
-from referencing import Registry, Resource
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -32,37 +31,23 @@ def json_files(root):
 
 def validated_documents(root=ROOT):
     root = root.resolve()
-    schemas = {path: read_json(path) for path in sorted((root / "schemas").glob("*.schema.json"))}
-    required = {"catalog.schema.json", "fixture.schema.json", "oracle.schema.json"}
-    missing = required - {path.name for path in schemas}
-    if missing:
-        raise ValueError("missing schemas: " + ", ".join(sorted(missing)))
-    for path, schema in schemas.items():
-        try:
-            Draft202012Validator.check_schema(schema)
-        except SchemaError as error:
-            raise ValueError(f"{path}: invalid schema: {error.message[:240]}") from error
-    registry = Registry().with_resources(
-        (path.as_uri(), Resource.from_contents(schema)) for path, schema in schemas.items()
-    )
-    validators = {
-        kind: Draft202012Validator({"$ref": (root / "schemas" / f"{kind}.schema.json").as_uri()}, registry=registry)
-        for kind in ("catalog", "fixture")
-    }
-    if not (root / "catalog.json").is_file():
-        raise ValueError("catalog.json is missing")
+    schema_path = root / "schemas" / "fixture.schema.json"
+    if not schema_path.is_file():
+        raise ValueError("missing schema: fixture.schema.json")
+    schema = read_json(schema_path)
+    try:
+        Draft202012Validator.check_schema(schema)
+    except SchemaError as error:
+        raise ValueError(f"{schema_path}: invalid schema: {error.message[:240]}") from error
+    validator = Draft202012Validator(schema)
     for path in json_files(root):
-        if path in schemas:
-            yield path, schemas[path]
+        if path == schema_path:
+            yield path, schema
             continue
-        if path == root / "catalog.json":
-            kind = "catalog"
-        elif path.name == "fixture.json" and len(path.relative_to(root).parts) == 3:
-            kind = "fixture"
-        else:
+        if path.name != "fixture.json" or len(path.relative_to(root).parts) != 3:
             raise ValueError(f"{path.relative_to(root)}: no schema assigned to this JSON file")
         data = read_json(path)
-        error = next(validators[kind].iter_errors(data), None)
+        error = next(validator.iter_errors(data), None)
         if error is not None:
             while error.context:
                 error = max(error.context, key=lambda child: len(child.absolute_path))
@@ -72,7 +57,7 @@ def validated_documents(root=ROOT):
 
 def main():
     count = sum(1 for _ in validated_documents())
-    print(f"Validated {count} JSON files against local schemas.")
+    print(f"Validated {count} JSON files against the local fixture schema.")
 
 
 if __name__ == "__main__":

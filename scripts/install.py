@@ -62,9 +62,11 @@ def request(url, accept="application/vnd.github+json"):
         "User-Agent": "ondas-fixtures-installer",
         "X-GitHub-Api-Version": "2022-11-28",
     }
+    if accept == "application/vnd.github+json":
+        headers["Accept-Encoding"] = "gzip"
     if token := os.environ.get("GITHUB_TOKEN"):
         headers["Authorization"] = f"Bearer {token}"
-    return urlopen(Request(url, headers=headers))
+    return urlopen(Request(url, headers=headers), timeout=60)
 
 
 def load_fixtures():
@@ -102,7 +104,11 @@ def asset_name(fixture):
 def page(url):
     while url:
         with request(url) as response:
-            items = json.load(response)
+            if response.headers.get("Content-Encoding") == "gzip":
+                with gzip.GzipFile(fileobj=response) as content:
+                    items = json.load(content)
+            else:
+                items = json.load(response)
             yield from items
             url = response.headers.get("Link", "")
             url = next(

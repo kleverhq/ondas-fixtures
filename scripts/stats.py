@@ -31,7 +31,7 @@ def main():
     for format in sorted(counts):
         print(row(format.upper(), counts[format], metadata[format], waveforms[format]))
     print(row("Total", sum(counts.values()),
-              sum(metadata.values()) + (ROOT / "catalog.json").stat().st_size,
+              sum(metadata.values()),
               sum(waveforms.values()), bold=True))
 
 

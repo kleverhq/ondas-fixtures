@@ -6,9 +6,11 @@ import shutil
 import tempfile
 import unittest
 
+from jsonschema import Draft202012Validator
+
 from check import check_fixture
 import install
-from validate import ROOT, validated_documents
+from validate import ROOT, read_json, validated_documents
 
 
 class ValidationTests(unittest.TestCase):
@@ -17,9 +19,6 @@ class ValidationTests(unittest.TestCase):
         self.addCleanup(temporary.cleanup)
         self.root = Path(temporary.name)
         shutil.copytree(ROOT / "schemas", self.root / "schemas")
-        (self.root / "catalog.json").write_text(json.dumps(
-            {"schema": 1, "provider": "kleverhq.ondas-fixtures", "version": "1.0.0"}
-        ))
         self.directory = self.root / "vcd" / "vcd0000-test"
         self.directory.mkdir(parents=True)
         self.sidecar = self.directory / "fixture.json"
@@ -40,7 +39,7 @@ class ValidationTests(unittest.TestCase):
     def test_metadata_only_checkout_and_present_artifact_verification(self):
         self.data["provenance"]["transform"] = {"tool": "vcd2fst", "input_format": "vcd"}
         self.write_sidecar(self.data)
-        self.assertEqual(len(list(validated_documents(self.root))), 5)
+        self.assertEqual(len(list(validated_documents(self.root))), 2)
         names = {self.directory.name}
         self.assertFalse(check_fixture(self.sidecar, self.data, {}, names))
         waveform = self.directory / "waveform.vcd"
@@ -50,32 +49,25 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "size or checksum mismatch"):
             check_fixture(self.sidecar, self.data, {}, names)
 
-    def test_catalog_errors_include_file_and_property(self):
-        (self.root / "catalog.json").write_text(json.dumps(
-            {"schema": 1, "provider": "kleverhq.ondas-fixtures", "version": 1}
-        ))
-        with self.assertRaisesRegex(ValueError, r"catalog.json: \$.version"):
-            list(validated_documents(self.root))
-
-    def test_catalog_version_follows_semver(self):
-        valid = (
-            "0.0.0", "6.0.0", "123.456.789", "6.0.0-alpha.1", "6.0.0-0",
-            "6.0.0-01a", "6.0.0+001", "6.0.0-rc.1+build.001",
-        )
-        invalid = (
-            "", "latest", "6.0", "v6.0.0", "06.0.0", "6.00.0", "6.0.00",
-            "6.0.0-01", "6.0.0-alpha..1", "6.0.0+", "6.0.0\n", "6.\u0661.0",
-        )
-        for version in (*valid, *invalid):
-            with self.subTest(version=version):
-                (self.root / "catalog.json").write_text(json.dumps(
-                    {"schema": 1, "provider": "kleverhq.ondas-fixtures", "version": version}
-                ))
-                if version in valid:
-                    list(validated_documents(self.root))
+    def test_sidecar_and_oracle_schema_markers_remain_required(self):
+        for value in (None, 2):
+            with self.subTest(sidecar_schema=value):
+                data = copy.deepcopy(self.data)
+                if value is None:
+                    del data["schema"]
                 else:
-                    with self.assertRaisesRegex(ValueError, r"catalog.json: \$.version"):
-                        list(validated_documents(self.root))
+                    data["schema"] = value
+                self.write_sidecar(data)
+                with self.assertRaisesRegex(ValueError, r"fixture.json: .*schema"):
+                    list(validated_documents(self.root))
+            with self.subTest(oracle_schema=value):
+                data = copy.deepcopy(self.data)
+                data["oracle"] = {"open": {"result": "ok"}}
+                if value is not None:
+                    data["oracle"]["schema"] = value
+                self.write_sidecar(data)
+                with self.assertRaisesRegex(ValueError, r"fixture.json: .*oracle"):
+                    list(validated_documents(self.root))
 
     def test_schema_binds_artifact_filename_to_format(self):
         formats = ("fsdb", "fst", "ghw", "vcd", "wlf")
@@ -152,7 +144,7 @@ class ValidationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, message):
                     list(validated_documents(self.root))
 
-    def test_nested_oracle_is_validated_through_local_reference(self):
+    def test_nested_oracle_is_validated_through_embedded_reference(self):
         data = copy.deepcopy(self.data)
         data["oracle"] = {
             "schema": 1, "open": {"result": "ok"},
@@ -162,6 +154,66 @@ class ValidationTests(unittest.TestCase):
         self.write_sidecar(data)
         with self.assertRaisesRegex(ValueError, r"fixture.json: .*oracle.*bits"):
             list(validated_documents(self.root))
+
+    def test_oracle_definition_is_usable_from_the_single_schema(self):
+        schema = read_json(self.root / "schemas" / "fixture.schema.json")
+        validator = Draft202012Validator(schema).evolve(schema={"$ref": "#/$defs/oracle"})
+        cases = (
+            ({}, True),
+            ({"schema": 1, "open": {"result": "ok"}}, True),
+            ({"schema": 1, "open": {"result": "error", "kind": "malformed"}}, True),
+            ({"schema": 1, "open": {"result": "error", "kind": "malformed"}, "signals": {}}, False),
+            ({"open": {"result": "ok"}}, False),
+            ({"schema": 2, "open": {"result": "ok"}}, False),
+        )
+        for oracle, valid in cases:
+            with self.subTest(oracle=oracle):
+                self.assertEqual(validator.is_valid(oracle), valid)
+
+    def test_embedded_oracle_preserves_sample_and_window_constraints(self):
+        cases = (
+            ({"time": "0", "value": {"bits": "01xz"}, "changed_at": None}, True),
+            ({"time": "0", "value": {"real_bits": "3ff0000000000000"}}, True),
+            ({"time": "0", "value": {"string": "value"}}, True),
+            ({"time": "0", "value": {"event": True}}, True),
+            ({"time": "0", "missing": True}, True),
+            ({"time": "0", "occurrences": "2"}, True),
+            ({"time": "0", "error": {"kind": "unsupported-signal"}}, True),
+            ({"time": "00", "missing": True}, False),
+            ({"time": "0", "value": {"real_bits": "bad"}}, False),
+            ({"time": "0", "missing": True, "changed_at": "0"}, False),
+            ({"time": "0", "value": {"bits": "1"}, "occurrences": "1"}, False),
+        )
+        for sample, valid in cases:
+            with self.subTest(sample=sample):
+                data = copy.deepcopy(self.data)
+                data["oracle"] = {
+                    "schema": 1, "open": {"result": "ok"},
+                    "signals": {"signal": {"encoding": {"kind": "bits", "width": 1},
+                                           "samples": [sample]}},
+                }
+                self.write_sidecar(data)
+                if valid:
+                    list(validated_documents(self.root))
+                else:
+                    with self.assertRaises(ValueError):
+                        list(validated_documents(self.root))
+        for window, valid in (
+            ({"start": "0", "end": "1", "initial": None, "changes": []}, True),
+            ({"start": "0", "end": "1", "error": {"kind": "malformed"}}, True),
+            ({"start": "0", "end": "1", "initial": None}, False),
+            ({"start": "0", "end": "1", "initial": None, "changes": [],
+              "error": {"kind": "malformed"}}, False),
+        ):
+            with self.subTest(window=window):
+                data["oracle"]["signals"]["signal"].pop("samples", None)
+                data["oracle"]["signals"]["signal"]["windows"] = [window]
+                self.write_sidecar(data)
+                if valid:
+                    list(validated_documents(self.root))
+                else:
+                    with self.assertRaises(ValueError):
+                        list(validated_documents(self.root))
 
     def test_malformed_json_and_unassigned_json_files_fail(self):
         self.sidecar.write_text("{broken")
@@ -176,14 +228,14 @@ class ValidationTests(unittest.TestCase):
             list(validated_documents(self.root))
 
     def test_invalid_or_missing_schemas_fail(self):
-        path = self.root / "schemas" / "catalog.schema.json"
+        path = self.root / "schemas" / "fixture.schema.json"
         original = path.read_bytes()
         path.write_text(json.dumps({"type": "invalid"}))
-        with self.assertRaisesRegex(ValueError, "catalog.schema.json: invalid schema"):
+        with self.assertRaisesRegex(ValueError, "fixture.schema.json: invalid schema"):
             list(validated_documents(self.root))
         path.write_bytes(original)
-        (self.root / "schemas" / "oracle.schema.json").unlink()
-        with self.assertRaisesRegex(ValueError, "missing schemas: oracle.schema.json"):
+        path.unlink()
+        with self.assertRaisesRegex(ValueError, "missing schema: fixture.schema.json"):
             list(validated_documents(self.root))
 
     def test_duplicate_hash_and_unexpected_directory_contents_fail(self):
