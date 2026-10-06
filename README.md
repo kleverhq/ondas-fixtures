@@ -6,15 +6,15 @@ Most waveforms were collected from public sources and retain their original lice
 
 ## Installation
 
-The repository contains only metadata; waveforms are stored in [GitHub releases](https://github.com/kleverhq/ondas-fixtures/releases). Clone the repository and run the installer from its root:
+The repository contains only metadata; waveforms are stored in [GitHub releases](https://github.com/kleverhq/ondas-fixtures/releases). With Python 3 and `just` installed, clone the repository and install the waveforms:
 
 ```sh
 git clone https://github.com/kleverhq/ondas-fixtures.git
 cd ondas-fixtures
-python3 install.py
+just install
 ```
 
-The installer downloads waveforms into their fixture directories and verifies their sizes and SHA-256 checksums. Use `python3 install.py --dry-run` to list missing assets without downloading.
+The installer downloads waveforms into their fixture directories and verifies their sizes and SHA-256 checksums. Use `just install --dry-run` to list missing assets without downloading.
 
 ## Corpus
 

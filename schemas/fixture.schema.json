@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ondas fixture sidecar schema 1",
+  "type": "object",
+  "required": ["schema", "artifact", "provenance"],
+  "properties": {
+    "schema": {"type": "integer", "const": 1},
+    "description": {"type": "string"},
+    "artifact": {
+      "type": "object",
+      "required": ["file", "format", "size", "sha256"],
+      "properties": {
+        "file": {"type": "string", "pattern": "^waveform\\.(fsdb|fst|ghw|shm|vcd|wlf)$"},
+        "format": {"enum": ["fsdb", "fst", "ghw", "shm", "vcd", "wlf"]},
+        "size": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "files": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["file", "size", "sha256"],
+            "properties": {
+              "file": {"type": "string", "pattern": "^[^/\\\\]+\\.(dsn|trn)$"},
+              "size": {"type": "integer", "minimum": 1},
+              "sha256": {"$ref": "#/$defs/sha256"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "if": {"properties": {"format": {"const": "shm"}}},
+      "then": {"required": ["files"], "properties": {"file": {"const": "waveform.shm"}}},
+      "else": {"not": {"required": ["files"]}},
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"enum": ["authored", "imported", "converted"]},
+        "source": {"type": "string", "minLength": 1},
+        "license": {"type": "string", "minLength": 1},
+        "transform": {"type": ["string", "object"], "minLength": 1, "minProperties": 1}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"kind": {"enum": ["imported", "converted"]}}},
+          "then": {"required": ["source"]}
+        },
+        {
+          "if": {"properties": {"kind": {"const": "converted"}}},
+          "then": {"required": ["transform"]}
+        }
+      ]
+    },
+    "tags": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "fixture"],
+        "properties": {
+          "kind": {"type": "string", "minLength": 1},
+          "fixture": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "oracle": {"$ref": "oracle.schema.json"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

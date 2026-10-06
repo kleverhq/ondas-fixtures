@@ -15,7 +15,7 @@ from urllib.request import Request, urlopen
 
 REPOSITORY = "kleverhq/ondas-fixtures"
 API_URL = f"https://api.github.com/repos/{REPOSITORY}"
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 SHA256 = re.compile(r"[0-9a-f]{64}")
 
 

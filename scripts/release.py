@@ -10,7 +10,7 @@ import tempfile
 
 from install import REPOSITORY, asset_name, file_matches, load_fixtures
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 
 
 def arguments():
