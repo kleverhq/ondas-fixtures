@@ -108,6 +108,35 @@ class ValidationTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "license.*required"):
                     list(validated_documents(self.root))
 
+    def test_fixture_schema_rejects_unknown_top_level_properties(self):
+        data = copy.deepcopy(self.data)
+        data["tag"] = data.pop("tags")
+        self.write_sidecar(data)
+        with self.assertRaisesRegex(ValueError, r"fixture.json: .*Additional properties.*tag"):
+            list(validated_documents(self.root))
+
+    def test_derived_relation_does_not_require_a_source_backlink(self):
+        source = self.root / "vcd" / "vcd0001-source"
+        source.mkdir()
+        source_data = copy.deepcopy(self.data)
+        source_payload = b"source waveform bytes"
+        source_data["artifact"].update(
+            size=len(source_payload), sha256=hashlib.sha256(source_payload).hexdigest(),
+        )
+        source_sidecar = source / "fixture.json"
+        source_sidecar.write_text(json.dumps(source_data))
+        data = copy.deepcopy(self.data)
+        data["relations"] = [{"kind": "derived-from", "fixture": source.name}]
+        self.write_sidecar(data)
+        list(validated_documents(self.root))
+        names = {self.directory.name, source.name}
+        hashes = {}
+        self.assertFalse(check_fixture(source_sidecar, source_data, hashes, names))
+        self.assertFalse(check_fixture(self.sidecar, data, hashes, names))
+        data["relations"][0]["fixture"] = "vcd9999-missing"
+        with self.assertRaisesRegex(ValueError, "unknown related fixture"):
+            check_fixture(self.sidecar, data, {}, names)
+
     def test_sidecar_schema_rejects_invalid_artifact_provenance_and_tags(self):
         cases = [
             ("artifact", {**self.data["artifact"], "size": "12"}, r"artifact.size"),
