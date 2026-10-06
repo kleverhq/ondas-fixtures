@@ -56,7 +56,7 @@ Publishing requires an authenticated GitHub CLI and valid local waveform payload
 
 1. Run `just setup` and `just check`, then commit the changes without waveform payloads and push the commit.
 2. For waveform uploads, use a tag named `files-<first 12 characters of the full commit SHA>`. Preview the explicit fixture list with `just release files-<short-sha> FORMAT/FIXTURE... --target <full-commit-sha> --dry-run`.
-3. Publish the selected assets from that commit's checkout with `just release files-<short-sha> FORMAT/FIXTURE... --target <full-commit-sha>`. The publisher resolves `--target` to a full SHA (default: `HEAD`), verifies any existing remote tag's commit, and passes the SHA to `gh release create --target` to create an absent tag at that commit.
+3. Publish the selected assets from a clean checkout of that commit with `just release files-<short-sha> FORMAT/FIXTURE... --target <full-commit-sha>`. The publisher resolves `--target` to a full SHA (default: `HEAD`) and requires it to match `HEAD`, with no tracked changes or untracked files; ignored waveform payloads are allowed. Dry runs enforce the same checkout requirements. It verifies any existing remote tag's commit and passes the SHA to `gh release create --target` to create an absent tag at that commit.
 4. Never publish all working-tree directories by default. Metadata-only changes need only a pushed commit. Preserve existing tags, releases, and assets.
 
 ## Checks

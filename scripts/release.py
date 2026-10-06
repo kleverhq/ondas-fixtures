@@ -33,6 +33,19 @@ def release_target(tag, revision):
     return target
 
 
+def check_checkout(target):
+    head = subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, text=True,
+    ).strip()
+    if head != target:
+        raise ValueError(f"checkout HEAD is {head}, expected target {target}")
+    changes = subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=normal"], cwd=ROOT, text=True,
+    )
+    if changes:
+        raise ValueError("release requires a clean checkout; commit or remove local changes first")
+
+
 def selected_fixtures(names):
     fixtures = {}
     for fixture in load_fixtures():
@@ -117,6 +130,7 @@ def publish(tag, assets, target):
 def main():
     args = arguments()
     target = release_target(args.tag, args.target)
+    check_checkout(target)
     fixtures = selected_fixtures(args.fixtures)
     if args.dry_run:
         print(f"Release {args.tag} at {target}:")

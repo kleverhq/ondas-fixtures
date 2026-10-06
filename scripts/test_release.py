@@ -2,6 +2,8 @@ import argparse
 import contextlib
 import io
 from pathlib import Path
+import subprocess
+import tempfile
 import unittest
 from unittest.mock import patch
 
@@ -99,13 +101,79 @@ class ReleaseTests(unittest.TestCase):
         output = io.StringIO()
         with patch.object(release, "arguments", return_value=args), \
              patch.object(release, "release_target", return_value=self.target), \
+             patch.object(release, "check_checkout") as checkout, \
              patch.object(release, "selected_fixtures", return_value=[fixture]) as selected, \
              patch.object(release, "publish") as publish, \
              patch.object(release, "compress") as compress, \
              contextlib.redirect_stdout(output):
             release.main()
+        checkout.assert_called_once_with(self.target)
         selected.assert_called_once_with(args.fixtures)
         publish.assert_not_called()
         compress.assert_not_called()
         self.assertIn(f"Release {self.tag} at {self.target}", output.getvalue())
         self.assertIn(release.asset_name(fixture), output.getvalue())
+
+    def test_invalid_checkout_blocks_selection_packaging_and_publication(self):
+        for dry_run in (False, True):
+            args = argparse.Namespace(tag=self.tag, fixtures=["vcd/vcd0000-test"],
+                                      target=self.target, dry_run=dry_run)
+            with self.subTest(dry_run=dry_run), \
+                 patch.object(release, "arguments", return_value=args), \
+                 patch.object(release, "release_target", return_value=self.target), \
+                 patch.object(release, "check_checkout", side_effect=ValueError("invalid checkout")), \
+                 patch.object(release, "selected_fixtures") as selected, \
+                 patch.object(release, "compress") as compress, \
+                 patch.object(release, "publish") as publish:
+                with self.assertRaisesRegex(ValueError, "invalid checkout"):
+                    release.main()
+                selected.assert_not_called()
+                compress.assert_not_called()
+                publish.assert_not_called()
+
+
+class ReleaseCheckoutTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory(prefix="fixture-release-test-")
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name)
+        self.git("init", "-q")
+        (self.root / ".gitignore").write_text("waveform.vcd\n.venv/\n")
+        self.metadata = self.root / "fixture.json"
+        self.metadata.write_text("{}\n")
+        self.git("add", ".")
+        self.git("-c", "user.name=Fixture Test", "-c", "user.email=fixture@example.com",
+                 "commit", "-qm", "Initial fixture")
+        self.target = self.git("rev-parse", "HEAD").strip()
+        patcher = patch.object(release, "ROOT", self.root)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def git(self, *args):
+        return subprocess.check_output(["git", "-C", str(self.root), *args], text=True)
+
+    def test_clean_checkout_accepts_ignored_waveforms(self):
+        (self.root / "waveform.vcd").write_bytes(b"waveform")
+        (self.root / ".venv").mkdir()
+        (self.root / ".venv" / "local").write_text("environment")
+        release.check_checkout(self.target)
+
+    def test_other_commit_is_rejected_even_with_clean_metadata(self):
+        self.git("-c", "user.name=Fixture Test", "-c", "user.email=fixture@example.com",
+                 "commit", "--allow-empty", "-qm", "Another commit")
+        with self.assertRaisesRegex(ValueError, "checkout HEAD .* expected target"):
+            release.check_checkout(self.target)
+
+    def test_unstaged_and_staged_metadata_changes_are_rejected(self):
+        self.metadata.write_text('{"changed": true}\n')
+        for staged in (False, True):
+            with self.subTest(staged=staged):
+                if staged:
+                    self.git("add", "fixture.json")
+                with self.assertRaisesRegex(ValueError, "requires a clean checkout"):
+                    release.check_checkout(self.target)
+
+    def test_untracked_metadata_is_rejected(self):
+        (self.root / "new-fixture.json").write_text("{}\n")
+        with self.assertRaisesRegex(ValueError, "requires a clean checkout"):
+            release.check_checkout(self.target)
