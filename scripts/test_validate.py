@@ -57,11 +57,62 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, r"catalog.json: \$.version"):
             list(validated_documents(self.root))
 
+    def test_catalog_version_follows_semver(self):
+        valid = (
+            "0.0.0", "6.0.0", "123.456.789", "6.0.0-alpha.1", "6.0.0-0",
+            "6.0.0-01a", "6.0.0+001", "6.0.0-rc.1+build.001",
+        )
+        invalid = (
+            "", "latest", "6.0", "v6.0.0", "06.0.0", "6.00.0", "6.0.00",
+            "6.0.0-01", "6.0.0-alpha..1", "6.0.0+", "6.0.0\n", "6.\u0661.0",
+        )
+        for version in (*valid, *invalid):
+            with self.subTest(version=version):
+                (self.root / "catalog.json").write_text(json.dumps(
+                    {"schema": 1, "provider": "kleverhq.ondas-fixtures", "version": version}
+                ))
+                if version in valid:
+                    list(validated_documents(self.root))
+                else:
+                    with self.assertRaisesRegex(ValueError, r"catalog.json: \$.version"):
+                        list(validated_documents(self.root))
+
+    def test_schema_binds_artifact_filename_to_format(self):
+        formats = ("fsdb", "fst", "ghw", "vcd", "wlf")
+        for format in formats:
+            data = copy.deepcopy(self.data)
+            data["artifact"]["format"] = format
+            data["artifact"]["file"] = f"waveform.{format}"
+            self.write_sidecar(data)
+            list(validated_documents(self.root))
+            for extension in (*formats, "shm"):
+                if extension == format:
+                    continue
+                with self.subTest(format=format, extension=extension):
+                    data["artifact"]["file"] = f"waveform.{extension}"
+                    self.write_sidecar(data)
+                    with self.assertRaisesRegex(ValueError, r"artifact.file"):
+                        list(validated_documents(self.root))
+
+    def test_license_is_required_for_every_provenance_kind(self):
+        for kind in ("authored", "imported", "converted"):
+            with self.subTest(kind=kind):
+                data = copy.deepcopy(self.data)
+                data["provenance"].update(kind=kind, source="https://example.com/waveform.vcd")
+                if kind == "converted":
+                    data["provenance"]["transform"] = "vcd2fst"
+                self.write_sidecar(data)
+                list(validated_documents(self.root))
+                del data["provenance"]["license"]
+                self.write_sidecar(data)
+                with self.assertRaisesRegex(ValueError, "license.*required"):
+                    list(validated_documents(self.root))
+
     def test_sidecar_schema_rejects_invalid_artifact_provenance_and_tags(self):
         cases = [
             ("artifact", {**self.data["artifact"], "size": "12"}, r"artifact.size"),
             ("artifact", {**self.data["artifact"], "sha256": "bad"}, r"artifact.sha256"),
-            ("provenance", {"kind": "imported"}, r"source.*required"),
+            ("provenance", {"kind": "imported", "license": "unknown"}, r"source.*required"),
             ("tags", ["values", "values"], r"tags"),
         ]
         for field, value, message in cases:
@@ -143,6 +194,11 @@ class ValidationTests(unittest.TestCase):
         self.write_sidecar(data)
         list(validated_documents(self.root))
         self.assertFalse(check_fixture(self.sidecar, data, {}, {directory.name}))
+        data["artifact"]["file"] = "waveform.vcd"
+        self.write_sidecar(data)
+        with self.assertRaisesRegex(ValueError, r"artifact.file"):
+            list(validated_documents(self.root))
+        data["artifact"]["file"] = "waveform.shm"
         del data["artifact"]["files"]
         self.write_sidecar(data)
         with self.assertRaisesRegex(ValueError, "files.*required"):

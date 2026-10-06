@@ -32,11 +32,18 @@
       "if": {"properties": {"format": {"const": "shm"}}},
       "then": {"required": ["files"], "properties": {"file": {"const": "waveform.shm"}}},
       "else": {"not": {"required": ["files"]}},
+      "allOf": [
+        {"if": {"properties": {"format": {"const": "fsdb"}}}, "then": {"properties": {"file": {"const": "waveform.fsdb"}}}},
+        {"if": {"properties": {"format": {"const": "fst"}}}, "then": {"properties": {"file": {"const": "waveform.fst"}}}},
+        {"if": {"properties": {"format": {"const": "ghw"}}}, "then": {"properties": {"file": {"const": "waveform.ghw"}}}},
+        {"if": {"properties": {"format": {"const": "vcd"}}}, "then": {"properties": {"file": {"const": "waveform.vcd"}}}},
+        {"if": {"properties": {"format": {"const": "wlf"}}}, "then": {"properties": {"file": {"const": "waveform.wlf"}}}}
+      ],
       "additionalProperties": false
     },
     "provenance": {
       "type": "object",
-      "required": ["kind"],
+      "required": ["kind", "license"],
       "properties": {
         "kind": {"enum": ["authored", "imported", "converted"]},
         "source": {"type": "string", "minLength": 1},
