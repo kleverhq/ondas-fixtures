@@ -1,46 +1,45 @@
 # Ondas waveform fixtures
 
-This repository contains waveforms for Ondas parser, conformance, and regression tests. It includes parser edge cases and output from simulation tools.
+A collection of waveform fixtures for the [Ondas library](https://github.com/kleverhq/ondas). It provides convenient storage and a shared source of fixtures for tests, benchmarks, and other tools. The collection can be used for any waveform-related purpose.
+
+Most waveforms were collected from public sources and retain their original licenses. Available source project license texts are in [LICENSES/](LICENSES/).
+
+## Installation
+
+The repository contains only metadata; waveforms are stored in [GitHub releases](https://github.com/kleverhq/ondas-fixtures/releases). With Python 3 and `just` installed, clone the repository and install the waveforms:
+
+```sh
+git clone https://github.com/kleverhq/ondas-fixtures.git
+cd ondas-fixtures
+just install
+```
+
+The installer downloads waveforms into their fixture directories and verifies their sizes and SHA-256 checksums. Use `just install --dry-run` to list missing assets without downloading.
+
+## Corpus
+
+| Format | Fixtures | JSON (MB) | Waveforms (MB) | Total (MB) |
+| --- | ---: | ---: | ---: | ---: |
+| FSDB | 51 | 159 | 16 | 175 |
+| FST | 88 | 106 | 1964 | 2070 |
+| GHW | 93 | 0 | 140 | 140 |
+| SHM | 66 | 29 | 8 | 37 |
+| VCD | 99 | 26 | 1645 | 1671 |
+| WLF | 70 | 134 | 47 | 181 |
+| **Total** | **467** | **454** | **3820** | **4274** |
 
 ## Layout
 
 ```text
 catalog.json
-<format><NNNN>-<slug>/
-├── fixture.json
-└── waveform.<format>
+<format>/
+└── <format><NNNN>-<slug>/
+    ├── fixture.json
+    └── waveform.<format>
 ```
 
-`catalog.json` records the provider name and corpus version. Each fixture directory contains one waveform and a `fixture.json` sidecar that records its format, size, SHA-256 checksum, source, license, tags, and optional test oracle.
+`catalog.json` records the provider name and corpus version. Fixtures are grouped by format. Each `fixture.json` records the waveform's format, size, SHA-256 checksum, source, license, tags, and optional test oracle.
 
-For SHM, `waveform.shm` is a directory containing the original `.dsn` and `.trn` files.
+## Development
 
-Git tracks the metadata needed to download and verify waveforms, but ignores the waveform files themselves.
-
-## Installation
-
-Clone the repository at `$ONDAS_FIXTURES/kleverhq.ondas-fixtures`, then install the waveforms:
-
-```text
-python3 install.py
-```
-
-The installer looks for matching gzip assets in the repository's releases. It checks each waveform's uncompressed size and SHA-256 checksum before saving it as `waveform.<format>`. It leaves existing artifacts alone if they pass those checks.
-
-For each downloaded file, the log shows the gzip asset size, unpacked size, and time spent downloading, unpacking, and verifying it. The final summary reports the total compressed MB downloaded (1 MB = 1,000,000 bytes) and elapsed installation time, including checks of existing files and release lookup. Both report average MB/s: compressed size divided by the corresponding elapsed time, including that processing time.
-
-Use `--dry-run` to list missing assets without accessing GitHub. By default, the installer stops before downloading anything if a release asset is missing. With `--ignore-missing`, it installs the available assets and reports what it skipped. Set `GITHUB_TOKEN` when you need authenticated GitHub API access.
-
-## Publishing assets
-
-Release assets use the name `<fixture>.<sha256>.<format>.gz`. They contain gzipped waveform bytes, or a gzipped tar archive for SHM directories.
-
-Authenticate the GitHub CLI, then pass the fixture directories you want to publish:
-
-```text
-python3 release.py waveforms-2026-06-06 vcd0000-counter fst0000-counter
-```
-
-Use `--dry-run` to check the selected fixtures and print their asset names without creating a release.
-
-Each waveform retains its source license. Available license texts are in `LICENSES/`. The value `unknown` means that no SPDX license identifier has been confirmed.
+See [AGENTS.md](AGENTS.md) for development instructions.

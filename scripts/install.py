@@ -15,7 +15,7 @@ from urllib.request import Request, urlopen
 
 REPOSITORY = "kleverhq/ondas-fixtures"
 API_URL = f"https://api.github.com/repos/{REPOSITORY}"
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 SHA256 = re.compile(r"[0-9a-f]{64}")
 
 
@@ -69,9 +69,11 @@ def request(url, accept="application/vnd.github+json"):
 
 def load_fixtures():
     fixtures = []
-    for sidecar in sorted(ROOT.glob("*/fixture.json")):
+    for sidecar in sorted(ROOT.glob("*/*/fixture.json")):
         data = json.loads(sidecar.read_text())
         artifact = data["artifact"]
+        if sidecar.parent.parent.name != artifact["format"]:
+            raise ValueError(f"format directory mismatch in {sidecar}")
         filename = artifact["file"]
         digest = artifact["sha256"]
         if Path(filename).name != filename or not SHA256.fullmatch(digest):
