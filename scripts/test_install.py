@@ -114,7 +114,7 @@ class InstallTests(unittest.TestCase):
                                     if key not in {"name", "path"}}}
             (root / "fixture.json").write_text(json.dumps(sidecar))
             with patch.object(install, "ROOT", root.parent.parent):
-                loaded = next(item for item in install.load_fixtures() if item["path"] == fixture["path"])
+                loaded, = install.load_fixtures(["shm/shm0000-test"])
             self.assertEqual(loaded["files"], fixture["files"])
             self.assertTrue(install.file_matches(loaded))
             compressed = release.compress(fixture, root).read_bytes()
@@ -187,7 +187,7 @@ class InstallTests(unittest.TestCase):
             name = f"{directory.name}.{artifact['sha256']}.vcd.gz"
             asset = {"name": name, "url": "https://api.github.com/repos/example/fixtures/releases/assets/1",
                      "size": len(compressed)}
-            args = argparse.Namespace(dry_run=False, ignore_missing=False)
+            args = argparse.Namespace(fixtures=[], dry_run=False, ignore_missing=False)
             output = io.StringIO()
             with patch.object(install, "ROOT", root), patch.object(install, "arguments", return_value=args), \
                  patch.object(install, "page", side_effect=[[{"assets_url": "https://api.github.com/assets"}], [asset]]), \
@@ -225,6 +225,136 @@ class InstallTests(unittest.TestCase):
                 install.install(fixture, asset["url"])
             self.assertEqual(fixture["path"].read_bytes(), payload)
             self.assertFalse(fixture["path"].with_suffix(".vcd.part").exists())
+
+
+class SelectiveInstallTests(unittest.TestCase):
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory(prefix="fixture-install-test-")
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.payloads = {}
+        for format in ("vcd", "fst"):
+            name = f"{format}0000-test"
+            directory = self.root / format / name
+            directory.mkdir(parents=True)
+            payload = f"{format} waveform\n".encode()
+            self.payloads[name] = payload
+            artifact = {"file": f"waveform.{format}", "format": format,
+                        "size": len(payload), "sha256": hashlib.sha256(payload).hexdigest()}
+            (directory / "fixture.json").write_text(json.dumps({"artifact": artifact, "tags": []}))
+        patcher = patch.object(install, "ROOT", self.root)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_arguments_default_to_all_and_accept_flags_between_fixture_names(self):
+        with patch("sys.argv", ["install.py"]):
+            args = install.arguments()
+            self.assertEqual(args.fixtures, [])
+            self.assertFalse(args.dry_run)
+            self.assertFalse(args.ignore_missing)
+        for argv in (
+            ["--dry-run", "--ignore-missing", "fst/fst0000-test", "vcd0000-test"],
+            ["fst/fst0000-test", "--dry-run", "vcd0000-test", "--ignore-missing"],
+            ["fst/fst0000-test", "vcd0000-test", "--dry-run", "--ignore-missing"],
+        ):
+            with self.subTest(argv=argv), patch("sys.argv", ["install.py", *argv]):
+                args = install.arguments()
+                self.assertEqual(args.fixtures, ["fst/fst0000-test", "vcd0000-test"])
+                self.assertTrue(args.dry_run)
+                self.assertTrue(args.ignore_missing)
+
+    def test_selection_loads_only_requested_metadata_in_argument_order(self):
+        ignored = self.root / "vcd" / "vcd0001-ignored"
+        ignored.mkdir()
+        (ignored / "fixture.json").write_text("invalid JSON")
+        selected = install.load_fixtures(["vcd0000-test", "fst/fst0000-test"])
+        self.assertEqual([item["name"] for item in selected], ["vcd0000-test", "fst0000-test"])
+        self.assertEqual([item["format"] for item in selected], ["vcd", "fst"])
+        with self.assertRaises(json.JSONDecodeError):
+            install.load_fixtures()
+
+    def test_invalid_selection_fails_before_payload_checks_or_network_access(self):
+        cases = (
+            (["vcd0000-test", "unknown"], "unknown fixture directories"),
+            (["fst/vcd0000-test"], "unknown fixture directories"),
+            (["../vcd/vcd0000-test"], "unknown fixture directories"),
+            (["fst0000-test", "fst0000-test"], "duplicates"),
+            (["fst0000-test", "fst/fst0000-test"], "duplicates"),
+        )
+        for names, message in cases:
+            args = argparse.Namespace(fixtures=names, dry_run=False, ignore_missing=False)
+            with self.subTest(names=names), \
+                 patch.object(install, "arguments", return_value=args), \
+                 patch.object(install, "file_matches") as file_matches, \
+                 patch.object(install, "find_assets") as find_assets, \
+                 patch.object(install, "request") as request:
+                with self.assertRaisesRegex(ValueError, message):
+                    install.main()
+                file_matches.assert_not_called()
+                find_assets.assert_not_called()
+                request.assert_not_called()
+
+    def test_dry_run_lists_selected_missing_payloads_and_defaults_to_all(self):
+        for names, expected in ((["vcd0000-test"], ["vcd0000-test"]),
+                                ([], ["fst0000-test", "vcd0000-test"])):
+            args = argparse.Namespace(fixtures=names, dry_run=True, ignore_missing=False)
+            output = io.StringIO()
+            with self.subTest(names=names), \
+                 patch.object(install, "arguments", return_value=args), \
+                 patch.object(install, "find_assets") as find_assets, \
+                 patch.object(install, "request") as request, \
+                 contextlib.redirect_stdout(output):
+                install.main()
+            lines = output.getvalue().splitlines()
+            self.assertEqual([line.split(".")[0] for line in lines[:-1]], expected)
+            self.assertEqual(lines[-1], f"{len(expected)} fixtures would be installed.")
+            find_assets.assert_not_called()
+            request.assert_not_called()
+
+    def test_partial_download_and_repeat_ignore_unselected_payloads(self):
+        fixture, = install.load_fixtures(["fst0000-test"])
+        other, = install.load_fixtures(["vcd0000-test"])
+        other["path"].write_bytes(b"unrelated local data")
+        compressed = gzip.compress(self.payloads[fixture["name"]])
+        asset = {"url": "https://example.com/fixture.gz", "size": len(compressed)}
+        args = argparse.Namespace(fixtures=["fst/fst0000-test"], dry_run=False, ignore_missing=False)
+        with patch.object(install, "arguments", return_value=args), \
+             patch.object(install, "find_assets", return_value={install.asset_name(fixture): asset}) as find_assets, \
+             patch.object(install, "request", return_value=io.BytesIO(compressed)) as request, \
+             patch.object(install, "file_matches", wraps=install.file_matches) as file_matches, \
+             contextlib.redirect_stdout(io.StringIO()):
+            install.main()
+        find_assets.assert_called_once_with({install.asset_name(fixture)})
+        request.assert_called_once_with(asset["url"], "application/octet-stream")
+        self.assertEqual([call.args[0]["name"] for call in file_matches.call_args_list], [fixture["name"]])
+        self.assertEqual(fixture["path"].read_bytes(), self.payloads[fixture["name"]])
+        self.assertEqual(other["path"].read_bytes(), b"unrelated local data")
+        with patch.object(install, "arguments", return_value=args), \
+             patch.object(install, "find_assets") as find_assets, \
+             patch.object(install, "request") as request, \
+             contextlib.redirect_stdout(io.StringIO()):
+            install.main()
+        find_assets.assert_not_called()
+        request.assert_not_called()
+
+    def test_unavailable_selected_assets_respect_ignore_missing(self):
+        fixture, = install.load_fixtures(["vcd0000-test"])
+        for ignore_missing in (False, True):
+            args = argparse.Namespace(fixtures=[fixture["name"]], dry_run=False,
+                                      ignore_missing=ignore_missing)
+            with self.subTest(ignore_missing=ignore_missing), \
+                 patch.object(install, "arguments", return_value=args), \
+                 patch.object(install, "find_assets", return_value={}) as find_assets, \
+                 patch.object(install, "request") as request, \
+                 contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+                if ignore_missing:
+                    install.main()
+                else:
+                    with self.assertRaisesRegex(RuntimeError, "release assets not found"):
+                        install.main()
+                find_assets.assert_called_once_with({install.asset_name(fixture)})
+                request.assert_not_called()
+                self.assertFalse(fixture["path"].exists())
 
 
 if __name__ == "__main__":

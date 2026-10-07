@@ -9,7 +9,7 @@ setup:
     python3 -m venv .venv
     .venv/bin/python -m pip install -r scripts/requirements.txt
 
-# Download and verify waveform payloads; accepts installer flags.
+# Download and verify all or selected waveform payloads; accepts installer flags.
 install *args:
     @python3 -B scripts/install.py "$@"
 

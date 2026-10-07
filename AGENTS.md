@@ -10,6 +10,7 @@ Use the root `justfile` for all repository operations. Do not invoke scripts dir
 | --- | --- |
 | `just setup` | Create `.venv` and install validation dependencies. |
 | `just install` | Download and verify waveform payloads. |
+| `just install FORMAT/FIXTURE...` | Download and verify only the selected fixtures; bare directory names are also accepted. |
 | `just install --dry-run` | List missing payloads without downloading. |
 | `just validate` | Validate all repository JSON against the fixture schema. |
 | `just check` | Validate metadata, layout, hashes, installed payloads, README statistics, and script tests. |
@@ -47,7 +48,7 @@ Run `just setup` before validation, checks, or tests. `just check` also works wi
 ## Delivery format
 
 - Name release assets `<fixture>.<sha256>.<format>.gz`. Each gzip stream must expand directly to the raw waveform bytes declared in `fixture.json`, or, for SHM directories, to a tar archive containing exactly the declared component files at its root.
-- Do not add delivery fields to fixture metadata. `scripts/install.py` derives asset names from the directory and artifact fields. It scans every fixture without filtering by tags.
+- Do not add delivery fields to fixture metadata. `scripts/install.py` derives asset names from the directory and artifact fields. Without fixture arguments it installs every fixture; explicit directory names select a subset. It does not filter by tags.
 - Keep `scripts/install.py` and `scripts/release.py` compatible with the Python standard library. Declare validation dependencies in `scripts/requirements.txt` and install them with `just setup`.
 
 ## Release

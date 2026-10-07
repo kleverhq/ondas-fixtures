@@ -47,13 +47,17 @@ def validate_components(artifact):
 
 def arguments():
     parser = argparse.ArgumentParser(description="Install waveform fixtures from GitHub release assets.")
+    parser.add_argument(
+        "fixtures", nargs="*", metavar="FIXTURE",
+        help="fixture names or FORMAT/FIXTURE directories to install (default: all fixtures)",
+    )
     parser.add_argument("--dry-run", action="store_true", help="print missing assets without downloading")
     parser.add_argument(
         "--ignore-missing",
         action="store_true",
         help="install available assets when some expected assets are absent",
     )
-    return parser.parse_args()
+    return parser.parse_intermixed_args()
 
 
 def request(url, accept="application/vnd.github+json"):
@@ -69,9 +73,21 @@ def request(url, accept="application/vnd.github+json"):
     return urlopen(Request(url, headers=headers), timeout=60)
 
 
-def load_fixtures():
+def load_fixtures(names=()):
+    sidecars = sorted(ROOT.glob("*/*/fixture.json"))
+    if names:
+        directories = {}
+        for sidecar in sidecars:
+            directories[sidecar.parent.name] = sidecar
+            directories[sidecar.parent.relative_to(ROOT).as_posix()] = sidecar
+        unknown = sorted(set(names) - directories.keys())
+        if unknown:
+            raise ValueError("unknown fixture directories: " + ", ".join(unknown))
+        sidecars = [directories[name] for name in names]
+        if len(sidecars) != len(set(sidecars)):
+            raise ValueError("fixture selection contains duplicates")
     fixtures = []
-    for sidecar in sorted(ROOT.glob("*/*/fixture.json")):
+    for sidecar in sidecars:
         data = json.loads(sidecar.read_text())
         artifact = data["artifact"]
         if sidecar.parent.parent.name != artifact["format"]:
@@ -222,7 +238,7 @@ def install(fixture, url):
 def main():
     args = arguments()
     started = time.monotonic()
-    fixtures = load_fixtures()
+    fixtures = load_fixtures(args.fixtures)
     missing = [fixture for fixture in fixtures if not file_matches(fixture)]
     if not missing:
         print(f"All {len(fixtures)} fixtures are installed. Downloaded 0 MB; total time {time.monotonic() - started:.2f} s.")
