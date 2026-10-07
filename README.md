@@ -18,6 +18,14 @@ The parent repository pins the submodule commit. After cloning the parent, run `
 
 The installer downloads waveforms into their fixture directories and verifies their sizes and SHA-256 checksums. It searches all releases by asset name and checksum, regardless of release tag. Repeated installation verifies and reuses matching local waveforms. Use `just install --dry-run` at the fixture repository root to list missing assets without downloading.
 
+Without fixture arguments, `just install` installs the entire corpus. To install only selected fixtures, pass their directory names or `FORMAT/FIXTURE` paths:
+
+```sh
+just install fst/fst0013-picorv32-test-vcd fst/fst0022-scr1-max-axi-coremark
+```
+
+Selection preserves the argument order and rejects unknown or repeated fixtures. Only selected metadata and payloads are read and verified. Both `--dry-run` and `--ignore-missing` apply to the selected fixtures; `--ignore-missing` skips unavailable release assets.
+
 ## Corpus
 
 | Format | Fixtures | JSON (MB) | Waveforms (MB) | Total (MB) |

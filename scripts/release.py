@@ -47,16 +47,7 @@ def check_checkout(target):
 
 
 def selected_fixtures(names):
-    fixtures = {}
-    for fixture in load_fixtures():
-        fixtures[fixture["name"]] = fixture
-        fixtures[f"{fixture['format']}/{fixture['name']}"] = fixture
-    unknown = sorted(set(names) - fixtures.keys())
-    if unknown:
-        raise ValueError("unknown fixture directories: " + ", ".join(unknown))
-    selected = [fixtures[name] for name in names]
-    if len(selected) != len({fixture["name"] for fixture in selected}):
-        raise ValueError("fixture whitelist contains duplicates")
+    selected = load_fixtures(names) if names else []
     invalid = [fixture["name"] for fixture in selected if not file_matches(fixture)]
     if invalid:
         raise ValueError("missing or invalid waveform files: " + ", ".join(invalid))

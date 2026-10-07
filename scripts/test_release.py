@@ -14,6 +14,11 @@ class ReleaseTests(unittest.TestCase):
     target = "0123456789abcdef0123456789abcdef01234567"
     tag = "files-0123456789ab"
 
+    def test_empty_selection_does_not_load_or_publish_the_corpus(self):
+        with patch.object(release, "load_fixtures") as load_fixtures:
+            self.assertEqual(release.selected_fixtures([]), [])
+        load_fixtures.assert_not_called()
+
     def test_target_is_resolved_to_a_full_commit_and_bound_to_the_tag(self):
         with patch.object(release.subprocess, "check_output", return_value=self.target + "\n") as git:
             self.assertEqual(release.release_target(self.tag, "HEAD"), self.target)
