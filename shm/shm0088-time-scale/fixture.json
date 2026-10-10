@@ -1,0 +1,100 @@
+{
+  "schema": 1,
+  "description": "Authored time scale recording.",
+  "artifact": {
+    "file": "waveform.shm",
+    "format": "shm",
+    "size": 2616,
+    "sha256": "ab2530becff99f39540ed1d175d5763ea3d22784cb7e5953f28fdf014ef2e8a7",
+    "files": [
+      {
+        "file": "waveform.dsn",
+        "size": 1456,
+        "sha256": "fe8950aaf843a55edb9d5d62b9d88a9cb75962cb0b6008e5adbc61d250ac05db"
+      },
+      {
+        "file": "waveform.trn",
+        "size": 1160,
+        "sha256": "52dcd722daa778bd8b1471957931f4087553219de56dadcab2b4c3e85fab46e5"
+      }
+    ]
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "unknown",
+    "license": "MIT"
+  },
+  "tags": [
+    "authored",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 100,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "value"
+          ],
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "300",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "100",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

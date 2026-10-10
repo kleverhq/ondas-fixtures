@@ -33,10 +33,10 @@ Selection preserves the argument order and rejects unknown or repeated fixtures.
 | FSDB | 51 | 159 | 16 | 175 |
 | FST | 88 | 106 | 1964 | 2070 |
 | GHW | 93 | 0 | 140 | 140 |
-| SHM | 66 | 29 | 8 | 37 |
+| SHM | 78 | 34 | 15 | 50 |
 | VCD | 99 | 26 | 1645 | 1671 |
 | WLF | 70 | 134 | 47 | 181 |
-| **Total** | **467** | **454** | **3820** | **4274** |
+| **Total** | **479** | **459** | **3828** | **4287** |
 
 ## Layout
 
