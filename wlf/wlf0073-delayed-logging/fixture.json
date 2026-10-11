@@ -1,0 +1,166 @@
+{
+  "schema": 1,
+  "description": "Delayed first state and a logging stop/restart interval.",
+  "artifact": {
+    "file": "waveform.wlf",
+    "format": "wlf",
+    "size": 49152,
+    "sha256": "6d906a0abc8d77100bce0d4ef02e3f73b84404efae3ef2087d5cf217f5e64019"
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "unknown",
+    "license": "Apache-2.0"
+  },
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "15"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module",
+          "definition_name": "fixture_top"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "delayed"
+          ],
+          "kind": "reg",
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "missing": true
+          },
+          {
+            "time": "4",
+            "missing": true
+          },
+          {
+            "time": "5",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "7",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "7"
+          },
+          {
+            "time": "8",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "7"
+          },
+          {
+            "time": "9",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "7"
+          },
+          {
+            "time": "10",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "7"
+          },
+          {
+            "time": "12",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "12"
+          },
+          {
+            "time": "15",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "15"
+          },
+          {
+            "time": "18",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "15"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "18",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "7",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "12",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
