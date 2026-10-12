@@ -12,6 +12,1527 @@
     "source": "https://github.com/JoHofmann/Smart-LED-Driver/blob/045af6bca1c1e426042e256cf93b08570d6d83b8/sim/ws2815b_driver.ghw",
     "license": "MIT"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "10000000000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "ws2815b_driver_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_slave_i0"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "clock_50"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "reset"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "spi_clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "spi_cs"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "spi_mosi"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "serial_out"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "interrupt"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "clock_50"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "reset_n"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_clk_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_mosi_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_cs_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "interrupt_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "serial_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_data_valid"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_data"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "new_frame"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwm_data"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwm_data_valid"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwm_done"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwm_en"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwm"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_wd"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_rd"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_wa"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 12,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_ra"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 12,
+            "lsb": 0
+          },
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_we"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "clk_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "rst_n"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "d_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "dv_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "en_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "pwm_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "done_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "cstate"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "state_t",
+          "enumeration": {
+            "name": "state_t",
+            "variants": [
+              {
+                "encoded": "000",
+                "label": "idle"
+              },
+              {
+                "encoded": "001",
+                "label": "output"
+              },
+              {
+                "encoded": "010",
+                "label": "bit_completed"
+              },
+              {
+                "encoded": "011",
+                "label": "request"
+              },
+              {
+                "encoded": "100",
+                "label": "reset"
+              }
+            ]
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "pwmgen_i0",
+            "timer"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 6,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "clk_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "rst_n"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "mem_a_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 12,
+            "lsb": 0
+          },
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "mem_d_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "done_pwm_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "dv_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "d_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "en_pwm_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "new_frame_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memreadinterface_i0",
+            "reset_counter"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 13,
+            "lsb": 0
+          },
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0",
+            "clk_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0",
+            "wd_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0",
+            "wa_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 12,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0",
+            "we_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0",
+            "rd_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0",
+            "ra_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 12,
+            "lsb": 0
+          },
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "mem_i0",
+            "wa"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "clk_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "rst_n"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "mem_a_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 12,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "mem_d_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "mem_we_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "dv_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "d_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "memwriteinterface_i0",
+            "new_frame_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_slave_i0",
+            "rst_n"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_slave_i0",
+            "spi_cs_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_slave_i0",
+            "spi_clk_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_slave_i0",
+            "spi_mosi_i"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_slave_i0",
+            "dv_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "ws2815b_driver_tb",
+            "ws2815b_driver_i0",
+            "spi_slave_i0",
+            "d_o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 13
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 7
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 14
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-13": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-14": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-15": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-16": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-17": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-18": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-19": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-20": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-21": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-22": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-23": {
+        "encoding": {
+          "kind": "bits",
+          "width": 13
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-24": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

@@ -12,6 +12,224 @@
     "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/ghdl/wellen_issue_34.ghw",
     "license": "BSD-3-Clause"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "3040000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "wellen_34"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "wellen_34",
+            "constrained_s"
+          ],
+          "kind": "record",
+          "packing": "unpacked"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "wellen_34",
+            "constrained_s",
+            "address"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "wellen_34",
+            "constrained_s",
+            "data"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 32,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "wellen_34",
+            "constrained_s",
+            "datavalid"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3040000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "2020000000",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "3040000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 33
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3040000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "000000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "2020000000",
+                "value": {
+                  "bits": "000000000000000000000000000000010"
+                }
+              },
+              {
+                "time": "3040000000",
+                "value": {
+                  "bits": "000000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3040000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1020000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2020000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2040000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3040000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
