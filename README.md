@@ -32,11 +32,11 @@ Selection preserves the argument order and rejects unknown or repeated fixtures.
 | --- | ---: | ---: | ---: | ---: |
 | FSDB | 51 | 159 | 16 | 175 |
 | FST | 88 | 106 | 1964 | 2070 |
-| GHW | 95 | 0 | 141 | 141 |
+| GHW | 102 | 0 | 141 | 141 |
 | SHM | 66 | 29 | 8 | 37 |
 | VCD | 99 | 26 | 1645 | 1671 |
 | WLF | 70 | 134 | 47 | 181 |
-| **Total** | **469** | **454** | **3821** | **4275** |
+| **Total** | **476** | **454** | **3821** | **4275** |
 
 ## Layout
 
