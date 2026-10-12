@@ -18,6 +18,3505 @@
       "options": "--std=08; default femtosecond resolution; neutral temporary workspace"
     }
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "real",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "1000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "top",
+            "characters"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "matrix"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "matrix",
+            "[1]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "matrix",
+            "[0]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "cube"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[0]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[0]",
+            "[1]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[0]",
+            "[0]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[1]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[1]",
+            "[1]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[1]",
+            "[0]"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "indexed"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "raw_nested"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "resolved_nested"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "rec"
+          ],
+          "kind": "record",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "records"
+          ],
+          "kind": "array",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "records",
+            "[1]"
+          ],
+          "kind": "record",
+          "packing": "unpacked"
+        },
+        {
+          "path": [
+            "top",
+            "records",
+            "[0]"
+          ],
+          "kind": "record",
+          "packing": "unpacked"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "i32"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "top",
+            "i64"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "wide_integer",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "top",
+            "p32"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "physical32",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "top",
+            "p64"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "physical64",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "top",
+            "r"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "real",
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "top",
+            "state"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "subset",
+          "enumeration": {
+            "name": "subset",
+            "variants": [
+              {
+                "encoded": "001",
+                "label": "green"
+              },
+              {
+                "encoded": "010",
+                "label": "blue"
+              },
+              {
+                "encoded": "011",
+                "label": "white"
+              }
+            ]
+          },
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "top",
+            "characters",
+            "[1]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "character",
+          "enumeration": {
+            "name": "character",
+            "variants": [
+              {
+                "encoded": "00000000",
+                "label": "nul"
+              },
+              {
+                "encoded": "00000001",
+                "label": "soh"
+              },
+              {
+                "encoded": "00000010",
+                "label": "stx"
+              },
+              {
+                "encoded": "00000011",
+                "label": "etx"
+              },
+              {
+                "encoded": "00000100",
+                "label": "eot"
+              },
+              {
+                "encoded": "00000101",
+                "label": "enq"
+              },
+              {
+                "encoded": "00000110",
+                "label": "ack"
+              },
+              {
+                "encoded": "00000111",
+                "label": "bel"
+              },
+              {
+                "encoded": "00001000",
+                "label": "bs"
+              },
+              {
+                "encoded": "00001001",
+                "label": "ht"
+              },
+              {
+                "encoded": "00001010",
+                "label": "lf"
+              },
+              {
+                "encoded": "00001011",
+                "label": "vt"
+              },
+              {
+                "encoded": "00001100",
+                "label": "ff"
+              },
+              {
+                "encoded": "00001101",
+                "label": "cr"
+              },
+              {
+                "encoded": "00001110",
+                "label": "so"
+              },
+              {
+                "encoded": "00001111",
+                "label": "si"
+              },
+              {
+                "encoded": "00010000",
+                "label": "dle"
+              },
+              {
+                "encoded": "00010001",
+                "label": "dc1"
+              },
+              {
+                "encoded": "00010010",
+                "label": "dc2"
+              },
+              {
+                "encoded": "00010011",
+                "label": "dc3"
+              },
+              {
+                "encoded": "00010100",
+                "label": "dc4"
+              },
+              {
+                "encoded": "00010101",
+                "label": "nak"
+              },
+              {
+                "encoded": "00010110",
+                "label": "syn"
+              },
+              {
+                "encoded": "00010111",
+                "label": "etb"
+              },
+              {
+                "encoded": "00011000",
+                "label": "can"
+              },
+              {
+                "encoded": "00011001",
+                "label": "em"
+              },
+              {
+                "encoded": "00011010",
+                "label": "sub"
+              },
+              {
+                "encoded": "00011011",
+                "label": "esc"
+              },
+              {
+                "encoded": "00011100",
+                "label": "fsp"
+              },
+              {
+                "encoded": "00011101",
+                "label": "gsp"
+              },
+              {
+                "encoded": "00011110",
+                "label": "rsp"
+              },
+              {
+                "encoded": "00011111",
+                "label": "usp"
+              },
+              {
+                "encoded": "00100000",
+                "label": "' '"
+              },
+              {
+                "encoded": "00100001",
+                "label": "'!'"
+              },
+              {
+                "encoded": "00100010",
+                "label": "'\"'"
+              },
+              {
+                "encoded": "00100011",
+                "label": "'#'"
+              },
+              {
+                "encoded": "00100100",
+                "label": "'$'"
+              },
+              {
+                "encoded": "00100101",
+                "label": "'%'"
+              },
+              {
+                "encoded": "00100110",
+                "label": "'&'"
+              },
+              {
+                "encoded": "00100111",
+                "label": "'''"
+              },
+              {
+                "encoded": "00101000",
+                "label": "'('"
+              },
+              {
+                "encoded": "00101001",
+                "label": "')'"
+              },
+              {
+                "encoded": "00101010",
+                "label": "'*'"
+              },
+              {
+                "encoded": "00101011",
+                "label": "'+'"
+              },
+              {
+                "encoded": "00101100",
+                "label": "','"
+              },
+              {
+                "encoded": "00101101",
+                "label": "'-'"
+              },
+              {
+                "encoded": "00101110",
+                "label": "'.'"
+              },
+              {
+                "encoded": "00101111",
+                "label": "'/'"
+              },
+              {
+                "encoded": "00110000",
+                "label": "'0'"
+              },
+              {
+                "encoded": "00110001",
+                "label": "'1'"
+              },
+              {
+                "encoded": "00110010",
+                "label": "'2'"
+              },
+              {
+                "encoded": "00110011",
+                "label": "'3'"
+              },
+              {
+                "encoded": "00110100",
+                "label": "'4'"
+              },
+              {
+                "encoded": "00110101",
+                "label": "'5'"
+              },
+              {
+                "encoded": "00110110",
+                "label": "'6'"
+              },
+              {
+                "encoded": "00110111",
+                "label": "'7'"
+              },
+              {
+                "encoded": "00111000",
+                "label": "'8'"
+              },
+              {
+                "encoded": "00111001",
+                "label": "'9'"
+              },
+              {
+                "encoded": "00111010",
+                "label": "':'"
+              },
+              {
+                "encoded": "00111011",
+                "label": "';'"
+              },
+              {
+                "encoded": "00111100",
+                "label": "'<'"
+              },
+              {
+                "encoded": "00111101",
+                "label": "'='"
+              },
+              {
+                "encoded": "00111110",
+                "label": "'>'"
+              },
+              {
+                "encoded": "00111111",
+                "label": "'?'"
+              },
+              {
+                "encoded": "01000000",
+                "label": "'@'"
+              },
+              {
+                "encoded": "01000001",
+                "label": "'A'"
+              },
+              {
+                "encoded": "01000010",
+                "label": "'B'"
+              },
+              {
+                "encoded": "01000011",
+                "label": "'C'"
+              },
+              {
+                "encoded": "01000100",
+                "label": "'D'"
+              },
+              {
+                "encoded": "01000101",
+                "label": "'E'"
+              },
+              {
+                "encoded": "01000110",
+                "label": "'F'"
+              },
+              {
+                "encoded": "01000111",
+                "label": "'G'"
+              },
+              {
+                "encoded": "01001000",
+                "label": "'H'"
+              },
+              {
+                "encoded": "01001001",
+                "label": "'I'"
+              },
+              {
+                "encoded": "01001010",
+                "label": "'J'"
+              },
+              {
+                "encoded": "01001011",
+                "label": "'K'"
+              },
+              {
+                "encoded": "01001100",
+                "label": "'L'"
+              },
+              {
+                "encoded": "01001101",
+                "label": "'M'"
+              },
+              {
+                "encoded": "01001110",
+                "label": "'N'"
+              },
+              {
+                "encoded": "01001111",
+                "label": "'O'"
+              },
+              {
+                "encoded": "01010000",
+                "label": "'P'"
+              },
+              {
+                "encoded": "01010001",
+                "label": "'Q'"
+              },
+              {
+                "encoded": "01010010",
+                "label": "'R'"
+              },
+              {
+                "encoded": "01010011",
+                "label": "'S'"
+              },
+              {
+                "encoded": "01010100",
+                "label": "'T'"
+              },
+              {
+                "encoded": "01010101",
+                "label": "'U'"
+              },
+              {
+                "encoded": "01010110",
+                "label": "'V'"
+              },
+              {
+                "encoded": "01010111",
+                "label": "'W'"
+              },
+              {
+                "encoded": "01011000",
+                "label": "'X'"
+              },
+              {
+                "encoded": "01011001",
+                "label": "'Y'"
+              },
+              {
+                "encoded": "01011010",
+                "label": "'Z'"
+              },
+              {
+                "encoded": "01011011",
+                "label": "'['"
+              },
+              {
+                "encoded": "01011100",
+                "label": "'\\'"
+              },
+              {
+                "encoded": "01011101",
+                "label": "']'"
+              },
+              {
+                "encoded": "01011110",
+                "label": "'^'"
+              },
+              {
+                "encoded": "01011111",
+                "label": "'_'"
+              },
+              {
+                "encoded": "01100000",
+                "label": "'`'"
+              },
+              {
+                "encoded": "01100001",
+                "label": "'a'"
+              },
+              {
+                "encoded": "01100010",
+                "label": "'b'"
+              },
+              {
+                "encoded": "01100011",
+                "label": "'c'"
+              },
+              {
+                "encoded": "01100100",
+                "label": "'d'"
+              },
+              {
+                "encoded": "01100101",
+                "label": "'e'"
+              },
+              {
+                "encoded": "01100110",
+                "label": "'f'"
+              },
+              {
+                "encoded": "01100111",
+                "label": "'g'"
+              },
+              {
+                "encoded": "01101000",
+                "label": "'h'"
+              },
+              {
+                "encoded": "01101001",
+                "label": "'i'"
+              },
+              {
+                "encoded": "01101010",
+                "label": "'j'"
+              },
+              {
+                "encoded": "01101011",
+                "label": "'k'"
+              },
+              {
+                "encoded": "01101100",
+                "label": "'l'"
+              },
+              {
+                "encoded": "01101101",
+                "label": "'m'"
+              },
+              {
+                "encoded": "01101110",
+                "label": "'n'"
+              },
+              {
+                "encoded": "01101111",
+                "label": "'o'"
+              },
+              {
+                "encoded": "01110000",
+                "label": "'p'"
+              },
+              {
+                "encoded": "01110001",
+                "label": "'q'"
+              },
+              {
+                "encoded": "01110010",
+                "label": "'r'"
+              },
+              {
+                "encoded": "01110011",
+                "label": "'s'"
+              },
+              {
+                "encoded": "01110100",
+                "label": "'t'"
+              },
+              {
+                "encoded": "01110101",
+                "label": "'u'"
+              },
+              {
+                "encoded": "01110110",
+                "label": "'v'"
+              },
+              {
+                "encoded": "01110111",
+                "label": "'w'"
+              },
+              {
+                "encoded": "01111000",
+                "label": "'x'"
+              },
+              {
+                "encoded": "01111001",
+                "label": "'y'"
+              },
+              {
+                "encoded": "01111010",
+                "label": "'z'"
+              },
+              {
+                "encoded": "01111011",
+                "label": "'{'"
+              },
+              {
+                "encoded": "01111100",
+                "label": "'|'"
+              },
+              {
+                "encoded": "01111101",
+                "label": "'}'"
+              },
+              {
+                "encoded": "01111110",
+                "label": "'~'"
+              },
+              {
+                "encoded": "01111111",
+                "label": "del"
+              },
+              {
+                "encoded": "10000000",
+                "label": "c128"
+              },
+              {
+                "encoded": "10000001",
+                "label": "c129"
+              },
+              {
+                "encoded": "10000010",
+                "label": "c130"
+              },
+              {
+                "encoded": "10000011",
+                "label": "c131"
+              },
+              {
+                "encoded": "10000100",
+                "label": "c132"
+              },
+              {
+                "encoded": "10000101",
+                "label": "c133"
+              },
+              {
+                "encoded": "10000110",
+                "label": "c134"
+              },
+              {
+                "encoded": "10000111",
+                "label": "c135"
+              },
+              {
+                "encoded": "10001000",
+                "label": "c136"
+              },
+              {
+                "encoded": "10001001",
+                "label": "c137"
+              },
+              {
+                "encoded": "10001010",
+                "label": "c138"
+              },
+              {
+                "encoded": "10001011",
+                "label": "c139"
+              },
+              {
+                "encoded": "10001100",
+                "label": "c140"
+              },
+              {
+                "encoded": "10001101",
+                "label": "c141"
+              },
+              {
+                "encoded": "10001110",
+                "label": "c142"
+              },
+              {
+                "encoded": "10001111",
+                "label": "c143"
+              },
+              {
+                "encoded": "10010000",
+                "label": "c144"
+              },
+              {
+                "encoded": "10010001",
+                "label": "c145"
+              },
+              {
+                "encoded": "10010010",
+                "label": "c146"
+              },
+              {
+                "encoded": "10010011",
+                "label": "c147"
+              },
+              {
+                "encoded": "10010100",
+                "label": "c148"
+              },
+              {
+                "encoded": "10010101",
+                "label": "c149"
+              },
+              {
+                "encoded": "10010110",
+                "label": "c150"
+              },
+              {
+                "encoded": "10010111",
+                "label": "c151"
+              },
+              {
+                "encoded": "10011000",
+                "label": "c152"
+              },
+              {
+                "encoded": "10011001",
+                "label": "c153"
+              },
+              {
+                "encoded": "10011010",
+                "label": "c154"
+              },
+              {
+                "encoded": "10011011",
+                "label": "c155"
+              },
+              {
+                "encoded": "10011100",
+                "label": "c156"
+              },
+              {
+                "encoded": "10011101",
+                "label": "c157"
+              },
+              {
+                "encoded": "10011110",
+                "label": "c158"
+              },
+              {
+                "encoded": "10011111",
+                "label": "c159"
+              },
+              {
+                "encoded": "10100000",
+                "label": "' '"
+              },
+              {
+                "encoded": "10100001",
+                "label": "'¡'"
+              },
+              {
+                "encoded": "10100010",
+                "label": "'¢'"
+              },
+              {
+                "encoded": "10100011",
+                "label": "'£'"
+              },
+              {
+                "encoded": "10100100",
+                "label": "'¤'"
+              },
+              {
+                "encoded": "10100101",
+                "label": "'¥'"
+              },
+              {
+                "encoded": "10100110",
+                "label": "'¦'"
+              },
+              {
+                "encoded": "10100111",
+                "label": "'§'"
+              },
+              {
+                "encoded": "10101000",
+                "label": "'¨'"
+              },
+              {
+                "encoded": "10101001",
+                "label": "'©'"
+              },
+              {
+                "encoded": "10101010",
+                "label": "'ª'"
+              },
+              {
+                "encoded": "10101011",
+                "label": "'«'"
+              },
+              {
+                "encoded": "10101100",
+                "label": "'¬'"
+              },
+              {
+                "encoded": "10101101",
+                "label": "'­'"
+              },
+              {
+                "encoded": "10101110",
+                "label": "'®'"
+              },
+              {
+                "encoded": "10101111",
+                "label": "'¯'"
+              },
+              {
+                "encoded": "10110000",
+                "label": "'°'"
+              },
+              {
+                "encoded": "10110001",
+                "label": "'±'"
+              },
+              {
+                "encoded": "10110010",
+                "label": "'²'"
+              },
+              {
+                "encoded": "10110011",
+                "label": "'³'"
+              },
+              {
+                "encoded": "10110100",
+                "label": "'´'"
+              },
+              {
+                "encoded": "10110101",
+                "label": "'µ'"
+              },
+              {
+                "encoded": "10110110",
+                "label": "'¶'"
+              },
+              {
+                "encoded": "10110111",
+                "label": "'·'"
+              },
+              {
+                "encoded": "10111000",
+                "label": "'¸'"
+              },
+              {
+                "encoded": "10111001",
+                "label": "'¹'"
+              },
+              {
+                "encoded": "10111010",
+                "label": "'º'"
+              },
+              {
+                "encoded": "10111011",
+                "label": "'»'"
+              },
+              {
+                "encoded": "10111100",
+                "label": "'¼'"
+              },
+              {
+                "encoded": "10111101",
+                "label": "'½'"
+              },
+              {
+                "encoded": "10111110",
+                "label": "'¾'"
+              },
+              {
+                "encoded": "10111111",
+                "label": "'¿'"
+              },
+              {
+                "encoded": "11000000",
+                "label": "'À'"
+              },
+              {
+                "encoded": "11000001",
+                "label": "'Á'"
+              },
+              {
+                "encoded": "11000010",
+                "label": "'Â'"
+              },
+              {
+                "encoded": "11000011",
+                "label": "'Ã'"
+              },
+              {
+                "encoded": "11000100",
+                "label": "'Ä'"
+              },
+              {
+                "encoded": "11000101",
+                "label": "'Å'"
+              },
+              {
+                "encoded": "11000110",
+                "label": "'Æ'"
+              },
+              {
+                "encoded": "11000111",
+                "label": "'Ç'"
+              },
+              {
+                "encoded": "11001000",
+                "label": "'È'"
+              },
+              {
+                "encoded": "11001001",
+                "label": "'É'"
+              },
+              {
+                "encoded": "11001010",
+                "label": "'Ê'"
+              },
+              {
+                "encoded": "11001011",
+                "label": "'Ë'"
+              },
+              {
+                "encoded": "11001100",
+                "label": "'Ì'"
+              },
+              {
+                "encoded": "11001101",
+                "label": "'Í'"
+              },
+              {
+                "encoded": "11001110",
+                "label": "'Î'"
+              },
+              {
+                "encoded": "11001111",
+                "label": "'Ï'"
+              },
+              {
+                "encoded": "11010000",
+                "label": "'Ð'"
+              },
+              {
+                "encoded": "11010001",
+                "label": "'Ñ'"
+              },
+              {
+                "encoded": "11010010",
+                "label": "'Ò'"
+              },
+              {
+                "encoded": "11010011",
+                "label": "'Ó'"
+              },
+              {
+                "encoded": "11010100",
+                "label": "'Ô'"
+              },
+              {
+                "encoded": "11010101",
+                "label": "'Õ'"
+              },
+              {
+                "encoded": "11010110",
+                "label": "'Ö'"
+              },
+              {
+                "encoded": "11010111",
+                "label": "'×'"
+              },
+              {
+                "encoded": "11011000",
+                "label": "'Ø'"
+              },
+              {
+                "encoded": "11011001",
+                "label": "'Ù'"
+              },
+              {
+                "encoded": "11011010",
+                "label": "'Ú'"
+              },
+              {
+                "encoded": "11011011",
+                "label": "'Û'"
+              },
+              {
+                "encoded": "11011100",
+                "label": "'Ü'"
+              },
+              {
+                "encoded": "11011101",
+                "label": "'Ý'"
+              },
+              {
+                "encoded": "11011110",
+                "label": "'Þ'"
+              },
+              {
+                "encoded": "11011111",
+                "label": "'ß'"
+              },
+              {
+                "encoded": "11100000",
+                "label": "'à'"
+              },
+              {
+                "encoded": "11100001",
+                "label": "'á'"
+              },
+              {
+                "encoded": "11100010",
+                "label": "'â'"
+              },
+              {
+                "encoded": "11100011",
+                "label": "'ã'"
+              },
+              {
+                "encoded": "11100100",
+                "label": "'ä'"
+              },
+              {
+                "encoded": "11100101",
+                "label": "'å'"
+              },
+              {
+                "encoded": "11100110",
+                "label": "'æ'"
+              },
+              {
+                "encoded": "11100111",
+                "label": "'ç'"
+              },
+              {
+                "encoded": "11101000",
+                "label": "'è'"
+              },
+              {
+                "encoded": "11101001",
+                "label": "'é'"
+              },
+              {
+                "encoded": "11101010",
+                "label": "'ê'"
+              },
+              {
+                "encoded": "11101011",
+                "label": "'ë'"
+              },
+              {
+                "encoded": "11101100",
+                "label": "'ì'"
+              },
+              {
+                "encoded": "11101101",
+                "label": "'í'"
+              },
+              {
+                "encoded": "11101110",
+                "label": "'î'"
+              },
+              {
+                "encoded": "11101111",
+                "label": "'ï'"
+              },
+              {
+                "encoded": "11110000",
+                "label": "'ð'"
+              },
+              {
+                "encoded": "11110001",
+                "label": "'ñ'"
+              },
+              {
+                "encoded": "11110010",
+                "label": "'ò'"
+              },
+              {
+                "encoded": "11110011",
+                "label": "'ó'"
+              },
+              {
+                "encoded": "11110100",
+                "label": "'ô'"
+              },
+              {
+                "encoded": "11110101",
+                "label": "'õ'"
+              },
+              {
+                "encoded": "11110110",
+                "label": "'ö'"
+              },
+              {
+                "encoded": "11110111",
+                "label": "'÷'"
+              },
+              {
+                "encoded": "11111000",
+                "label": "'ø'"
+              },
+              {
+                "encoded": "11111001",
+                "label": "'ù'"
+              },
+              {
+                "encoded": "11111010",
+                "label": "'ú'"
+              },
+              {
+                "encoded": "11111011",
+                "label": "'û'"
+              },
+              {
+                "encoded": "11111100",
+                "label": "'ü'"
+              },
+              {
+                "encoded": "11111101",
+                "label": "'ý'"
+              },
+              {
+                "encoded": "11111110",
+                "label": "'þ'"
+              },
+              {
+                "encoded": "11111111",
+                "label": "'ÿ'"
+              }
+            ]
+          },
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "top",
+            "characters",
+            "[2]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "character",
+          "enumeration": {
+            "name": "character",
+            "variants": [
+              {
+                "encoded": "00000000",
+                "label": "nul"
+              },
+              {
+                "encoded": "00000001",
+                "label": "soh"
+              },
+              {
+                "encoded": "00000010",
+                "label": "stx"
+              },
+              {
+                "encoded": "00000011",
+                "label": "etx"
+              },
+              {
+                "encoded": "00000100",
+                "label": "eot"
+              },
+              {
+                "encoded": "00000101",
+                "label": "enq"
+              },
+              {
+                "encoded": "00000110",
+                "label": "ack"
+              },
+              {
+                "encoded": "00000111",
+                "label": "bel"
+              },
+              {
+                "encoded": "00001000",
+                "label": "bs"
+              },
+              {
+                "encoded": "00001001",
+                "label": "ht"
+              },
+              {
+                "encoded": "00001010",
+                "label": "lf"
+              },
+              {
+                "encoded": "00001011",
+                "label": "vt"
+              },
+              {
+                "encoded": "00001100",
+                "label": "ff"
+              },
+              {
+                "encoded": "00001101",
+                "label": "cr"
+              },
+              {
+                "encoded": "00001110",
+                "label": "so"
+              },
+              {
+                "encoded": "00001111",
+                "label": "si"
+              },
+              {
+                "encoded": "00010000",
+                "label": "dle"
+              },
+              {
+                "encoded": "00010001",
+                "label": "dc1"
+              },
+              {
+                "encoded": "00010010",
+                "label": "dc2"
+              },
+              {
+                "encoded": "00010011",
+                "label": "dc3"
+              },
+              {
+                "encoded": "00010100",
+                "label": "dc4"
+              },
+              {
+                "encoded": "00010101",
+                "label": "nak"
+              },
+              {
+                "encoded": "00010110",
+                "label": "syn"
+              },
+              {
+                "encoded": "00010111",
+                "label": "etb"
+              },
+              {
+                "encoded": "00011000",
+                "label": "can"
+              },
+              {
+                "encoded": "00011001",
+                "label": "em"
+              },
+              {
+                "encoded": "00011010",
+                "label": "sub"
+              },
+              {
+                "encoded": "00011011",
+                "label": "esc"
+              },
+              {
+                "encoded": "00011100",
+                "label": "fsp"
+              },
+              {
+                "encoded": "00011101",
+                "label": "gsp"
+              },
+              {
+                "encoded": "00011110",
+                "label": "rsp"
+              },
+              {
+                "encoded": "00011111",
+                "label": "usp"
+              },
+              {
+                "encoded": "00100000",
+                "label": "' '"
+              },
+              {
+                "encoded": "00100001",
+                "label": "'!'"
+              },
+              {
+                "encoded": "00100010",
+                "label": "'\"'"
+              },
+              {
+                "encoded": "00100011",
+                "label": "'#'"
+              },
+              {
+                "encoded": "00100100",
+                "label": "'$'"
+              },
+              {
+                "encoded": "00100101",
+                "label": "'%'"
+              },
+              {
+                "encoded": "00100110",
+                "label": "'&'"
+              },
+              {
+                "encoded": "00100111",
+                "label": "'''"
+              },
+              {
+                "encoded": "00101000",
+                "label": "'('"
+              },
+              {
+                "encoded": "00101001",
+                "label": "')'"
+              },
+              {
+                "encoded": "00101010",
+                "label": "'*'"
+              },
+              {
+                "encoded": "00101011",
+                "label": "'+'"
+              },
+              {
+                "encoded": "00101100",
+                "label": "','"
+              },
+              {
+                "encoded": "00101101",
+                "label": "'-'"
+              },
+              {
+                "encoded": "00101110",
+                "label": "'.'"
+              },
+              {
+                "encoded": "00101111",
+                "label": "'/'"
+              },
+              {
+                "encoded": "00110000",
+                "label": "'0'"
+              },
+              {
+                "encoded": "00110001",
+                "label": "'1'"
+              },
+              {
+                "encoded": "00110010",
+                "label": "'2'"
+              },
+              {
+                "encoded": "00110011",
+                "label": "'3'"
+              },
+              {
+                "encoded": "00110100",
+                "label": "'4'"
+              },
+              {
+                "encoded": "00110101",
+                "label": "'5'"
+              },
+              {
+                "encoded": "00110110",
+                "label": "'6'"
+              },
+              {
+                "encoded": "00110111",
+                "label": "'7'"
+              },
+              {
+                "encoded": "00111000",
+                "label": "'8'"
+              },
+              {
+                "encoded": "00111001",
+                "label": "'9'"
+              },
+              {
+                "encoded": "00111010",
+                "label": "':'"
+              },
+              {
+                "encoded": "00111011",
+                "label": "';'"
+              },
+              {
+                "encoded": "00111100",
+                "label": "'<'"
+              },
+              {
+                "encoded": "00111101",
+                "label": "'='"
+              },
+              {
+                "encoded": "00111110",
+                "label": "'>'"
+              },
+              {
+                "encoded": "00111111",
+                "label": "'?'"
+              },
+              {
+                "encoded": "01000000",
+                "label": "'@'"
+              },
+              {
+                "encoded": "01000001",
+                "label": "'A'"
+              },
+              {
+                "encoded": "01000010",
+                "label": "'B'"
+              },
+              {
+                "encoded": "01000011",
+                "label": "'C'"
+              },
+              {
+                "encoded": "01000100",
+                "label": "'D'"
+              },
+              {
+                "encoded": "01000101",
+                "label": "'E'"
+              },
+              {
+                "encoded": "01000110",
+                "label": "'F'"
+              },
+              {
+                "encoded": "01000111",
+                "label": "'G'"
+              },
+              {
+                "encoded": "01001000",
+                "label": "'H'"
+              },
+              {
+                "encoded": "01001001",
+                "label": "'I'"
+              },
+              {
+                "encoded": "01001010",
+                "label": "'J'"
+              },
+              {
+                "encoded": "01001011",
+                "label": "'K'"
+              },
+              {
+                "encoded": "01001100",
+                "label": "'L'"
+              },
+              {
+                "encoded": "01001101",
+                "label": "'M'"
+              },
+              {
+                "encoded": "01001110",
+                "label": "'N'"
+              },
+              {
+                "encoded": "01001111",
+                "label": "'O'"
+              },
+              {
+                "encoded": "01010000",
+                "label": "'P'"
+              },
+              {
+                "encoded": "01010001",
+                "label": "'Q'"
+              },
+              {
+                "encoded": "01010010",
+                "label": "'R'"
+              },
+              {
+                "encoded": "01010011",
+                "label": "'S'"
+              },
+              {
+                "encoded": "01010100",
+                "label": "'T'"
+              },
+              {
+                "encoded": "01010101",
+                "label": "'U'"
+              },
+              {
+                "encoded": "01010110",
+                "label": "'V'"
+              },
+              {
+                "encoded": "01010111",
+                "label": "'W'"
+              },
+              {
+                "encoded": "01011000",
+                "label": "'X'"
+              },
+              {
+                "encoded": "01011001",
+                "label": "'Y'"
+              },
+              {
+                "encoded": "01011010",
+                "label": "'Z'"
+              },
+              {
+                "encoded": "01011011",
+                "label": "'['"
+              },
+              {
+                "encoded": "01011100",
+                "label": "'\\'"
+              },
+              {
+                "encoded": "01011101",
+                "label": "']'"
+              },
+              {
+                "encoded": "01011110",
+                "label": "'^'"
+              },
+              {
+                "encoded": "01011111",
+                "label": "'_'"
+              },
+              {
+                "encoded": "01100000",
+                "label": "'`'"
+              },
+              {
+                "encoded": "01100001",
+                "label": "'a'"
+              },
+              {
+                "encoded": "01100010",
+                "label": "'b'"
+              },
+              {
+                "encoded": "01100011",
+                "label": "'c'"
+              },
+              {
+                "encoded": "01100100",
+                "label": "'d'"
+              },
+              {
+                "encoded": "01100101",
+                "label": "'e'"
+              },
+              {
+                "encoded": "01100110",
+                "label": "'f'"
+              },
+              {
+                "encoded": "01100111",
+                "label": "'g'"
+              },
+              {
+                "encoded": "01101000",
+                "label": "'h'"
+              },
+              {
+                "encoded": "01101001",
+                "label": "'i'"
+              },
+              {
+                "encoded": "01101010",
+                "label": "'j'"
+              },
+              {
+                "encoded": "01101011",
+                "label": "'k'"
+              },
+              {
+                "encoded": "01101100",
+                "label": "'l'"
+              },
+              {
+                "encoded": "01101101",
+                "label": "'m'"
+              },
+              {
+                "encoded": "01101110",
+                "label": "'n'"
+              },
+              {
+                "encoded": "01101111",
+                "label": "'o'"
+              },
+              {
+                "encoded": "01110000",
+                "label": "'p'"
+              },
+              {
+                "encoded": "01110001",
+                "label": "'q'"
+              },
+              {
+                "encoded": "01110010",
+                "label": "'r'"
+              },
+              {
+                "encoded": "01110011",
+                "label": "'s'"
+              },
+              {
+                "encoded": "01110100",
+                "label": "'t'"
+              },
+              {
+                "encoded": "01110101",
+                "label": "'u'"
+              },
+              {
+                "encoded": "01110110",
+                "label": "'v'"
+              },
+              {
+                "encoded": "01110111",
+                "label": "'w'"
+              },
+              {
+                "encoded": "01111000",
+                "label": "'x'"
+              },
+              {
+                "encoded": "01111001",
+                "label": "'y'"
+              },
+              {
+                "encoded": "01111010",
+                "label": "'z'"
+              },
+              {
+                "encoded": "01111011",
+                "label": "'{'"
+              },
+              {
+                "encoded": "01111100",
+                "label": "'|'"
+              },
+              {
+                "encoded": "01111101",
+                "label": "'}'"
+              },
+              {
+                "encoded": "01111110",
+                "label": "'~'"
+              },
+              {
+                "encoded": "01111111",
+                "label": "del"
+              },
+              {
+                "encoded": "10000000",
+                "label": "c128"
+              },
+              {
+                "encoded": "10000001",
+                "label": "c129"
+              },
+              {
+                "encoded": "10000010",
+                "label": "c130"
+              },
+              {
+                "encoded": "10000011",
+                "label": "c131"
+              },
+              {
+                "encoded": "10000100",
+                "label": "c132"
+              },
+              {
+                "encoded": "10000101",
+                "label": "c133"
+              },
+              {
+                "encoded": "10000110",
+                "label": "c134"
+              },
+              {
+                "encoded": "10000111",
+                "label": "c135"
+              },
+              {
+                "encoded": "10001000",
+                "label": "c136"
+              },
+              {
+                "encoded": "10001001",
+                "label": "c137"
+              },
+              {
+                "encoded": "10001010",
+                "label": "c138"
+              },
+              {
+                "encoded": "10001011",
+                "label": "c139"
+              },
+              {
+                "encoded": "10001100",
+                "label": "c140"
+              },
+              {
+                "encoded": "10001101",
+                "label": "c141"
+              },
+              {
+                "encoded": "10001110",
+                "label": "c142"
+              },
+              {
+                "encoded": "10001111",
+                "label": "c143"
+              },
+              {
+                "encoded": "10010000",
+                "label": "c144"
+              },
+              {
+                "encoded": "10010001",
+                "label": "c145"
+              },
+              {
+                "encoded": "10010010",
+                "label": "c146"
+              },
+              {
+                "encoded": "10010011",
+                "label": "c147"
+              },
+              {
+                "encoded": "10010100",
+                "label": "c148"
+              },
+              {
+                "encoded": "10010101",
+                "label": "c149"
+              },
+              {
+                "encoded": "10010110",
+                "label": "c150"
+              },
+              {
+                "encoded": "10010111",
+                "label": "c151"
+              },
+              {
+                "encoded": "10011000",
+                "label": "c152"
+              },
+              {
+                "encoded": "10011001",
+                "label": "c153"
+              },
+              {
+                "encoded": "10011010",
+                "label": "c154"
+              },
+              {
+                "encoded": "10011011",
+                "label": "c155"
+              },
+              {
+                "encoded": "10011100",
+                "label": "c156"
+              },
+              {
+                "encoded": "10011101",
+                "label": "c157"
+              },
+              {
+                "encoded": "10011110",
+                "label": "c158"
+              },
+              {
+                "encoded": "10011111",
+                "label": "c159"
+              },
+              {
+                "encoded": "10100000",
+                "label": "' '"
+              },
+              {
+                "encoded": "10100001",
+                "label": "'¡'"
+              },
+              {
+                "encoded": "10100010",
+                "label": "'¢'"
+              },
+              {
+                "encoded": "10100011",
+                "label": "'£'"
+              },
+              {
+                "encoded": "10100100",
+                "label": "'¤'"
+              },
+              {
+                "encoded": "10100101",
+                "label": "'¥'"
+              },
+              {
+                "encoded": "10100110",
+                "label": "'¦'"
+              },
+              {
+                "encoded": "10100111",
+                "label": "'§'"
+              },
+              {
+                "encoded": "10101000",
+                "label": "'¨'"
+              },
+              {
+                "encoded": "10101001",
+                "label": "'©'"
+              },
+              {
+                "encoded": "10101010",
+                "label": "'ª'"
+              },
+              {
+                "encoded": "10101011",
+                "label": "'«'"
+              },
+              {
+                "encoded": "10101100",
+                "label": "'¬'"
+              },
+              {
+                "encoded": "10101101",
+                "label": "'­'"
+              },
+              {
+                "encoded": "10101110",
+                "label": "'®'"
+              },
+              {
+                "encoded": "10101111",
+                "label": "'¯'"
+              },
+              {
+                "encoded": "10110000",
+                "label": "'°'"
+              },
+              {
+                "encoded": "10110001",
+                "label": "'±'"
+              },
+              {
+                "encoded": "10110010",
+                "label": "'²'"
+              },
+              {
+                "encoded": "10110011",
+                "label": "'³'"
+              },
+              {
+                "encoded": "10110100",
+                "label": "'´'"
+              },
+              {
+                "encoded": "10110101",
+                "label": "'µ'"
+              },
+              {
+                "encoded": "10110110",
+                "label": "'¶'"
+              },
+              {
+                "encoded": "10110111",
+                "label": "'·'"
+              },
+              {
+                "encoded": "10111000",
+                "label": "'¸'"
+              },
+              {
+                "encoded": "10111001",
+                "label": "'¹'"
+              },
+              {
+                "encoded": "10111010",
+                "label": "'º'"
+              },
+              {
+                "encoded": "10111011",
+                "label": "'»'"
+              },
+              {
+                "encoded": "10111100",
+                "label": "'¼'"
+              },
+              {
+                "encoded": "10111101",
+                "label": "'½'"
+              },
+              {
+                "encoded": "10111110",
+                "label": "'¾'"
+              },
+              {
+                "encoded": "10111111",
+                "label": "'¿'"
+              },
+              {
+                "encoded": "11000000",
+                "label": "'À'"
+              },
+              {
+                "encoded": "11000001",
+                "label": "'Á'"
+              },
+              {
+                "encoded": "11000010",
+                "label": "'Â'"
+              },
+              {
+                "encoded": "11000011",
+                "label": "'Ã'"
+              },
+              {
+                "encoded": "11000100",
+                "label": "'Ä'"
+              },
+              {
+                "encoded": "11000101",
+                "label": "'Å'"
+              },
+              {
+                "encoded": "11000110",
+                "label": "'Æ'"
+              },
+              {
+                "encoded": "11000111",
+                "label": "'Ç'"
+              },
+              {
+                "encoded": "11001000",
+                "label": "'È'"
+              },
+              {
+                "encoded": "11001001",
+                "label": "'É'"
+              },
+              {
+                "encoded": "11001010",
+                "label": "'Ê'"
+              },
+              {
+                "encoded": "11001011",
+                "label": "'Ë'"
+              },
+              {
+                "encoded": "11001100",
+                "label": "'Ì'"
+              },
+              {
+                "encoded": "11001101",
+                "label": "'Í'"
+              },
+              {
+                "encoded": "11001110",
+                "label": "'Î'"
+              },
+              {
+                "encoded": "11001111",
+                "label": "'Ï'"
+              },
+              {
+                "encoded": "11010000",
+                "label": "'Ð'"
+              },
+              {
+                "encoded": "11010001",
+                "label": "'Ñ'"
+              },
+              {
+                "encoded": "11010010",
+                "label": "'Ò'"
+              },
+              {
+                "encoded": "11010011",
+                "label": "'Ó'"
+              },
+              {
+                "encoded": "11010100",
+                "label": "'Ô'"
+              },
+              {
+                "encoded": "11010101",
+                "label": "'Õ'"
+              },
+              {
+                "encoded": "11010110",
+                "label": "'Ö'"
+              },
+              {
+                "encoded": "11010111",
+                "label": "'×'"
+              },
+              {
+                "encoded": "11011000",
+                "label": "'Ø'"
+              },
+              {
+                "encoded": "11011001",
+                "label": "'Ù'"
+              },
+              {
+                "encoded": "11011010",
+                "label": "'Ú'"
+              },
+              {
+                "encoded": "11011011",
+                "label": "'Û'"
+              },
+              {
+                "encoded": "11011100",
+                "label": "'Ü'"
+              },
+              {
+                "encoded": "11011101",
+                "label": "'Ý'"
+              },
+              {
+                "encoded": "11011110",
+                "label": "'Þ'"
+              },
+              {
+                "encoded": "11011111",
+                "label": "'ß'"
+              },
+              {
+                "encoded": "11100000",
+                "label": "'à'"
+              },
+              {
+                "encoded": "11100001",
+                "label": "'á'"
+              },
+              {
+                "encoded": "11100010",
+                "label": "'â'"
+              },
+              {
+                "encoded": "11100011",
+                "label": "'ã'"
+              },
+              {
+                "encoded": "11100100",
+                "label": "'ä'"
+              },
+              {
+                "encoded": "11100101",
+                "label": "'å'"
+              },
+              {
+                "encoded": "11100110",
+                "label": "'æ'"
+              },
+              {
+                "encoded": "11100111",
+                "label": "'ç'"
+              },
+              {
+                "encoded": "11101000",
+                "label": "'è'"
+              },
+              {
+                "encoded": "11101001",
+                "label": "'é'"
+              },
+              {
+                "encoded": "11101010",
+                "label": "'ê'"
+              },
+              {
+                "encoded": "11101011",
+                "label": "'ë'"
+              },
+              {
+                "encoded": "11101100",
+                "label": "'ì'"
+              },
+              {
+                "encoded": "11101101",
+                "label": "'í'"
+              },
+              {
+                "encoded": "11101110",
+                "label": "'î'"
+              },
+              {
+                "encoded": "11101111",
+                "label": "'ï'"
+              },
+              {
+                "encoded": "11110000",
+                "label": "'ð'"
+              },
+              {
+                "encoded": "11110001",
+                "label": "'ñ'"
+              },
+              {
+                "encoded": "11110010",
+                "label": "'ò'"
+              },
+              {
+                "encoded": "11110011",
+                "label": "'ó'"
+              },
+              {
+                "encoded": "11110100",
+                "label": "'ô'"
+              },
+              {
+                "encoded": "11110101",
+                "label": "'õ'"
+              },
+              {
+                "encoded": "11110110",
+                "label": "'ö'"
+              },
+              {
+                "encoded": "11110111",
+                "label": "'÷'"
+              },
+              {
+                "encoded": "11111000",
+                "label": "'ø'"
+              },
+              {
+                "encoded": "11111001",
+                "label": "'ù'"
+              },
+              {
+                "encoded": "11111010",
+                "label": "'ú'"
+              },
+              {
+                "encoded": "11111011",
+                "label": "'û'"
+              },
+              {
+                "encoded": "11111100",
+                "label": "'ü'"
+              },
+              {
+                "encoded": "11111101",
+                "label": "'ý'"
+              },
+              {
+                "encoded": "11111110",
+                "label": "'þ'"
+              },
+              {
+                "encoded": "11111111",
+                "label": "'ÿ'"
+              }
+            ]
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "top",
+            "matrix",
+            "[1]",
+            "[-1]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "top",
+            "matrix",
+            "[1]",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "top",
+            "matrix",
+            "[0]",
+            "[-1]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "top",
+            "matrix",
+            "[0]",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[0]",
+            "[1]",
+            "[-1]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[0]",
+            "[1]",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[0]",
+            "[0]",
+            "[-1]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[0]",
+            "[0]",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[1]",
+            "[1]",
+            "[-1]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[1]",
+            "[1]",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[1]",
+            "[0]",
+            "[-1]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "top",
+            "cube",
+            "[1]",
+            "[0]",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "top",
+            "indexed",
+            "[green]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "top",
+            "indexed",
+            "[blue]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "top",
+            "indexed",
+            "[white]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "top",
+            "raw_nested",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 0,
+            "lsb": 0
+          },
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "top",
+            "resolved_nested",
+            "[0]"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 0,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "top",
+            "rec",
+            "data"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-26"
+        },
+        {
+          "path": [
+            "top",
+            "rec",
+            "state"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "subset",
+          "enumeration": {
+            "name": "subset",
+            "variants": [
+              {
+                "encoded": "001",
+                "label": "green"
+              },
+              {
+                "encoded": "010",
+                "label": "blue"
+              },
+              {
+                "encoded": "011",
+                "label": "white"
+              }
+            ]
+          },
+          "signal": "signal-27"
+        },
+        {
+          "path": [
+            "top",
+            "records",
+            "[1]",
+            "data"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-28"
+        },
+        {
+          "path": [
+            "top",
+            "records",
+            "[1]",
+            "state"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "subset",
+          "enumeration": {
+            "name": "subset",
+            "variants": [
+              {
+                "encoded": "001",
+                "label": "green"
+              },
+              {
+                "encoded": "010",
+                "label": "blue"
+              },
+              {
+                "encoded": "011",
+                "label": "white"
+              }
+            ]
+          },
+          "signal": "signal-29"
+        },
+        {
+          "path": [
+            "top",
+            "records",
+            "[0]",
+            "data"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-30"
+        },
+        {
+          "path": [
+            "top",
+            "records",
+            "[0]",
+            "state"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "subset",
+          "enumeration": {
+            "name": "subset",
+            "variants": [
+              {
+                "encoded": "001",
+                "label": "green"
+              },
+              {
+                "encoded": "010",
+                "label": "blue"
+              },
+              {
+                "encoded": "011",
+                "label": "white"
+              }
+            ]
+          },
+          "signal": "signal-31"
+        },
+        {
+          "path": [
+            "top",
+            "\\bus.name [x]\\"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic",
+          "signal": "signal-32"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11111111111111111111111111101111"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "00000000000000000000000000101010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 64
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1000000000000000000000000000000000000000000000000000000000000001"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "0111111111111111111111111111111111111111111111111111111111111111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11111111111111111111111111110111"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "00000000000000000000000000001100"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 64
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0111111111111111111111111111111111111111111111111111111111111111"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "1000000000000000000000000000000000000000000000000000000000000001"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "real"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "real_bits": "8000000000000000"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "real_bits": "3ff4000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "01000001"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11101001"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "z"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "l"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "h"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-13": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-14": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-15": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-16": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-17": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-18": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-19": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "11111111111111111111111110011101"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-20": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-21": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000001011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-22": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000010110"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "11111111111111111111111111101010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-23": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000100001"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-24": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-25": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-26": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "101"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-27": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-28": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-29": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-30": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "110"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-31": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "001"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-32": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

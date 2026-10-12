@@ -12,6 +12,138 @@
     "source": "https://gitlab.com/api/v4/projects/42073614/uploads/9b88777cd7b5bcd7f52cef298d762001/dump.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "250000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "cpu_core_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "cpu_core_tb",
+            "uut"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "cpu_core_tb",
+            "uut",
+            "reg_file"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "cpu_core_tb",
+            "uut",
+            "reg_file",
+            "addr_c"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 4,
+            "lsb": 0
+          },
+          "signal": "addr-c"
+        }
+      ]
+    },
+    "signals": {
+      "addr-c": {
+        "encoding": {
+          "kind": "bits",
+          "width": 5
+        },
+        "samples": [
+          {
+            "time": "149999999",
+            "value": {
+              "bits": "00000"
+            },
+            "changed_at": "142000000"
+          },
+          {
+            "time": "150000000",
+            "value": {
+              "bits": "00001"
+            },
+            "changed_at": "150000000"
+          },
+          {
+            "time": "151000000",
+            "value": {
+              "bits": "00001"
+            },
+            "changed_at": "150000000"
+          },
+          {
+            "time": "152000000",
+            "value": {
+              "bits": "00000"
+            },
+            "changed_at": "152000000"
+          }
+        ],
+        "windows": [
+          {
+            "start": "149000000",
+            "end": "153000000",
+            "initial": {
+              "value": {
+                "bits": "00000"
+              },
+              "changed_at": "142000000"
+            },
+            "changes": [
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "00001"
+                }
+              },
+              {
+                "time": "152000000",
+                "value": {
+                  "bits": "00000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
