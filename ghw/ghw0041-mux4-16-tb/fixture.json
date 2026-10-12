@@ -12,6 +12,283 @@
     "source": "https://github.com/rjrobsonjunior/ComputerArchitecture-uProcessador/blob/7f12adc1ab0a8b3f6056c922ed35115dccf94724/MUX4_16_tb.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "250000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "mux4_16_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "mux4_16_tb",
+            "mux"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "mux4_16_tb",
+            "selector_tb"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "mux4_16_tb",
+            "inmux_tb"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 127,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "mux4_16_tb",
+            "outmux_tb"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "mux4_16_tb",
+            "mux",
+            "selector"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "mux4_16_tb",
+            "mux",
+            "inmux"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 127,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "mux4_16_tb",
+            "mux",
+            "outmux"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "250000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "100"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "110"
+                }
+              },
+              {
+                "time": "250000000",
+                "value": {
+                  "bits": "111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 128
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "250000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000001001000110100010101100111100010011010101111001101111011110000000100100011010001010110011110001001101010111100110111101111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "250000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1100110111101111"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "1000100110101011"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0100010101100111"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1100110111101111"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0100010101100111"
+                }
+              },
+              {
+                "time": "250000000",
+                "value": {
+                  "bits": "0000000100100011"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

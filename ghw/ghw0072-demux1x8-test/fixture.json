@@ -12,6 +12,317 @@
     "source": "https://github.com/JulyWitch/vhdl_ghdl_examples/blob/60e216d12a29e1f251e9f8ccb4603f78a4b1ce08/waves/demux1x8_test.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "500000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "demux1x8_test"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "demux1x8_test",
+            "uut"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "demux1x8_test",
+            "x"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "demux1x8_test",
+            "sel"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "demux1x8_test",
+            "y"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "demux1x8_test",
+            "uut",
+            "x"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "demux1x8_test",
+            "uut",
+            "sel"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "demux1x8_test",
+            "uut",
+            "y"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "500000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "350000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "380000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "500000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "001"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "500000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000u"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "320000000",
+                "value": {
+                  "bits": "00000010"
+                }
+              },
+              {
+                "time": "370000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "00000010"
+                }
+              },
+              {
+                "time": "420000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

@@ -12,6 +12,2707 @@
     "source": "https://github.com/marlonprudente/ARCOMP-BDREG/blob/1ef8ef0596c65b67a3b6af0797aa3c5bde12f95e/banco16bits_tb.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "3000000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "bancoreg16bits_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg2"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg3"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg4"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg5"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg6"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg7"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "rst"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "wr_en"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "rreg1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "rreg2"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "datain"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "dataout1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "dataout2"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "readreg1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "readreg2"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "rst"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_data"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "readdata1"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "readdata2"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en2"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en3"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en4"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en5"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en6"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "wr_en7"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out2"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out3"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out4"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out5"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out6"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_out7"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "data_in"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg0",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg0",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg0",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg0",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg0",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg0",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-26"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg1",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg1",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg1",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg1",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg1",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg1",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-27"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg2",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg2",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg2",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg2",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg2",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg2",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-28"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg3",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg3",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg3",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg3",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg3",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg3",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-29"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg4",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg4",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg4",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg4",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg4",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg4",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-30"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg5",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg5",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg5",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg5",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg5",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg5",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-31"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg6",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg6",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg6",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg6",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg6",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg6",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-32"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg7",
+            "clock"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg7",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg7",
+            "wr_enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg7",
+            "data_in"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg7",
+            "data_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "bancoreg16bits_tb",
+            "uut",
+            "reg7",
+            "registro"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-33"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "250000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "350000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "450000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "550000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "600000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "650000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "750000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "800000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "850000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "900000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "950000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1050000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1250000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1300000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1350000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1400000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1450000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1500000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1550000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1600000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1650000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1700000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1750000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1800000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1850000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1900000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1950000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2000000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2050000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2250000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2300000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2350000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2400000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2450000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2500000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2550000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2600000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2650000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2700000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2750000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2800000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2850000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2900000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2950000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "600000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuu"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuu"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1111000011111111"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1111111111111111"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "1111000011111111"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "1111111111111111"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "1111000011111111"
+                }
+              },
+              {
+                "time": "600000000",
+                "value": {
+                  "bits": "1111111111111111"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "1111000011111111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "250000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "350000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "450000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "550000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "650000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "750000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "850000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "250000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "350000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "450000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "550000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "650000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "750000000",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "850000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "600000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-13": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-14": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-15": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-16": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-17": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-18": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "350000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-19": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "550000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-20": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "750000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-21": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-22": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-23": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-24": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-25": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-26": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-27": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "350000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-28": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "550000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-29": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "750000000",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-30": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-31": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-32": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-33": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
