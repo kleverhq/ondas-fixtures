@@ -12,6 +12,685 @@
     "source": "https://github.com/PauMarquez99/LabSistemas/blob/a33e0da35122a2353522b18309f4eeedbde34015/Keyboard/KeyboardWave.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "3000000000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "keyboard2_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "keyboard2_tb",
+            "clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "reset"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "kbd_clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "kbd_data"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "enable"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "scan_ready"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "parity_bit"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "scan_code"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "kbd_clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "kbd_data"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "enable"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "scan_code"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "scan_ready"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "parity_bit"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "filter"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "kbd_clk_filtered"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "read_char"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "ready_set"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "incount"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "shiftin"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 8,
+            "lsb": 0
+          },
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "parity_state"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "keyboard2_tb",
+            "uut",
+            "current_state"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "state",
+          "enumeration": {
+            "name": "state",
+            "variants": [
+              {
+                "encoded": "0",
+                "label": "state_wait"
+              },
+              {
+                "encoded": "1",
+                "label": "state_run"
+              }
+            ]
+          },
+          "signal": "signal-16"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "h"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-13": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-14": {
+        "encoding": {
+          "kind": "bits",
+          "width": 9
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-15": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-16": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

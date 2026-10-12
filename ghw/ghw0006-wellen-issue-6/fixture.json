@@ -12,6 +12,296 @@
     "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/ghdl/wellen_issue_6.ghw",
     "license": "BSD-3-Clause"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "4000000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "wellen_6"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(0)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(1)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(2)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(3)"
+          ],
+          "kind": "for-generate"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "wellen_6",
+            "toplevel_s"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(0)",
+            "blocklevel_s"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(1)",
+            "blocklevel_s"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(2)",
+            "blocklevel_s"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "wellen_6",
+            "gen(3)",
+            "blocklevel_s"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-5"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "4000000000",
+                "value": {
+                  "bits": "uuuu"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000000",
+                "value": {
+                  "bits": "z"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000000",
+                "value": {
+                  "bits": "z"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000000",
+                "value": {
+                  "bits": "z"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000000",
+                "value": {
+                  "bits": "z"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

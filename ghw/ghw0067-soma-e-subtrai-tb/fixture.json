@@ -12,6 +12,345 @@
     "source": "https://github.com/DaniloGC2003/ArqComp/blob/bb17722a58226253824d8cab0c64deef4834487c/soma_subtrai/soma_e_subtrai_tb.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "200000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "soma_e_subtrai_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "uut"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "x"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "y"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "soma"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "subt"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "uut",
+            "x"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "uut",
+            "y"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "uut",
+            "soma"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "soma_e_subtrai_tb",
+            "uut",
+            "subt"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "unsigned",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "200000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "10000000"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "00000110"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "200000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "10000000"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "00000011"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "200000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "10000001"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "00001001"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "200000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "01111111"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "00000011"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

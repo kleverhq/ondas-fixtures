@@ -12,6 +12,3382 @@
     "source": "https://github.com/PauMarquez99/LabSistemas/blob/a33e0da35122a2353522b18309f4eeedbde34015/ContSinUDWave.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "240000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "contsinud_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "contsinud_tb",
+            "en"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "ud"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "lim"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "r"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "en"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "ud"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "lim"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "r"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "q"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "nq"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "qand"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "qor"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 4,
+            "lsb": 0
+          },
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "en"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "sn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "rn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "j"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "k"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "q"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "nq"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff0",
+            "qsignal"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "en"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "sn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "rn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "j"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "k"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "q"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "nq"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff1",
+            "qsignal"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "en"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "sn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "rn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "j"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "k"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "q"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-25"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "nq"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-26"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff2",
+            "qsignal"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-27"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "en"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "sn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "rn"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "j"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-28"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "k"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-28"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "q"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-29"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "nq"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-30"
+        },
+        {
+          "path": [
+            "contsinud_tb",
+            "conup1",
+            "jk_ff3",
+            "qsignal"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-31"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "15000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "25000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "35000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "45000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "55000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "65000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "75000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "85000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "95000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "105000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "115000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "125000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "135000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "145000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "155000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "165000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "175000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "185000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "195000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "205000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "215000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "225000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "235000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0100"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "0101"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0100"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0101"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "0100"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0100"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "0101"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0100"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0101"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "0100"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "1110"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "1101"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "1100"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "1011"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "1010"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "1110"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "1101"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "1100"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "1011"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1100"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "1101"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "1110"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "1010"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "1011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 5
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11000"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "10001"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "10011"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "10001"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "10111"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "10001"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "11000"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "10001"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "10011"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "11011"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "11001"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "11111"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "11111"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "11001"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "10000"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "11011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-13": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-14": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-15": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-16": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-17": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-18": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-19": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "90000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "110000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "160000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "220000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-20": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-21": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-22": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "20000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "60000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "120000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "170000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "230000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-23": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-24": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "30000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "130000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "240000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-25": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-26": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-27": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "40000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "140000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "150000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-28": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "70000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "180000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-29": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-30": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-31": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "240000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "80000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "190000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "210000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

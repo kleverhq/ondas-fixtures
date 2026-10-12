@@ -12,6 +12,1214 @@
     "source": "https://github.com/frsr0/MAX1000-Logic-Analyzer/blob/ce4207e81a6c4e4ea59fe74e90ec26032657f161/sim/tb_send_uart.ghw",
     "license": "MIT"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "770006160000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "tb_send_uart"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_interface1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "proto_trigger1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_slave1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "tb_send_uart",
+            "clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "fast_clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "running"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "boolean",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "spi_cs"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "spi_mosi"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "spi_sck"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "uart_rx"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "gen_start"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "gen_busy"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "gen_baud_div"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "gen_load_byte"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "gen_load_we"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "gen_tx"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "start_cap"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "busy_cap"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "tx_cap"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "fast_clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_rx"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_tx"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_cs"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_mosi"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "inputs"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "gen_load_byte"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "gen_load_we"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "gen_start"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "gen_baud_div"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "gen_busy"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "buffer_full"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "channel_groups"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "proto_trig_protocol"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "div3_shift"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 20,
+            "lsb": 0
+          },
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_interface1",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_interface1",
+            "rx"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_interface1",
+            "tx"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_interface1",
+            "rx_parity"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 8,
+            "lsb": 0
+          },
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "uart_interface1",
+            "tx_buffer"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 9,
+            "lsb": 0
+          },
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "proto_trigger1",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "proto_trigger1",
+            "protocol"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 1,
+            "lsb": 0
+          },
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_slave1",
+            "sys_clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_slave1",
+            "fast_clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_slave1",
+            "sck"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_slave1",
+            "mosi"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "intf",
+            "spi_slave1",
+            "cs_n"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig",
+            "load_byte"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig",
+            "load_we"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig",
+            "start"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig",
+            "baud_div"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 15,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig",
+            "tx_out"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "tb_send_uart",
+            "sig",
+            "busy"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-18"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 21
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 9
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 10
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1111111111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-13": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-14": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-15": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-16": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-17": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-18": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-19": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-20": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-21": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-22": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-23": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-24": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

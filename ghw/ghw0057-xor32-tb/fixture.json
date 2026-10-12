@@ -12,6 +12,1984 @@
     "source": "https://github.com/kevoconnor/ComputerArchitecture/blob/e152b01e071744e4baa66ef0eaddf1122a7fcb1c/xor32_tb.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "4000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "xor32_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out2"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out2"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)"
+          ],
+          "kind": "for-generate"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out0"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out1"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out2"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "xor32_tb",
+            "i0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "i1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "o"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 31,
+            "lsb": 0
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "n0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "n1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "t0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "t1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out0",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out0",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out0",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out1",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out1",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out1",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out2",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out2",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-10"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(0)",
+            "output",
+            "out2",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "n0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "n1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "t0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "t1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out0",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out0",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-15"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out0",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out1",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-12"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out1",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-14"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out1",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out2",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-16"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out2",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-17"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(1)",
+            "output",
+            "out2",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-13"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-20"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "n0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "n1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "t0"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "t1"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out0",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-18"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out0",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-22"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out0",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out1",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-19"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out1",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-21"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out1",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out2",
+            "i0"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-23"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out2",
+            "i1"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_logic",
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "xor32_tb",
+            "xor1",
+            "outputs(2)",
+            "output",
+            "out2",
+            "o"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_logic",
+          "signal": "signal-20"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "11111111111111111111111111111111"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "10101010101010101010101010101010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11111111111111111111111111111111"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "11111111111111111111111111111111"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "15000",
+                "value": {
+                  "bits": "11111111111111111111111111111111"
+                }
+              },
+              {
+                "time": "1010000",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "11111111111111111111111111111111"
+                }
+              },
+              {
+                "time": "2015000",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "3015000",
+                "value": {
+                  "bits": "10101010101010101010101010101010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "15000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1010000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2015000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3005000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3005000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-11": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-12": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-13": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "15000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1010000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2015000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3015000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-14": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-15": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3005000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-16": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3010000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-17": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-18": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-19": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-20": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "15000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1010000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2015000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-21": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3005000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-22": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "1005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3005000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-23": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-24": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "4000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "1005000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "2005000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "2010000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
