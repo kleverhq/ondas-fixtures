@@ -51,7 +51,7 @@ class InstallTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             expected = {}
-            for format in ("vcd", "fst"):
+            for format in ("vcd", "fst", "wdb"):
                 name = f"{format}0000-test"
                 directory = root / format / name
                 directory.mkdir(parents=True)
@@ -64,8 +64,9 @@ class InstallTests(unittest.TestCase):
             with patch.object(install, "ROOT", root):
                 loaded = install.load_fixtures()
                 self.assertEqual({item["name"]: item["path"] for item in loaded}, expected)
-                selected = release.selected_fixtures(["vcd/vcd0000-test", "fst0000-test"])
-                self.assertEqual([item["name"] for item in selected], ["vcd0000-test", "fst0000-test"])
+                selected = release.selected_fixtures(["vcd/vcd0000-test", "fst0000-test", "wdb/wdb0000-test"])
+                self.assertEqual([item["name"] for item in selected],
+                                 ["vcd0000-test", "fst0000-test", "wdb0000-test"])
                 for fixture in selected:
                     self.assertEqual(install.asset_name(fixture),
                                      f"{fixture['name']}.{fixture['sha256']}.{fixture['format']}.gz")
