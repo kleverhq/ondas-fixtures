@@ -28,7 +28,136 @@
   },
   "tags": [
     "basic-arithmetic",
-    "rtl-behavioral"
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "unknown-states",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "binary_to_BCD"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "binary_to_BCD",
+            "bin"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "binary_to_BCD",
+            "bcd"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "binary_to_BCD",
+            "i"
+          ],
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 9
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "zzzzzzzzz"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "zzzzzzzzz"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "zzzzzzzzz"
+            }
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxx"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxx"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxx"
+            }
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

@@ -27,7 +27,142 @@
   },
   "tags": [
     "control-fsm",
-    "post-implementation-functional"
+    "post-implementation-functional",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "led_tb"
+          ]
+        },
+        {
+          "path": [
+            "led_tb",
+            "led_inst"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "led_tb",
+            "led_out"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "led_tb",
+            "key_in"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "led_tb",
+            "led_inst",
+            "led_out"
+          ],
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "1"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "1"
+            }
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "1"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "1"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "1"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

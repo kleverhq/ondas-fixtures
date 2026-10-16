@@ -28,7 +28,93 @@
   },
   "tags": [
     "cpu-soc",
-    "rtl-standalone"
+    "rtl-standalone",
+    "conformance",
+    "hierarchy",
+    "metadata"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "riscV_inst"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "clk"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "rst_n"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "riscV_inst",
+            "clk"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "riscV_inst",
+            "rst_n"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "riscV_inst",
+            "stall_pipeline"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "riscV_inst",
+            "forward_a"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "riscV_inst",
+            "forward_b"
+          ]
+        },
+        {
+          "path": [
+            "top",
+            "riscV_inst",
+            "branch_taken"
+          ]
+        }
+      ]
+    },
+    "signals": {}
+  }
 }

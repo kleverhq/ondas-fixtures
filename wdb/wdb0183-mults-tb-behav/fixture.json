@@ -27,7 +27,232 @@
   },
   "tags": [
     "basic-arithmetic",
-    "rtl-behavioral"
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "mults_tb"
+          ]
+        },
+        {
+          "path": [
+            "mults_tb",
+            "UUT"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "mults_tb",
+            "A"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "mults_tb",
+            "X"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "mults_tb",
+            "result"
+          ],
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "mults_tb",
+            "i"
+          ],
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "mults_tb",
+            "UUT",
+            "result"
+          ],
+          "signal": "signal-5"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "00000000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "01111001"
+            }
+          },
+          {
+            "time": "105000",
+            "value": {
+              "bits": "11000010"
+            }
+          },
+          {
+            "time": "120000",
+            "value": {
+              "bits": "11000010"
+            }
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "00000000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "10001011"
+            }
+          },
+          {
+            "time": "105000",
+            "value": {
+              "bits": "11101101"
+            }
+          },
+          {
+            "time": "120000",
+            "value": {
+              "bits": "11101101"
+            }
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0000000000000000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0100000110110011"
+            }
+          },
+          {
+            "time": "105000",
+            "value": {
+              "bits": "1011001110011010"
+            }
+          },
+          {
+            "time": "120000",
+            "value": {
+              "bits": "1011001110011010"
+            }
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "00000000000000000000000000000000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "00000000000000000000000000000110"
+            }
+          },
+          {
+            "time": "120000",
+            "value": {
+              "bits": "00000000000000000000000000001000"
+            }
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0000000000000000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0100000110110011"
+            }
+          },
+          {
+            "time": "105000",
+            "value": {
+              "bits": "1011001110011010"
+            }
+          },
+          {
+            "time": "120000",
+            "value": {
+              "bits": "1011001110011010"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

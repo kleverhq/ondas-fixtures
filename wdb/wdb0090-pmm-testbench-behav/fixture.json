@@ -28,7 +28,325 @@
   },
   "tags": [
     "serial-sensors",
-    "rtl-behavioral"
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "unknown-states",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "pmm_testbench"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "pmm_testbench",
+            "command"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "pmm_testbench",
+            "sync_status"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "pmm_testbench",
+            "fsm_rst"
+          ],
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "pmm_testbench",
+            "reg_rst"
+          ],
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "pmm_testbench",
+            "clk"
+          ],
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "pmm_testbench",
+            "curr_state"
+          ],
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "pmm_testbench",
+            "reset_ack"
+          ],
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "pmm_testbench",
+            "wup_en"
+          ],
+          "signal": "signal-8"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "uu"
+            }
+          },
+          {
+            "time": "25000",
+            "value": {
+              "bits": "10"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "10"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "10"
+            }
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "1"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "970000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "010"
+            }
+          },
+          {
+            "time": "990000",
+            "value": {
+              "bits": "001"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "001"
+            }
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "u"
+            }
+          },
+          {
+            "time": "50000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "u"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "u"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "u"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

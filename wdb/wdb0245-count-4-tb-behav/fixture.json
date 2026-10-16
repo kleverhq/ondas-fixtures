@@ -27,7 +27,141 @@
   },
   "tags": [
     "control-fsm",
-    "rtl-behavioral"
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "count_4_tb"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "count_4_tb",
+            "rst"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "count_4_tb",
+            "clk"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "count_4_tb",
+            "q"
+          ],
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "1"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0"
+            }
+          },
+          {
+            "time": "100000000",
+            "value": {
+              "bits": "0"
+            }
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "0000"
+            }
+          },
+          {
+            "time": "99950000",
+            "value": {
+              "bits": "0111"
+            }
+          },
+          {
+            "time": "100000000",
+            "value": {
+              "bits": "0111"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

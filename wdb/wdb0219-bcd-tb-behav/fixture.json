@@ -27,7 +27,102 @@
   },
   "tags": [
     "basic-arithmetic",
-    "rtl-behavioral"
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "BCD_tb"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "BCD_tb",
+            "in"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "BCD_tb",
+            "out"
+          ],
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "1010"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0100"
+            }
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0000"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "1001"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "0100"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

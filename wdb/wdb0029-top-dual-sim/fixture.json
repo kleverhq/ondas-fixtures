@@ -28,7 +28,93 @@
   },
   "tags": [
     "cpu-soc",
-    "rtl-standalone"
+    "rtl-standalone",
+    "conformance",
+    "hierarchy",
+    "metadata"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top_dual"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "dual_core_inst"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top_dual",
+            "clk"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "rst_n"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "dual_core_inst",
+            "clk"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "dual_core_inst",
+            "rst_n"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "dual_core_inst",
+            "core0_mem_addr"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "dual_core_inst",
+            "core0_mem_write_data"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "dual_core_inst",
+            "core0_mem_funct3"
+          ]
+        },
+        {
+          "path": [
+            "top_dual",
+            "dual_core_inst",
+            "core0_mem_read"
+          ]
+        }
+      ]
+    },
+    "signals": {}
+  }
 }

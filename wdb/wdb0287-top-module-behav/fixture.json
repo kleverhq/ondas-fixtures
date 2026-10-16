@@ -27,7 +27,211 @@
   },
   "tags": [
     "mixed-teaching",
-    "rtl-behavioral"
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "unknown-states",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "Top_module"
+          ]
+        },
+        {
+          "path": [
+            "Top_module",
+            "AND_GATE"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "Top_module",
+            "IN"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "Top_module",
+            "OUT"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "Top_module",
+            "AND_GATE",
+            "I1"
+          ],
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "Top_module",
+            "AND_GATE",
+            "I2"
+          ],
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "Top_module",
+            "AND_GATE",
+            "O"
+          ],
+          "signal": "signal-5"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "zzzzzzzzzzzzzzzz"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "zzzzzzzzzzzzzzzz"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "zzzzzzzzzzzzzzzz"
+            }
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "zzzzzzzx"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "zzzzzzzx"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "zzzzzzzx"
+            }
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "z"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "z"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "z"
+            }
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "z"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "z"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "z"
+            }
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "x"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "x"
+            }
+          },
+          {
+            "time": "1000000",
+            "value": {
+              "bits": "x"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

@@ -27,7 +27,91 @@
   },
   "tags": [
     "dsp-algorithms",
-    "rtl-standalone"
+    "rtl-standalone",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "unknown-states",
+    "values"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top_level_wrapper_tb"
+          ]
+        },
+        {
+          "path": [
+            "top_level_wrapper_tb",
+            "u_top_level_wrapper"
+          ]
+        },
+        {
+          "path": [
+            "top_level_wrapper_tb",
+            "u_top_level_wrapper",
+            "u_mem1"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top_level_wrapper_tb",
+            "u_top_level_wrapper",
+            "u_mem1",
+            "data_out"
+          ],
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          },
+          {
+            "time": "100000",
+            "value": {
+              "bits": "00000000000000000000000000000000"
+            }
+          },
+          {
+            "time": "715000",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          },
+          {
+            "time": "885000",
+            "value": {
+              "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

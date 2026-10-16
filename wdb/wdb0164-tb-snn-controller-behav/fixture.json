@@ -27,7 +27,81 @@
   },
   "tags": [
     "ml-image-video",
-    "rtl-behavioral"
+    "rtl-behavioral",
+    "conformance",
+    "hierarchy",
+    "metadata"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "tb_snn_controller"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "tb_snn_controller",
+            "clk"
+          ]
+        },
+        {
+          "path": [
+            "tb_snn_controller",
+            "reset"
+          ]
+        },
+        {
+          "path": [
+            "tb_snn_controller",
+            "neuron_reset"
+          ]
+        },
+        {
+          "path": [
+            "tb_snn_controller",
+            "pixel_idx"
+          ]
+        },
+        {
+          "path": [
+            "tb_snn_controller",
+            "timestep"
+          ]
+        },
+        {
+          "path": [
+            "tb_snn_controller",
+            "frame_done"
+          ]
+        },
+        {
+          "path": [
+            "tb_snn_controller",
+            "test_num"
+          ]
+        },
+        {
+          "path": [
+            "tb_snn_controller",
+            "error_count"
+          ]
+        }
+      ]
+    },
+    "signals": {}
+  }
 }
