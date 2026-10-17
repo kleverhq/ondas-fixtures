@@ -32,6 +32,8 @@
     "conformance",
     "hierarchy",
     "metadata",
+    "same-time",
+    "unknown-states",
     "values"
   ],
   "oracle": {
@@ -76,24 +78,62 @@
           "kind": "bits",
           "width": 1
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "0"
-            }
+            "start": "0",
+            "end": "3333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
           },
           {
-            "time": "5000",
-            "value": {
-              "bits": "1"
-            }
+            "start": "3334",
+            "end": "6666",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
           },
           {
-            "time": "10000",
-            "value": {
-              "bits": "1"
-            }
+            "start": "6667",
+            "end": "10000",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "10001",
+            "end": "10100",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
           }
         ]
       },
@@ -102,18 +142,49 @@
           "kind": "bits",
           "width": 32
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "00000000000000000000000000000100"
-            }
+            "start": "0",
+            "end": "3333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000100"
+                }
+              }
+            ]
           },
           {
-            "time": "10000",
-            "value": {
-              "bits": "00000000000000000000000000000100"
-            }
+            "start": "3334",
+            "end": "6666",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000100"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "6667",
+            "end": "10000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000100"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "10001",
+            "end": "10100",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000100"
+              }
+            },
+            "changes": []
           }
         ]
       }

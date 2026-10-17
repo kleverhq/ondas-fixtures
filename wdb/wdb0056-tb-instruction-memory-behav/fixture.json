@@ -33,6 +33,9 @@
     "conformance",
     "hierarchy",
     "metadata",
+    "projections",
+    "same-time",
+    "unknown-states",
     "values"
   ],
   "oracle": {
@@ -52,12 +55,6 @@
           "path": [
             "tb_instruction_memory"
           ]
-        },
-        {
-          "path": [
-            "tb_instruction_memory",
-            "dut"
-          ]
         }
       ],
       "variables": [
@@ -74,14 +71,6 @@
             "instr"
           ],
           "signal": "signal-2"
-        },
-        {
-          "path": [
-            "tb_instruction_memory",
-            "dut",
-            "instr"
-          ],
-          "signal": "signal-3"
         }
       ]
     },
@@ -91,24 +80,75 @@
           "kind": "bits",
           "width": 32
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "00000000000000000000000000000000"
-            }
+            "start": "0",
+            "end": "13333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "00000000000000000000000000000100"
+                }
+              }
+            ]
           },
           {
-            "time": "30000",
-            "value": {
-              "bits": "00000000000000000000000000001100"
-            }
+            "start": "13334",
+            "end": "26666",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000100"
+              }
+            },
+            "changes": [
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "00000000000000000000000000001000"
+                }
+              }
+            ]
           },
           {
-            "time": "40000",
-            "value": {
-              "bits": "00000000000000000000000000001100"
-            }
+            "start": "26667",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000001000"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "00000000000000000000000000001100"
+                }
+              }
+            ]
+          },
+          {
+            "start": "40001",
+            "end": "40400",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000001100"
+              }
+            },
+            "changes": []
           }
         ]
       },
@@ -117,50 +157,81 @@
           "kind": "bits",
           "width": 32
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "00000000010100000000000010010011"
-            }
+            "start": "0",
+            "end": "13333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000010100000000000010010011"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "00000000101000000000000100010011"
+                }
+              }
+            ]
           },
           {
-            "time": "30000",
-            "value": {
-              "bits": "00000000001100000010000000100011"
-            }
+            "start": "13334",
+            "end": "26666",
+            "initial": {
+              "value": {
+                "bits": "00000000101000000000000100010011"
+              }
+            },
+            "changes": [
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "00000000001000001000000110110011"
+                }
+              }
+            ]
           },
           {
-            "time": "40000",
-            "value": {
-              "bits": "00000000001100000010000000100011"
-            }
-          }
-        ]
-      },
-      "signal-3": {
-        "encoding": {
-          "kind": "bits",
-          "width": 32
-        },
-        "samples": [
-          {
-            "time": "0",
-            "value": {
-              "bits": "00000000010100000000000010010011"
-            }
+            "start": "26667",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "00000000001000001000000110110011"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "00000000001100000010000000100011"
+                }
+              }
+            ]
           },
           {
-            "time": "30000",
-            "value": {
-              "bits": "00000000001100000010000000100011"
-            }
-          },
-          {
-            "time": "40000",
-            "value": {
-              "bits": "00000000001100000010000000100011"
-            }
+            "start": "40001",
+            "end": "40400",
+            "initial": {
+              "value": {
+                "bits": "00000000001100000010000000100011"
+              }
+            },
+            "changes": []
           }
         ]
       }

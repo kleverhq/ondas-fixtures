@@ -27,9 +27,13 @@
   "tags": [
     "cpu-soc",
     "rtl-behavioral",
+    "bits",
     "conformance",
     "hierarchy",
-    "metadata"
+    "metadata",
+    "same-time",
+    "unknown-states",
+    "values"
   ],
   "oracle": {
     "schema": 1,
@@ -55,52 +59,165 @@
           "path": [
             "IFDEC_tb",
             "reset"
-          ]
-        },
-        {
-          "path": [
-            "IFDEC_tb",
-            "Instr_Phase"
-          ]
-        },
-        {
-          "path": [
-            "IFDEC_tb",
-            "Instruction"
-          ]
-        },
-        {
-          "path": [
-            "IFDEC_tb",
-            "Sx_Addr"
-          ]
-        },
-        {
-          "path": [
-            "IFDEC_tb",
-            "Sy_Addr"
-          ]
-        },
-        {
-          "path": [
-            "IFDEC_tb",
-            "DMemAddr_dir"
-          ]
+          ],
+          "signal": "signal-1"
         },
         {
           "path": [
             "IFDEC_tb",
             "ENInterrupt"
-          ]
-        },
-        {
-          "path": [
-            "IFDEC_tb",
-            "PortID_dir"
-          ]
+          ],
+          "signal": "signal-2"
         }
       ]
     },
-    "signals": {}
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "26666",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "26667",
+            "end": "53333",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "53334",
+            "end": "80000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "60000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "70000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "80001",
+            "end": "80800",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "26666",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "26667",
+            "end": "53333",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "50000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "53334",
+            "end": "80000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "80001",
+            "end": "80800",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
   }
 }

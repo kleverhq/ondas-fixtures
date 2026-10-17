@@ -66,20 +66,6 @@
         {
           "path": [
             "multiply_core_uart_spi",
-            "reset"
-          ],
-          "signal": "signal-2"
-        },
-        {
-          "path": [
-            "multiply_core_uart_spi",
-            "communication_sel"
-          ],
-          "signal": "signal-3"
-        },
-        {
-          "path": [
-            "multiply_core_uart_spi",
             "freq_control"
           ],
           "signal": "signal-4"
@@ -87,30 +73,65 @@
         {
           "path": [
             "multiply_core_uart_spi",
-            "uart_rx"
+            "uart_tx"
           ],
-          "signal": "signal-5"
+          "signal": "signal-9"
         },
         {
           "path": [
             "multiply_core_uart_spi",
-            "cs_bar"
+            "mul_ip_BA"
           ],
-          "signal": "signal-6"
+          "signal": "signal-13"
         },
         {
           "path": [
             "multiply_core_uart_spi",
-            "mosi"
+            "uart_transmit_data"
           ],
-          "signal": "signal-7"
+          "signal": "signal-18"
         },
         {
           "path": [
             "multiply_core_uart_spi",
-            "mul_enable"
+            "uart_tx_delay_count"
           ],
-          "signal": "signal-8"
+          "signal": "signal-24"
+        },
+        {
+          "path": [
+            "multiply_core_uart_spi",
+            "rx_frames_count"
+          ],
+          "signal": "signal-26"
+        },
+        {
+          "path": [
+            "multiply_core_uart_spi",
+            "NUM_FRAMES"
+          ],
+          "signal": "signal-29"
+        },
+        {
+          "path": [
+            "multiply_core_uart_spi",
+            "DELAY_TIME"
+          ],
+          "signal": "signal-30"
+        },
+        {
+          "path": [
+            "multiply_core_uart_spi",
+            "UART_TX_DELAY"
+          ],
+          "signal": "signal-31"
+        },
+        {
+          "path": [
+            "multiply_core_uart_spi",
+            "UART_TX_DELAY_BITS"
+          ],
+          "signal": "signal-32"
         }
       ]
     },
@@ -120,52 +141,29 @@
           "kind": "bits",
           "width": 1
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "missing": true
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "z"
+                }
+              }
+            ]
           },
           {
-            "time": "200000",
-            "value": {
-              "bits": "z"
-            }
-          }
-        ]
-      },
-      "signal-2": {
-        "encoding": {
-          "kind": "bits",
-          "width": 1
-        },
-        "samples": [
-          {
-            "time": "0",
-            "missing": true
-          },
-          {
-            "time": "200000",
-            "value": {
-              "bits": "z"
-            }
-          }
-        ]
-      },
-      "signal-3": {
-        "encoding": {
-          "kind": "bits",
-          "width": 1
-        },
-        "samples": [
-          {
-            "time": "0",
-            "missing": true
-          },
-          {
-            "time": "200000",
-            "value": {
-              "bits": "z"
-            }
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
           }
         ]
       },
@@ -174,88 +172,308 @@
           "kind": "bits",
           "width": 2
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "missing": true
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "zz"
+                }
+              }
+            ]
           },
           {
-            "time": "200000",
-            "value": {
-              "bits": "zz"
-            }
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "zz"
+              }
+            },
+            "changes": []
           }
         ]
       },
-      "signal-5": {
+      "signal-9": {
         "encoding": {
           "kind": "bits",
           "width": 1
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "missing": true
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "x"
+                }
+              }
+            ]
           },
           {
-            "time": "200000",
-            "value": {
-              "bits": "z"
-            }
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "x"
+              }
+            },
+            "changes": []
           }
         ]
       },
-      "signal-6": {
+      "signal-13": {
         "encoding": {
           "kind": "bits",
-          "width": 1
+          "width": 16
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "missing": true
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxx"
+                }
+              }
+            ]
           },
           {
-            "time": "200000",
-            "value": {
-              "bits": "z"
-            }
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
           }
         ]
       },
-      "signal-7": {
+      "signal-18": {
         "encoding": {
           "kind": "bits",
-          "width": 1
+          "width": 8
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "missing": true
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "xxxxxxxx"
+                }
+              }
+            ]
           },
           {
-            "time": "200000",
-            "value": {
-              "bits": "z"
-            }
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxx"
+              }
+            },
+            "changes": []
           }
         ]
       },
-      "signal-8": {
+      "signal-24": {
         "encoding": {
           "kind": "bits",
-          "width": 1
+          "width": 17
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "missing": true
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxx"
+                }
+              }
+            ]
           },
           {
-            "time": "200000",
-            "value": {
-              "bits": "z"
-            }
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-26": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "xx"
+                }
+              }
+            ]
+          },
+          {
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "xx"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-29": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "00000000000000000000000000000010"
+                }
+              }
+            ]
+          },
+          {
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000010"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-30": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "00000000000000000000000001100100"
+                }
+              }
+            ]
+          },
+          {
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000001100100"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-31": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "00000000000000011000011010100000"
+                }
+              }
+            ]
+          },
+          {
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000011000011010100000"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-32": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "200000",
+            "end": "200000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "200000",
+                "value": {
+                  "bits": "00000000000000000000000000010001"
+                }
+              }
+            ]
+          },
+          {
+            "start": "200001",
+            "end": "202000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000010001"
+              }
+            },
+            "changes": []
           }
         ]
       }

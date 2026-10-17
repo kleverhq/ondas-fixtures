@@ -32,6 +32,7 @@
     "conformance",
     "hierarchy",
     "metadata",
+    "same-time",
     "unknown-states",
     "values"
   ],
@@ -65,30 +66,9 @@
         {
           "path": [
             "arithmetic",
-            "ce"
-          ],
-          "signal": "signal-2"
-        },
-        {
-          "path": [
-            "arithmetic",
             "A"
           ],
           "signal": "signal-3"
-        },
-        {
-          "path": [
-            "arithmetic",
-            "B"
-          ],
-          "signal": "signal-4"
-        },
-        {
-          "path": [
-            "arithmetic",
-            "C"
-          ],
-          "signal": "signal-5"
         },
         {
           "path": [
@@ -100,16 +80,23 @@
         {
           "path": [
             "arithmetic",
-            "a_wire"
+            "ab"
           ],
-          "signal": "signal-7"
+          "signal": "signal-10"
         },
         {
           "path": [
             "arithmetic",
-            "b_wire"
+            "c_del"
           ],
-          "signal": "signal-8"
+          "signal": "signal-11"
+        },
+        {
+          "path": [
+            "arithmetic",
+            "y_wire"
+          ],
+          "signal": "signal-12"
         }
       ]
     },
@@ -119,50 +106,49 @@
           "kind": "bits",
           "width": 1
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "z"
-            }
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "z"
+                }
+              }
+            ]
           },
           {
-            "time": "100000",
-            "value": {
-              "bits": "z"
-            }
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
           },
           {
-            "time": "1000000",
-            "value": {
-              "bits": "z"
-            }
-          }
-        ]
-      },
-      "signal-2": {
-        "encoding": {
-          "kind": "bits",
-          "width": 1
-        },
-        "samples": [
-          {
-            "time": "0",
-            "value": {
-              "bits": "z"
-            }
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
           },
           {
-            "time": "100000",
-            "value": {
-              "bits": "z"
-            }
-          },
-          {
-            "time": "1000000",
-            "value": {
-              "bits": "z"
-            }
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
           }
         ]
       },
@@ -171,76 +157,49 @@
           "kind": "bits",
           "width": 7
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzz"
+                }
+              }
+            ]
           },
           {
-            "time": "100000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzz"
+              }
+            },
+            "changes": []
           },
           {
-            "time": "1000000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
-          }
-        ]
-      },
-      "signal-4": {
-        "encoding": {
-          "kind": "bits",
-          "width": 7
-        },
-        "samples": [
-          {
-            "time": "0",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzz"
+              }
+            },
+            "changes": []
           },
           {
-            "time": "100000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
-          },
-          {
-            "time": "1000000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
-          }
-        ]
-      },
-      "signal-5": {
-        "encoding": {
-          "kind": "bits",
-          "width": 7
-        },
-        "samples": [
-          {
-            "time": "0",
-            "value": {
-              "bits": "zzzzzzz"
-            }
-          },
-          {
-            "time": "100000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
-          },
-          {
-            "time": "1000000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzz"
+              }
+            },
+            "changes": []
           }
         ]
       },
@@ -249,76 +208,262 @@
           "kind": "bits",
           "width": 8
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "00000000"
-            }
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
           },
           {
-            "time": "100000",
-            "value": {
-              "bits": "00000000"
-            }
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "00000000"
+              }
+            },
+            "changes": []
           },
           {
-            "time": "1000000",
-            "value": {
-              "bits": "00000000"
-            }
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "00000000"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "00000000"
+              }
+            },
+            "changes": []
           }
         ]
       },
-      "signal-7": {
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxx"
+                }
+              },
+              {
+                "time": "100",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "00000000"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "00000000"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "00000000"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-11": {
         "encoding": {
           "kind": "bits",
           "width": 7
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000"
+                }
+              }
+            ]
           },
           {
-            "time": "100000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "0000000"
+              }
+            },
+            "changes": []
           },
           {
-            "time": "1000000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "0000000"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "0000000"
+              }
+            },
+            "changes": []
           }
         ]
       },
-      "signal-8": {
+      "signal-12": {
         "encoding": {
           "kind": "bits",
-          "width": 7
+          "width": 1
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
           },
           {
-            "time": "100000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
           },
           {
-            "time": "1000000",
-            "value": {
-              "bits": "zzzzzzz"
-            }
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
           }
         ]
       }

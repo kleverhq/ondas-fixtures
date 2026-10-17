@@ -52,12 +52,6 @@
           "path": [
             "mac_tb"
           ]
-        },
-        {
-          "path": [
-            "mac_tb",
-            "uut"
-          ]
         }
       ],
       "variables": [
@@ -71,13 +65,6 @@
         {
           "path": [
             "mac_tb",
-            "rst"
-          ],
-          "signal": "signal-2"
-        },
-        {
-          "path": [
-            "mac_tb",
             "data"
           ],
           "signal": "signal-3"
@@ -85,24 +72,9 @@
         {
           "path": [
             "mac_tb",
-            "weight"
-          ],
-          "signal": "signal-4"
-        },
-        {
-          "path": [
-            "mac_tb",
             "result"
           ],
           "signal": "signal-5"
-        },
-        {
-          "path": [
-            "mac_tb",
-            "uut",
-            "result_temp2"
-          ],
-          "signal": "signal-6"
         }
       ]
     },
@@ -112,26 +84,29 @@
           "kind": "bits",
           "width": 1
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "x"
-            }
-          }
-        ]
-      },
-      "signal-2": {
-        "encoding": {
-          "kind": "bits",
-          "width": 1
-        },
-        "samples": [
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x"
+                }
+              }
+            ]
+          },
           {
-            "time": "0",
-            "value": {
-              "bits": "x"
-            }
+            "start": "1",
+            "end": "1",
+            "initial": {
+              "value": {
+                "bits": "x"
+              }
+            },
+            "changes": []
           }
         ]
       },
@@ -140,26 +115,29 @@
           "kind": "bits",
           "width": 24
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "xxxxxxxxxxxxxxxxxxxxxxxx"
-            }
-          }
-        ]
-      },
-      "signal-4": {
-        "encoding": {
-          "kind": "bits",
-          "width": 24
-        },
-        "samples": [
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              }
+            ]
+          },
           {
-            "time": "0",
-            "value": {
-              "bits": "xxxxxxxxxxxxxxxxxxxxxxxx"
-            }
+            "start": "1",
+            "end": "1",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
           }
         ]
       },
@@ -168,26 +146,29 @@
           "kind": "bits",
           "width": 20
         },
-        "samples": [
+        "windows": [
           {
-            "time": "0",
-            "value": {
-              "bits": "xxxxxxxxxxxxxxxxxxxx"
-            }
-          }
-        ]
-      },
-      "signal-6": {
-        "encoding": {
-          "kind": "bits",
-          "width": 20
-        },
-        "samples": [
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxx"
+                }
+              }
+            ]
+          },
           {
-            "time": "0",
-            "value": {
-              "bits": "xxxxxxxxxxxxxxxxxxxx"
-            }
+            "start": "1",
+            "end": "1",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
           }
         ]
       }
