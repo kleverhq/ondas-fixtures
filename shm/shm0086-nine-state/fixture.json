@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "description": "Authored nine state recording.",
+  "artifact": {
+    "file": "waveform.shm",
+    "format": "shm",
+    "size": 2792,
+    "sha256": "bb971351195367549cb7d1afec5cf43b1eb76357c3e7e2e8a8bcde8dea2ef160",
+    "files": [
+      {
+        "file": "waveform.dsn",
+        "size": 1616,
+        "sha256": "c8b7707b16404de05acebba2d0ebb40aa88aa0a085134e35a7f4e85cbcff22d2"
+      },
+      {
+        "file": "waveform.trn",
+        "size": 1176,
+        "sha256": "d625ac1510bd7ee7ed12dd391e775691c603788c66987443d91ec89345fa592a"
+      }
+    ]
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "unknown",
+    "license": "MIT"
+  },
+  "tags": [
+    "authored",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top(test)"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top(test)",
+            "value"
+          ],
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "8000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "1000000",
+                "value": {
+                  "bits": "x"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "3000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "4000000",
+                "value": {
+                  "bits": "z"
+                }
+              },
+              {
+                "time": "5000000",
+                "value": {
+                  "bits": "w"
+                }
+              },
+              {
+                "time": "6000000",
+                "value": {
+                  "bits": "l"
+                }
+              },
+              {
+                "time": "7000000",
+                "value": {
+                  "bits": "h"
+                }
+              },
+              {
+                "time": "8000000",
+                "value": {
+                  "bits": "-"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

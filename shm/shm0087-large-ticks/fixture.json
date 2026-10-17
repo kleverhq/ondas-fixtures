@@ -1,0 +1,94 @@
+{
+  "schema": 1,
+  "description": "Authored large ticks recording.",
+  "artifact": {
+    "file": "waveform.shm",
+    "format": "shm",
+    "size": 2624,
+    "sha256": "03c1531a31488f34b01b4bd1a910d3f208d8822d1bad6b24338846c62c5fa690",
+    "files": [
+      {
+        "file": "waveform.dsn",
+        "size": 1456,
+        "sha256": "b0577f50f94e35ef2aaee5575ccf979728ad8c3f7b900e05e37a547c2aefb69d"
+      },
+      {
+        "file": "waveform.trn",
+        "size": 1168,
+        "sha256": "a81b212036bd657bb8704678b5eb34c0c1a8aa85206166e1666015d032407c2f"
+      }
+    ]
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "unknown",
+    "license": "MIT"
+  },
+  "tags": [
+    "authored",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "value"
+          ],
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "9007199254740995",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "9007199254740993",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

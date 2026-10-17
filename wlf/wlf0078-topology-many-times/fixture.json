@@ -1,0 +1,260 @@
+{
+  "schema": 1,
+  "description": "Equal probes with unrelated activity at every tick.",
+  "artifact": {
+    "file": "waveform.wlf",
+    "format": "wlf",
+    "size": 49152,
+    "sha256": "6fcdbf2e68120dfc09d9b434adcb0f79d09ec76879bf9a9f112c5364670fd353"
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "unknown",
+    "license": "Apache-2.0"
+  },
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "4096"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ],
+          "kind": "module",
+          "definition_name": "controlled_top"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "probe_sparse"
+          ],
+          "kind": "reg",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "top",
+            "probe_constant"
+          ],
+          "kind": "reg",
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "17",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "49",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "64",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "64"
+          },
+          {
+            "time": "4031",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "3968"
+          },
+          {
+            "time": "4063",
+            "value": {
+              "bits": "1"
+            },
+            "changed_at": "4032"
+          },
+          {
+            "time": "4096",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": "4096"
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "129",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "64",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "128",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "4000",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": "3968"
+            },
+            "changes": [
+              {
+                "time": "4032",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "4096",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "samples": [
+          {
+            "time": "0",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "17",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "49",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "64",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "4031",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "4063",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          },
+          {
+            "time": "4096",
+            "value": {
+              "bits": "0"
+            },
+            "changed_at": null
+          }
+        ],
+        "windows": [
+          {
+            "start": "0",
+            "end": "129",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "4000",
+            "end": "4096",
+            "initial": {
+              "value": {
+                "bits": "0"
+              },
+              "changed_at": null
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "description": "Authored late probe and silent event recording.",
+  "artifact": {
+    "file": "waveform.shm",
+    "format": "shm",
+    "size": 2784,
+    "sha256": "07239b2049de0d39a511f24afec51763c6bc4f709be344fd8e5ac1b5f02fad14",
+    "files": [
+      {
+        "file": "waveform.dsn",
+        "size": 1536,
+        "sha256": "7f138e56c931662c8d31cb9b00543f7afd77665e6c693c62b438ab9a5d6b2ce7"
+      },
+      {
+        "file": "waveform.trn",
+        "size": 1248,
+        "sha256": "3b00d1413e814000e15962914df8344c9c5c7c66c2093824fcc52722b8c4c07a"
+      }
+    ]
+  },
+  "provenance": {
+    "kind": "authored",
+    "source": "unknown",
+    "license": "MIT"
+  },
+  "tags": [
+    "authored",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "late"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "top",
+            "marker"
+          ],
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "6",
+            "end": "8",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "6",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "6",
+            "end": "8",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

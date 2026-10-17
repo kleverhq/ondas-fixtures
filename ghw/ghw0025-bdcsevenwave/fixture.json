@@ -12,6 +12,304 @@
     "source": "https://github.com/PauMarquez99/LabSistemas/blob/a33e0da35122a2353522b18309f4eeedbde34015/Pr%C3%A1ctica%204/BDCSEVENWave.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "1200000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "bdc_seven_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "bdc_seven_tb",
+            "uut"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "bdc_seven_tb",
+            "bdc"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bdc_seven_tb",
+            "seven"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 1
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "bdc_seven_tb",
+            "uut",
+            "bdc"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 3,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "bdc_seven_tb",
+            "uut",
+            "seven"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 1
+          },
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1200000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "0010"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "0011"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "0100"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "0101"
+                }
+              },
+              {
+                "time": "600000000",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "800000000",
+                "value": {
+                  "bits": "1000"
+                }
+              },
+              {
+                "time": "900000000",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "0000"
+                }
+              },
+              {
+                "time": "1100000000",
+                "value": {
+                  "bits": "0001"
+                }
+              },
+              {
+                "time": "1200000000",
+                "value": {
+                  "bits": "0010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 7
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "1200000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0111111"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0000110"
+                }
+              },
+              {
+                "time": "200000000",
+                "value": {
+                  "bits": "1011011"
+                }
+              },
+              {
+                "time": "300000000",
+                "value": {
+                  "bits": "1001111"
+                }
+              },
+              {
+                "time": "400000000",
+                "value": {
+                  "bits": "1100110"
+                }
+              },
+              {
+                "time": "500000000",
+                "value": {
+                  "bits": "1101101"
+                }
+              },
+              {
+                "time": "600000000",
+                "value": {
+                  "bits": "1111101"
+                }
+              },
+              {
+                "time": "700000000",
+                "value": {
+                  "bits": "0000111"
+                }
+              },
+              {
+                "time": "800000000",
+                "value": {
+                  "bits": "1111111"
+                }
+              },
+              {
+                "time": "900000000",
+                "value": {
+                  "bits": "1101111"
+                }
+              },
+              {
+                "time": "1000000000",
+                "value": {
+                  "bits": "0111111"
+                }
+              },
+              {
+                "time": "1100000000",
+                "value": {
+                  "bits": "0000110"
+                }
+              },
+              {
+                "time": "1200000000",
+                "value": {
+                  "bits": "1011011"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

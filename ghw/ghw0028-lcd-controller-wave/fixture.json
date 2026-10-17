@@ -14,8 +14,479 @@
     "notes": "GHDL ghwdump 6.0.0 reads the snapshot at 0 fs; GTKWave 3.3.116 exits with code 255 after reporting a zero-length time range."
   },
   "tags": [
-    "zero-duration",
-    "snapshot-only"
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "snapshot-only",
+    "values",
+    "zero-duration"
   ],
-  "oracle": {}
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "0"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "lcd_controller_tb"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "lcd_controller_tb",
+            "clk"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "reset"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "rs"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "rw"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "datain"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "rso"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "rwo"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "en"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "dataout"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "clk"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "reset"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "rs"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "rw"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit",
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "datain"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-5"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "rso"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-6"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "rwo"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-7"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "en"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit",
+          "signal": "signal-8"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "dataout"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "bit_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-9"
+        },
+        {
+          "path": [
+            "lcd_controller_tb",
+            "lcd1",
+            "state"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "integer",
+          "signal": "signal-10"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-6": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-7": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-8": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-9": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-10": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "0",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

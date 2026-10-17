@@ -12,6 +12,245 @@
     "source": "https://github.com/JulyWitch/vhdl_ghdl_examples/blob/60e216d12a29e1f251e9f8ccb4603f78a4b1ce08/waves/dec3x8_conditional_test.ghw",
     "license": "unknown"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "aliases",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "ranges",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "14000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "dec3x8_conditional_test"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "dec3x8_conditional_test",
+            "uut"
+          ],
+          "kind": "instance"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "dec3x8_conditional_test",
+            "input"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "dec3x8_conditional_test",
+            "output"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "dec3x8_conditional_test",
+            "uut",
+            "x"
+          ],
+          "kind": "port",
+          "direction": "input",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 2,
+            "lsb": 0
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "dec3x8_conditional_test",
+            "uut",
+            "y"
+          ],
+          "kind": "port",
+          "direction": "output",
+          "type_name": "std_ulogic_vector",
+          "range": {
+            "msb": 7,
+            "lsb": 0
+          },
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "14000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "4000000",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "6000000",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "8000000",
+                "value": {
+                  "bits": "100"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "101"
+                }
+              },
+              {
+                "time": "12000000",
+                "value": {
+                  "bits": "110"
+                }
+              },
+              {
+                "time": "14000000",
+                "value": {
+                  "bits": "111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "14000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuuuuuu"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "2000000",
+                "value": {
+                  "bits": "00000010"
+                }
+              },
+              {
+                "time": "4000000",
+                "value": {
+                  "bits": "00000100"
+                }
+              },
+              {
+                "time": "6000000",
+                "value": {
+                  "bits": "00001000"
+                }
+              },
+              {
+                "time": "8000000",
+                "value": {
+                  "bits": "00010000"
+                }
+              },
+              {
+                "time": "10000000",
+                "value": {
+                  "bits": "00100000"
+                }
+              },
+              {
+                "time": "12000000",
+                "value": {
+                  "bits": "01000000"
+                }
+              },
+              {
+                "time": "14000000",
+                "value": {
+                  "bits": "10000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

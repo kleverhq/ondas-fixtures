@@ -12,6 +12,294 @@
     "source": "https://github.com/ekiwi/wellen/blob/34f40595c4330bcac364397679cdc3d5ae6b5c0c/wellen/inputs/ghdl/oscar/test.ghw",
     "license": "BSD-3-Clause"
   },
-  "tags": [],
-  "oracle": {}
+  "tags": [
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "ranges",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "fs"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "150000000"
+      },
+      "writer": null,
+      "date": null
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "test"
+          ],
+          "kind": "instance"
+        },
+        {
+          "path": [
+            "test",
+            "rr"
+          ],
+          "kind": "record",
+          "packing": "unpacked"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "test",
+            "ee"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "e",
+          "enumeration": {
+            "name": "e",
+            "variants": [
+              {
+                "encoded": "0",
+                "label": "foo"
+              },
+              {
+                "encoded": "1",
+                "label": "bar"
+              }
+            ]
+          },
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "a"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic",
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "b"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 5,
+            "lsb": 2
+          },
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "c"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "std_logic_vector",
+          "range": {
+            "msb": 1,
+            "lsb": 4
+          },
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "test",
+            "rr",
+            "d"
+          ],
+          "kind": "signal",
+          "direction": "implicit",
+          "type_name": "e",
+          "enumeration": {
+            "name": "e",
+            "variants": [
+              {
+                "encoded": "0",
+                "label": "foo"
+              },
+              {
+                "encoded": "1",
+                "label": "bar"
+              }
+            ]
+          },
+          "signal": "signal-5"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "u"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuu"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "hlz-"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "uuuu"
+                }
+              },
+              {
+                "time": "50000000",
+                "value": {
+                  "bits": "wx10"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "0101"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "signal-5": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "150000000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "100000000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }
