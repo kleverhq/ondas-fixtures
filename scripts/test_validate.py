@@ -70,7 +70,7 @@ class ValidationTests(unittest.TestCase):
                     list(validated_documents(self.root))
 
     def test_schema_binds_artifact_filename_to_format(self):
-        formats = ("fsdb", "fst", "ghw", "vcd", "wlf")
+        formats = ("fsdb", "fst", "ghw", "vcd", "wdb", "wlf")
         for format in formats:
             data = copy.deepcopy(self.data)
             data["artifact"]["format"] = format

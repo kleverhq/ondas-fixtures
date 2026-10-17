@@ -1,0 +1,436 @@
+{
+  "schema": 1,
+  "description": "Signal processing and hardware algorithm test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 12342,
+    "sha256": "25164dd2b583ea72738411e3d9a6f931a7f9598e63156afdb1f12ea006e47347"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/AYoldass/Digital-System-Design-with-Verilog/blob/93edf4219f896f5a95796546a7df103232094410/Lab1/DigitalDesign_week1.sim/sim_1/behav/xsim/find_sum_combinantional_tb_behav.wdb",
+    "license": "unknown",
+    "catalog_id": "WDB00008",
+    "git_blob_sha1": "427e04c2fcae4c24d562ac998994b7c197322085",
+    "toolchain": {
+      "version": "2022.2",
+      "evidence": "https://github.com/AYoldass/Digital-System-Design-with-Verilog/blob/93edf4219f896f5a95796546a7df103232094410/Lab1/DigitalDesign_week1.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator v2022.2",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "dsp-algorithms",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "find_sum_combinantional_tb"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "find_sum_combinantional_tb",
+            "A"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "find_sum_combinantional_tb",
+            "B"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "find_sum_combinantional_tb",
+            "C"
+          ],
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "find_sum_combinantional_tb",
+            "sum"
+          ],
+          "signal": "signal-4"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "20000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "01"
+                }
+              }
+            ]
+          },
+          {
+            "start": "20001",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "01"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "01"
+                }
+              }
+            ]
+          },
+          {
+            "start": "40001",
+            "end": "60000",
+            "initial": {
+              "value": {
+                "bits": "01"
+              }
+            },
+            "changes": [
+              {
+                "time": "50000",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          },
+          {
+            "start": "60001",
+            "end": "60600",
+            "initial": {
+              "value": {
+                "bits": "00"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "20000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "10"
+                }
+              }
+            ]
+          },
+          {
+            "start": "20001",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "10"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          },
+          {
+            "start": "40001",
+            "end": "60000",
+            "initial": {
+              "value": {
+                "bits": "00"
+              }
+            },
+            "changes": [
+              {
+                "time": "50000",
+                "value": {
+                  "bits": "01"
+                }
+              }
+            ]
+          },
+          {
+            "start": "60001",
+            "end": "60600",
+            "initial": {
+              "value": {
+                "bits": "01"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "20000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          },
+          {
+            "start": "20001",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "00"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "10"
+                }
+              }
+            ]
+          },
+          {
+            "start": "40001",
+            "end": "60000",
+            "initial": {
+              "value": {
+                "bits": "10"
+              }
+            },
+            "changes": [
+              {
+                "time": "50000",
+                "value": {
+                  "bits": "10"
+                }
+              }
+            ]
+          },
+          {
+            "start": "60001",
+            "end": "60600",
+            "initial": {
+              "value": {
+                "bits": "10"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "20000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "010"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "011"
+                }
+              }
+            ]
+          },
+          {
+            "start": "20001",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "011"
+              }
+            },
+            "changes": [
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "100"
+                }
+              }
+            ]
+          },
+          {
+            "start": "40001",
+            "end": "60000",
+            "initial": {
+              "value": {
+                "bits": "100"
+              }
+            },
+            "changes": [
+              {
+                "time": "50000",
+                "value": {
+                  "bits": "011"
+                }
+              }
+            ]
+          },
+          {
+            "start": "60001",
+            "end": "60600",
+            "initial": {
+              "value": {
+                "bits": "011"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

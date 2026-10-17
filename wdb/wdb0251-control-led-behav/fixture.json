@@ -1,0 +1,191 @@
+{
+  "schema": 1,
+  "description": "Control logic and state machine test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 8288,
+    "sha256": "c68ff9c91b179b245dc6c428ddca00131103c9579930835ca605393c04a0bd29"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/Winter-s-un/ELEC4320/blob/5b37c9a3a7b6b1ba464c39cb3079a07de06a9791/LAB1A/LAB1A.sim/sim_1/behav/xsim/control_LED_behav.wdb",
+    "license": "unknown",
+    "catalog_id": "WDB01269",
+    "git_blob_sha1": "dc5617a3e9fb932d35ad374d43dabf64f5b07aab",
+    "toolchain": {
+      "version": "2024.1.1",
+      "evidence": "https://github.com/Winter-s-un/ELEC4320/blob/5b37c9a3a7b6b1ba464c39cb3079a07de06a9791/LAB1A/LAB1A.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator v2024.1.1",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "control-fsm",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "control_LED"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "control_LED",
+            "dip_switch"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "control_LED",
+            "led"
+          ],
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzz"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzz"
+              },
+              "changed_at": null
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzz"
+              },
+              "changed_at": null
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzz"
+              },
+              "changed_at": null
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzz"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzz"
+              },
+              "changed_at": "0"
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzz"
+              },
+              "changed_at": "0"
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzz"
+              },
+              "changed_at": "0"
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

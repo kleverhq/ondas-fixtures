@@ -1,0 +1,334 @@
+{
+  "schema": 1,
+  "description": "Memory and interconnect test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 9836,
+    "sha256": "f67506a3c9bf01692515d1cc62c939d07e48c033fb7ac2be7b2540d33396c4ae"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/Khoulykid/Arch-Lab/blob/f1b2193c4fdd47dfdd72963b0e081ae1d4134152/Lab05/Lab05/Lab05.sim/sim_1/behav/xsim/InstMem_tb_behav.wdb",
+    "license": "unknown",
+    "catalog_id": "WDB00574",
+    "git_blob_sha1": "66e09d6b5a0d4074262178c7b88c8d51b4bffc7d",
+    "toolchain": {
+      "version": "2022.1",
+      "evidence": "https://github.com/Khoulykid/Arch-Lab/blob/f1b2193c4fdd47dfdd72963b0e081ae1d4134152/Lab05/Lab05/Lab05.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator v2022.1",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "memory-interconnect",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "InstMem_tb"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "InstMem_tb",
+            "addr"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "InstMem_tb",
+            "data_out"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "InstMem_tb",
+            "i"
+          ],
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 6
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "000000"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "000001"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "000010"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "000011"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "000100"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "000100"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "000100"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "000100"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "11111111111111111111111111110000"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "11111111111111111010111111110001"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "11111011111111111111111111110010"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "11111111111111001111111111110011"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "11111111111111111111110111110100"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "11111111111111111111110111110100"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "11111111111111111111110111110100"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "11111111111111111111110111110100"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "00000000000000000000000000000000"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "00000000000000000000000000000001"
+                }
+              },
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "00000000000000000000000000000010"
+                }
+              },
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "00000000000000000000000000000011"
+                }
+              },
+              {
+                "time": "40000",
+                "value": {
+                  "bits": "00000000000000000000000000000100"
+                }
+              },
+              {
+                "time": "50000",
+                "value": {
+                  "bits": "00000000000000000000000000000101"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000101"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000101"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000101"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

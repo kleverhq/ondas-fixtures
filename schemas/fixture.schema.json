@@ -10,8 +10,8 @@
       "type": "object",
       "required": ["file", "format", "size", "sha256"],
       "properties": {
-        "file": {"type": "string", "pattern": "^waveform\\.(fsdb|fst|ghw|shm|vcd|wlf)$"},
-        "format": {"enum": ["fsdb", "fst", "ghw", "shm", "vcd", "wlf"]},
+        "file": {"type": "string", "pattern": "^waveform\\.(fsdb|fst|ghw|shm|vcd|wdb|wlf)$"},
+        "format": {"enum": ["fsdb", "fst", "ghw", "shm", "vcd", "wdb", "wlf"]},
         "size": {"type": "integer", "minimum": 0},
         "sha256": {"$ref": "#/$defs/sha256"},
         "files": {
@@ -37,6 +37,7 @@
         {"if": {"properties": {"format": {"const": "fst"}}}, "then": {"properties": {"file": {"const": "waveform.fst"}}}},
         {"if": {"properties": {"format": {"const": "ghw"}}}, "then": {"properties": {"file": {"const": "waveform.ghw"}}}},
         {"if": {"properties": {"format": {"const": "vcd"}}}, "then": {"properties": {"file": {"const": "waveform.vcd"}}}},
+        {"if": {"properties": {"format": {"const": "wdb"}}}, "then": {"properties": {"file": {"const": "waveform.wdb"}}}},
         {"if": {"properties": {"format": {"const": "wlf"}}}, "then": {"properties": {"file": {"const": "waveform.wlf"}}}}
       ],
       "additionalProperties": false

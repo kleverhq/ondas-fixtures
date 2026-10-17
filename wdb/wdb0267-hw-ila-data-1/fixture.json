@@ -1,0 +1,235 @@
+{
+  "schema": 1,
+  "description": "Hardware logic analyzer capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 24355,
+    "sha256": "0fa0f6feb4b257aff55a34f00c352ded220002a09ef2faf4dd7bb4e74ca190ad"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/user-attachments/files/19813498/hrdebug5.zip",
+    "license": "unknown",
+    "catalog_id": "WDB04438",
+    "git_blob_sha1": "f5608487d43543136eae01706548883d2dcbec57",
+    "archive_member": "hrdebug5/iladata03b-stuck-state.ila!/hw_ila_data_1.wdb",
+    "context": "https://github.com/sy2002/MiSTer2MEGA65/issues/59#issuecomment-2815609236",
+    "toolchain": {
+      "version": "2024.1",
+      "evidence": "https://github.com/sy2002/MiSTer2MEGA65/issues/59#issuecomment-2764624429",
+      "evidence_type": "author_toolchain_context",
+      "evidence_group": "author_toolchain_statement",
+      "evidence_quote": "~/tools/Xilinx/Vivado/2024.1/data/ip/xpm/xpm_fifo/hdl/xpm_fifo.sv",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "hardware-debug",
+    "hardware-ila",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [],
+      "variables": [
+        {
+          "path": [
+            "$TRIGGER"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "i_framework/i_hyperram/hyperram_ctrl_inst/avm_read_i"
+          ],
+          "signal": "signal-4"
+        },
+        {
+          "path": [
+            "i_framework/hr_dig_waitrequest"
+          ],
+          "signal": "signal-20"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "5461",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "5462",
+            "end": "10922",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "8192",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "10923",
+            "end": "16384",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "16385",
+            "end": "16547",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "5461",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "5462",
+            "end": "10922",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "10923",
+            "end": "16384",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "16385",
+            "end": "16547",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-20": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "5461",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "5462",
+            "end": "10922",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "10923",
+            "end": "16384",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "16385",
+            "end": "16547",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

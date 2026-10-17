@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "description": "Digital logic and arithmetic test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 9871,
+    "sha256": "e21539681f52cac2163a0da758907adb467fc354c44030ba0db5e45a341f9e4a"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/ItzzInfinity/100-days-of-RTL/blob/da374f4add1f159f39697a8d7bc8f8947cb41d18/day_044/Z%20bin2bcd/bin2bcd.sim/sim_1/behav/xsim/binary_to_BCD_behav.wdb",
+    "license": "MIT",
+    "catalog_id": "WDB00470",
+    "license_source": "https://github.com/ItzzInfinity/100-days-of-RTL/blob/da374f4add1f159f39697a8d7bc8f8947cb41d18/LICENSE",
+    "git_blob_sha1": "fb9aef8d7253d98f108c1f9bbc046000b4ea994f",
+    "toolchain": {
+      "version": "2024.1",
+      "evidence": "https://github.com/ItzzInfinity/100-days-of-RTL/blob/da374f4add1f159f39697a8d7bc8f8947cb41d18/day_044/Z%20bin2bcd/bin2bcd.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator v2024.1",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "basic-arithmetic",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "binary_to_BCD"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "binary_to_BCD",
+            "bin"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "binary_to_BCD",
+            "bcd"
+          ],
+          "signal": "signal-2"
+        },
+        {
+          "path": [
+            "binary_to_BCD",
+            "i"
+          ],
+          "signal": "signal-3"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 9
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzzz"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzz"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzz"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzz"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxx"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

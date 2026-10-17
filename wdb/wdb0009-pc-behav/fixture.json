@@ -1,0 +1,237 @@
+{
+  "schema": 1,
+  "description": "Processor and SoC test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 11186,
+    "sha256": "eaf2a4eb554e53efbb06000e7aeaeeb86f6445773cbb8dacd908eb09680faa6e"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/DakshLohchab/risc_v_32i/blob/26ece365bd67d59b840c96cd7247685d54c66d6e/rv32i_pipeline_cpu.sim/sim_1/behav/xsim/pc_behav.wdb",
+    "license": "MIT",
+    "catalog_id": "WDB00252",
+    "license_source": "https://github.com/DakshLohchab/risc_v_32i/blob/26ece365bd67d59b840c96cd7247685d54c66d6e/LICENSE",
+    "git_blob_sha1": "06317d8002cf7b3cdc89b4fb94a400285b34bbe8",
+    "toolchain": {
+      "version": "2025.2",
+      "evidence": "https://github.com/DakshLohchab/risc_v_32i/blob/26ece365bd67d59b840c96cd7247685d54c66d6e/rv32i_pipeline_cpu.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator v2025.2",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "cpu-soc",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "pc"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "pc",
+            "clk"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "pc",
+            "pc_next"
+          ],
+          "signal": "signal-3"
+        },
+        {
+          "path": [
+            "pc",
+            "pc_current"
+          ],
+          "signal": "signal-4"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "z"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-3": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-4": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

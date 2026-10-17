@@ -1,0 +1,185 @@
+{
+  "schema": 1,
+  "description": "Digital design teaching project test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 7951,
+    "sha256": "8774461f52a28cc18a5c5ddc4c19eb2db70af5be9074999452b15006f441fb1a"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/berfinduman/digital-system-design-applics/blob/993bfc8b21a13512377558a5529549cc1e1ca2ff/week1/project_2/project_2.sim/sim_1/behav/xsim/Top_module_behav.wdb",
+    "license": "unknown",
+    "catalog_id": "WDB01741",
+    "git_blob_sha1": "a630fcfc05556e0103d0197b5a743c05059c7455",
+    "toolchain": {
+      "version": "2020.1",
+      "evidence": "https://github.com/berfinduman/digital-system-design-applics/blob/993bfc8b21a13512377558a5529549cc1e1ca2ff/week1/project_2/project_2.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator 2020.1",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "mixed-teaching",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "Top_module"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "Top_module",
+            "IN"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "Top_module",
+            "OUT"
+          ],
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzzzzzzzzzz"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzzzzzzzzz"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzzzzzzzzz"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzzzzzzzzzz"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "333333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzx"
+                }
+              }
+            ]
+          },
+          {
+            "start": "333334",
+            "end": "666666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "666667",
+            "end": "1000000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzx"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "1000001",
+            "end": "1010000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzzx"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

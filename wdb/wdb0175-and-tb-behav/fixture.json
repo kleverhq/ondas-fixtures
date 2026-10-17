@@ -1,0 +1,238 @@
+{
+  "schema": 1,
+  "description": "Digital logic and arithmetic test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 9887,
+    "sha256": "e3fd28e21b1edffaef34d9bd8932987e073e4473bc17e391f27b88b1ef4d1cc7"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/berfinduman/digital-system-design-applics/blob/993bfc8b21a13512377558a5529549cc1e1ca2ff/week1/project_2/project_2.sim/sim_1/behav/xsim/and_tb_behav.wdb",
+    "license": "unknown",
+    "catalog_id": "WDB01742",
+    "git_blob_sha1": "f2b47fd32315457a7c2b8a29c0afae9de8776c9d",
+    "toolchain": {
+      "version": "2020.1",
+      "evidence": "https://github.com/berfinduman/digital-system-design-applics/blob/993bfc8b21a13512377558a5529549cc1e1ca2ff/week1/project_2/project_2.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator 2020.1",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "basic-arithmetic",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "projections",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "and_tb"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "and_tb",
+            "inp1"
+          ],
+          "signal": "signal-1"
+        },
+        {
+          "path": [
+            "and_tb",
+            "out"
+          ],
+          "signal": "signal-2"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "13333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xxxxxxxxxxxxxxxx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0000000000000000"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "0000000000000001"
+                }
+              }
+            ]
+          },
+          {
+            "start": "13334",
+            "end": "26666",
+            "initial": {
+              "value": {
+                "bits": "0000000000000001"
+              }
+            },
+            "changes": [
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "0000000000000010"
+                }
+              }
+            ]
+          },
+          {
+            "start": "26667",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "0000000000000010"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "0000000000000011"
+                }
+              }
+            ]
+          },
+          {
+            "start": "40001",
+            "end": "40400",
+            "initial": {
+              "value": {
+                "bits": "0000000000000011"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "signal-2": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "13333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzzx"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "zzzzzzz0"
+                }
+              },
+              {
+                "time": "10000",
+                "value": {
+                  "bits": "zzzzzzz0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "13334",
+            "end": "26666",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzz0"
+              }
+            },
+            "changes": [
+              {
+                "time": "20000",
+                "value": {
+                  "bits": "zzzzzzz0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "26667",
+            "end": "40000",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzz0"
+              }
+            },
+            "changes": [
+              {
+                "time": "30000",
+                "value": {
+                  "bits": "zzzzzzz1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "40001",
+            "end": "40400",
+            "initial": {
+              "value": {
+                "bits": "zzzzzzz1"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

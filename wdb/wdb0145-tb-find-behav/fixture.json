@@ -1,0 +1,134 @@
+{
+  "schema": 1,
+  "description": "Signal processing and hardware algorithm test capture.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 12733,
+    "sha256": "240ce2c0c749bd752180d97fa306deff4034abf534b10b92dfaed9acef951e74"
+  },
+  "provenance": {
+    "kind": "imported",
+    "source": "https://github.com/slerR/LRMLD/blob/0dc50c2b9d3ff2568387cf891c8e74994201ae50/module_library/min_3_frm_7/min_3_frm_7.sim/sim_1/behav/xsim/tb_find_behav.wdb",
+    "license": "unknown",
+    "catalog_id": "WDB03996",
+    "git_blob_sha1": "2c1c7c0de5004ed3ad96e7a346771cf977bfe97b",
+    "toolchain": {
+      "version": "2022.1",
+      "evidence": "https://github.com/slerR/LRMLD/blob/0dc50c2b9d3ff2568387cf891c8e74994201ae50/module_library/min_3_frm_7/min_3_frm_7.sim/sim_1/behav/xsim/elaborate.log",
+      "evidence_type": "same_simulation_directory",
+      "evidence_group": "simulation_log",
+      "evidence_quote": "Vivado Simulator v2022.1",
+      "evidence_checked_date": "2026-10-16",
+      "exact_wdb_producer_version_verified": false
+    },
+    "classification_basis": "Source repository, directory and test names, plus associated logs/metadata. Not a semantic parse of the WDB."
+  },
+  "tags": [
+    "dsp-algorithms",
+    "rtl-behavioral",
+    "bits",
+    "conformance",
+    "hierarchy",
+    "metadata",
+    "same-time",
+    "unknown-states",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "tb_find"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "tb_find",
+            "clk"
+          ],
+          "signal": "signal-1"
+        }
+      ]
+    },
+    "signals": {
+      "signal-1": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "3333",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "x"
+                }
+              },
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          },
+          {
+            "start": "3334",
+            "end": "6666",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "5000",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          },
+          {
+            "start": "6667",
+            "end": "10000",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          },
+          {
+            "start": "10001",
+            "end": "10100",
+            "initial": {
+              "value": {
+                "bits": "1"
+              }
+            },
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}
