@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "description": "Distinct source scopes share a logical path and keep separate children.",
+  "artifact": {
+    "file": "waveform.fst",
+    "format": "fst",
+    "size": 512,
+    "sha256": "333ba0b15d99775153228d73b78af1c5414829c394577c592b1fcccdac05f122"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT",
+    "source": "ondas-fixtures-oracle commit c21b3aad0563e2a402f4b1fe5d2634623c94b6b8, sources/logical-names/scopes.vcd",
+    "transform": "Copy authored VCD source; convert VCD with GTKWave vcd2fst 3.3.116; test scope-collisions"
+  },
+  "tags": [
+    "authored",
+    "logical-names",
+    "ambiguous-path",
+    "scope-identity",
+    "conformance",
+    "bits",
+    "hierarchy"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ]
+    },
+    "signals": {}
+  },
+  "relations": [
+    {
+      "kind": "derived-from",
+      "fixture": "vcd0101-scope-collisions"
+    }
+  ]
+}
