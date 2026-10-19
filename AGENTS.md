@@ -44,6 +44,7 @@ Run `just setup` before validation, checks, or tests. `just check` also works wi
 - For source/derived pairs in the corpus, record `derived-from` on the derived fixture. A reciprocal `source-of` relation is optional.
 - For files outside Git commits, record a stable source URL.
 - Use a confirmed SPDX license identifier when available; otherwise use `"unknown"`. Store required license texts in `LICENSES/`.
+- Use `LICENSES/MIT-ondas.txt` for Ondas-authored MIT fixtures. Do not add separate license copies for fixture groups. Preserve upstream license texts and notices.
 
 ## Delivery format
 

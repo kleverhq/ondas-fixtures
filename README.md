@@ -2,7 +2,7 @@
 
 A collection of waveform fixtures for the [Ondas library](https://github.com/kleverhq/ondas). It provides convenient storage and a shared source of fixtures for tests, benchmarks, and other tools. The collection can be used for any waveform-related purpose.
 
-Most waveforms were collected from public sources and retain their original licenses. Available source project license texts are in [LICENSES/](LICENSES/).
+Ondas-authored MIT fixtures use one shared [MIT license](LICENSES/MIT-ondas.txt). Most waveforms were collected from public sources and retain their original licenses. Available source project license texts are in [LICENSES/](LICENSES/).
 
 ## Installation
 
