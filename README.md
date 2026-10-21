@@ -30,14 +30,14 @@ Selection preserves the argument order and rejects unknown or repeated fixtures.
 
 | Format | Fixtures | JSON (MB) | Waveforms (MB) | Total (MB) |
 | --- | ---: | ---: | ---: | ---: |
-| FSDB | 53 | 159 | 16 | 175 |
-| FST | 90 | 106 | 1964 | 2070 |
+| FSDB | 55 | 159 | 16 | 175 |
+| FST | 92 | 106 | 1964 | 2070 |
 | GHW | 102 | 72 | 141 | 213 |
-| SHM | 79 | 34 | 16 | 50 |
-| VCD | 102 | 26 | 1645 | 1671 |
+| SHM | 81 | 35 | 16 | 50 |
+| VCD | 104 | 26 | 1645 | 1671 |
 | WDB | 300 | 576 | 3304 | 3880 |
-| WLF | 83 | 136 | 48 | 184 |
-| **Total** | **809** | **1110** | **7134** | **8244** |
+| WLF | 85 | 137 | 48 | 184 |
+| **Total** | **819** | **1111** | **7134** | **8245** |
 
 ## Layout
 
