@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "description": "String and Event declarations alongside a recorded clock.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 4137,
+    "sha256": "496185e922740bbde78bdf61f4c83541cff1c3c66af4edaa10caa84db6239fa9"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT"
+  },
+  "tags": [
+    "hierarchy",
+    "values",
+    "strings",
+    "events"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "20"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "text"
+          ],
+          "kind": "string"
+        },
+        {
+          "path": [
+            "top",
+            "pulse"
+          ],
+          "kind": "event"
+        },
+        {
+          "path": [
+            "top",
+            "clock"
+          ],
+          "signal": "clock"
+        }
+      ]
+    },
+    "signals": {
+      "clock": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "9",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

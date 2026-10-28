@@ -1,0 +1,304 @@
+{
+  "schema": 1,
+  "description": "SV integral atom sizes, signed/unsigned values, and four-state integer/time updates.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 5361,
+    "sha256": "655d333f1b125af28d4ed20c382e501e9b713c2ff871276159c7ed16a362d528"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT"
+  },
+  "tags": [
+    "hierarchy",
+    "types",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "20"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "byte_value"
+          ],
+          "signal": "byte_value"
+        },
+        {
+          "path": [
+            "top",
+            "short_value"
+          ],
+          "signal": "short_value"
+        },
+        {
+          "path": [
+            "top",
+            "int_value"
+          ],
+          "signal": "int_value"
+        },
+        {
+          "path": [
+            "top",
+            "long_value"
+          ],
+          "signal": "long_value"
+        },
+        {
+          "path": [
+            "top",
+            "unsigned_value"
+          ],
+          "signal": "unsigned_value"
+        },
+        {
+          "path": [
+            "top",
+            "unsigned_long"
+          ],
+          "signal": "unsigned_long"
+        },
+        {
+          "path": [
+            "top",
+            "four_value"
+          ],
+          "signal": "four_value"
+        },
+        {
+          "path": [
+            "top",
+            "four_time"
+          ],
+          "signal": "four_time"
+        }
+      ]
+    },
+    "signals": {
+      "byte_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "11111001"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "00000101"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "short_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 16
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "1111101100101110"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "0000010011010010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "int_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "11111111111111111111111111101111"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "00000000000000000000000000010111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "long_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 64
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "1111111111111111111111101110000010001110000001001111101100110101"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "0000000000000000000000010001111101110001111110110000010011001011"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "unsigned_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "11111110110111001011101010011000"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "10001001101010111100110111101111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "unsigned_long": {
+        "encoding": {
+          "kind": "bits",
+          "width": 64
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "1111111011011100101110101001100001110110010101000011001000010000"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "0000000100100011010001010110011110001001101010111100110111101111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "four_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "0001001000110100xxxx0101zzzz0111"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "10001001zzzzxxxx1010101111001101"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "four_time": {
+        "encoding": {
+          "kind": "bits",
+          "width": 64
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "00010010001101000101011001111000xxxx1010101111001101zzzz11101111"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "zzzz000100100011010001010110011110001001101010111100xxxx00000001"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
