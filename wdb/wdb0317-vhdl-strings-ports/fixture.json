@@ -1,0 +1,428 @@
+{
+  "schema": 1,
+  "description": "Static strings, extended identifiers, ports and recorded string changes.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 13556,
+    "sha256": "8b18ca2b9a09a0b39c6c751bf68431195af1c6dc5e81b66cf0c13106e55587a8"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT"
+  },
+  "tags": [
+    "hierarchy",
+    "values",
+    "strings",
+    "ports",
+    "non-ascii"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "20000"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "message"
+          ],
+          "signal": "message",
+          "kind": "string"
+        },
+        {
+          "path": [
+            "top",
+            "reverse_message"
+          ],
+          "signal": "reverse_message",
+          "kind": "string"
+        },
+        {
+          "path": [
+            "top",
+            "message.with.dot"
+          ],
+          "signal": "message.with.dot",
+          "kind": "string"
+        },
+        {
+          "path": [
+            "top",
+            "with_nul"
+          ],
+          "signal": "with_nul",
+          "kind": "string"
+        },
+        {
+          "path": [
+            "top",
+            "slash\\name"
+          ],
+          "signal": "slash\\name",
+          "kind": "string"
+        },
+        {
+          "path": [
+            "top",
+            "dut",
+            "input_value"
+          ],
+          "signal": "input_value",
+          "direction": "input",
+          "kind": "logic"
+        },
+        {
+          "path": [
+            "top",
+            "dut",
+            "output_value"
+          ],
+          "signal": "output_value",
+          "direction": "output",
+          "kind": "logic"
+        },
+        {
+          "path": [
+            "top",
+            "dut",
+            "bidi"
+          ],
+          "signal": "bidi",
+          "direction": "inout",
+          "kind": "logic"
+        },
+        {
+          "path": [
+            "top",
+            "dut",
+            "buffered"
+          ],
+          "signal": "buffered",
+          "direction": "buffer",
+          "kind": "logic"
+        },
+        {
+          "path": [
+            "top",
+            "dut",
+            "linked"
+          ],
+          "signal": "linked",
+          "direction": "linkage",
+          "kind": "logic"
+        },
+        {
+          "path": [
+            "top",
+            "non_ascii"
+          ],
+          "kind": "string",
+          "signal": "non_ascii"
+        }
+      ]
+    },
+    "signals": {
+      "message": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "string": "abcd"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "string": "next"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "string": "done"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "reverse_message": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "string": "WXYZ"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "string": "last"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "string": "hold"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "message.with.dot": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "string": "name"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "string": "more"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "with_nul": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "string": "A\u0000B"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "slash\\name": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "string": "path"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "input_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "output_value": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "bidi": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "buffered": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "linked": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "z"
+              }
+            },
+            "changes": []
+          }
+        ]
+      },
+      "non_ascii": {
+        "encoding": {
+          "kind": "string"
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "20000",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "string": "a\u00a0"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

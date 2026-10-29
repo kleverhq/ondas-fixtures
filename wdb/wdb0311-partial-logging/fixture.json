@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "description": "Only the selected source is recorded.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 2943,
+    "sha256": "6cb3c400aabf3e1d1583b5746dc2c28d22b38f4879461d8acc179fcd026fedd8"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT"
+  },
+  "tags": [
+    "hierarchy",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "20"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "recorded"
+          ],
+          "signal": "recorded"
+        },
+        {
+          "path": [
+            "top",
+            "hidden"
+          ],
+          "signal": "hidden"
+        },
+        {
+          "path": [
+            "top",
+            "unlogged"
+          ],
+          "signal": "unlogged"
+        }
+      ]
+    },
+    "signals": {
+      "recorded": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "0"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "hidden": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": null,
+            "changes": []
+          }
+        ]
+      },
+      "unlogged": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": null,
+            "changes": []
+          }
+        ]
+      }
+    }
+  }
+}

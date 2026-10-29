@@ -1,0 +1,177 @@
+{
+  "schema": 1,
+  "description": "VHDL static INTEGER and REAL arrays with ascending/descending indices and independent signed/real transitions.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 6791,
+    "sha256": "2371d23a2d6acbef2c2492374d7a380c5a43bd52c4cfc2ca0dea743daee981cc"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT"
+  },
+  "tags": [
+    "hierarchy",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "20000"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "integers[1]"
+          ],
+          "signal": "integers[1]",
+          "kind": "integer"
+        },
+        {
+          "path": [
+            "top",
+            "integers[2]"
+          ],
+          "signal": "integers[2]",
+          "kind": "integer"
+        },
+        {
+          "path": [
+            "top",
+            "reals[2]"
+          ],
+          "signal": "reals[2]",
+          "kind": "real"
+        },
+        {
+          "path": [
+            "top",
+            "reals[1]"
+          ],
+          "signal": "reals[1]",
+          "kind": "real"
+        }
+      ]
+    },
+    "signals": {
+      "integers[1]": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "11111111111111111111111111101111"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "00000000000000000000000000010111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "integers[2]": {
+        "encoding": {
+          "kind": "bits",
+          "width": 32
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000010111"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "11111111111111111111111111101111"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "reals[2]": {
+        "encoding": {
+          "kind": "real"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "real_bits": "3ff4000000000000"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "real_bits": "c004000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "reals[1]": {
+        "encoding": {
+          "kind": "real"
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "real_bits": "c004000000000000"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "real_bits": "3ff4000000000000"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

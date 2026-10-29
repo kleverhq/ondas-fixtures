@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "description": "Dynamic 65-bit enum with X/Z codes.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 4318,
+    "sha256": "f5c3b91d26291de5870ea6d48128b30d5024df5369fbf364d44231e12ca65f36"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT"
+  },
+  "tags": [
+    "enumerations",
+    "bits",
+    "values",
+    "hierarchy"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "20"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "wide"
+          ],
+          "signal": "enum",
+          "enumeration": {
+            "variants": [
+              {
+                "encoded": "00000000000000000000000000000000000000000000000000000000000000001",
+                "label": "A"
+              },
+              {
+                "encoded": "z000000000000000000000000000000000000000000000000000000000000x101",
+                "label": "B"
+              },
+              {
+                "encoded": "1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxzz01",
+                "label": "C"
+              }
+            ]
+          }
+        },
+        {
+          "path": [
+            "top",
+            "bits"
+          ],
+          "signal": "bits"
+        }
+      ]
+    },
+    "signals": {
+      "enum": {
+        "encoding": {
+          "kind": "bits",
+          "width": 65
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000000000000000000000000000000000000001"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "z000000000000000000000000000000000000000000000000000000000000x101"
+                }
+              },
+              {
+                "time": "9",
+                "value": {
+                  "bits": "1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxzz01"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "bits": {
+        "encoding": {
+          "kind": "bits",
+          "width": 65
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20",
+            "initial": {
+              "value": {
+                "bits": "00000000000000000000000000000000000000000000000000000000000000001"
+              }
+            },
+            "changes": [
+              {
+                "time": "4",
+                "value": {
+                  "bits": "z000000000000000000000000000000000000000000000000000000000000x101"
+                }
+              },
+              {
+                "time": "9",
+                "value": {
+                  "bits": "1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxzz01"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

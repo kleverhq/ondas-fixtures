@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "description": "VHDL ordinal enum and nine-state vector.",
+  "artifact": {
+    "file": "waveform.wdb",
+    "format": "wdb",
+    "size": 10237,
+    "sha256": "4eba575afa554baf9b6688ffc188029c35741b29ed475feac160a3e3fd97e551"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT"
+  },
+  "tags": [
+    "enumerations",
+    "values"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "timescale": {
+        "factor": 1,
+        "unit": "ps"
+      },
+      "time_span": {
+        "first": "0",
+        "last": "20000"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "top"
+          ]
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "top",
+            "phase"
+          ],
+          "signal": "phase",
+          "enumeration": {
+            "name": "phase_t",
+            "variants": [
+              {
+                "encoded": "00000000",
+                "label": "idle"
+              },
+              {
+                "encoded": "00000001",
+                "label": "busy"
+              },
+              {
+                "encoded": "00000010",
+                "label": "done"
+              }
+            ]
+          }
+        },
+        {
+          "path": [
+            "top",
+            "control"
+          ],
+          "signal": "control"
+        }
+      ]
+    },
+    "signals": {
+      "phase": {
+        "encoding": {
+          "kind": "bits",
+          "width": 8
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "00000000"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "00000001"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "bits": "00000010"
+                }
+              },
+              {
+                "time": "15000",
+                "value": {
+                  "bits": "00000000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "control": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "1",
+            "end": "20000",
+            "initial": {
+              "value": {
+                "bits": "u01z"
+              }
+            },
+            "changes": [
+              {
+                "time": "4000",
+                "value": {
+                  "bits": "h10l"
+                }
+              },
+              {
+                "time": "9000",
+                "value": {
+                  "bits": "w-x0"
+                }
+              },
+              {
+                "time": "15000",
+                "value": {
+                  "bits": "0011"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
