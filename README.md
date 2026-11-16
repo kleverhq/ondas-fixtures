@@ -34,10 +34,10 @@ Selection preserves the argument order and rejects unknown or repeated fixtures.
 | FST | 97 | 107 | 2573 | 2680 |
 | GHW | 107 | 73 | 5094 | 5168 |
 | SHM | 86 | 36 | 1031 | 1066 |
-| VCD | 109 | 27 | 7857 | 7884 |
+| VCD | 110 | 27 | 7857 | 7884 |
 | WDB | 318 | 576 | 4589 | 5166 |
 | WLF | 90 | 138 | 1164 | 1302 |
-| **Total** | **867** | **1117** | **22450** | **23568** |
+| **Total** | **868** | **1117** | **22450** | **23568** |
 
 ## Layout
 
