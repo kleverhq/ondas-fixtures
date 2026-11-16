@@ -1,0 +1,701 @@
+{
+  "schema": 1,
+  "description": "Split bit and chunk declarations, aliases, missing histories, and rejected layouts.",
+  "artifact": {
+    "file": "waveform.vcd",
+    "format": "vcd",
+    "size": 2219,
+    "sha256": "9458597ac30c404f3459db7ad198cb22b14cddd2c5d158e2e0ae9ac4cadc2331"
+  },
+  "provenance": {
+    "kind": "authored",
+    "license": "MIT",
+    "source": "https://github.com/kleverhq/ondas-fixtures",
+    "simulation": {
+      "project": "Ondas diagnostic VCD cases",
+      "tests": [
+        "vcd0109-split-layouts"
+      ],
+      "method": "Hand-constructed record sequence; no HDL simulation."
+    },
+    "generator": {
+      "tool": "Hand-authored VCD"
+    },
+    "notes": "Expected values were calculated by hand from the record sequence. No format conversion."
+  },
+  "tags": [
+    "authored",
+    "conformance",
+    "bits",
+    "split-declarations",
+    "ascending-ranges",
+    "descending-ranges",
+    "negative-indices",
+    "nonzero-ranges",
+    "aliases",
+    "absent-initial",
+    "same-time",
+    "logical-names"
+  ],
+  "oracle": {
+    "schema": 1,
+    "open": {
+      "result": "ok"
+    },
+    "metadata": {
+      "time_span": {
+        "first": "0",
+        "last": "40"
+      },
+      "timescale": {
+        "factor": 1,
+        "unit": "ns"
+      }
+    },
+    "hierarchy": {
+      "scopes": [
+        {
+          "path": [
+            "aliases"
+          ],
+          "kind": "module"
+        },
+        {
+          "path": [
+            "negative_cases"
+          ],
+          "kind": "module"
+        }
+      ],
+      "variables": [
+        {
+          "path": [
+            "desc"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "chunks"
+        },
+        {
+          "path": [
+            "desc_ordered"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "chunks"
+        },
+        {
+          "path": [
+            "asc"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "chunks"
+        },
+        {
+          "path": [
+            "negative"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "chunks"
+        },
+        {
+          "path": [
+            "aliases",
+            "bus"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "chunks"
+        },
+        {
+          "path": [
+            "bits"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "bits"
+        },
+        {
+          "path": [
+            "negative_bits"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "bits"
+        },
+        {
+          "path": [
+            "mixed"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "mixed"
+        },
+        {
+          "path": [
+            "mixed_asc"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "mixed"
+        },
+        {
+          "path": [
+            "never"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "never"
+        },
+        {
+          "path": [
+            "reversed"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "reversed"
+        },
+        {
+          "path": [
+            "repeated"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "repeated"
+        },
+        {
+          "path": [
+            "high_alias"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 7,
+            "lsb": 6
+          },
+          "signal": "a"
+        },
+        {
+          "path": [
+            "low_alias"
+          ],
+          "kind": "wire",
+          "range": {
+            "msb": 5,
+            "lsb": 4
+          },
+          "signal": "b"
+        },
+        {
+          "path": [
+            "negative_cases",
+            "literal[3:2]"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "a"
+        },
+        {
+          "path": [
+            "negative_cases",
+            "attached[7:0]"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "a"
+        },
+        {
+          "path": [
+            "negative_cases",
+            "literal[1:0]"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "b"
+        },
+        {
+          "path": [
+            "negative_cases",
+            "array[10][0]"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "h"
+        },
+        {
+          "path": [
+            "negative_cases",
+            "array[10][1]"
+          ],
+          "kind": "wire",
+          "range": null,
+          "signal": "i"
+        }
+      ]
+    },
+    "signals": {
+      "chunks": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "10xx"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "1001"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "1101"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "11xz"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "00xz"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "0000"
+                }
+              }
+            ]
+          }
+        ],
+        "samples": [
+          {
+            "time": "0",
+            "missing": true
+          },
+          {
+            "time": "4",
+            "missing": true
+          }
+        ]
+      },
+      "bits": {
+        "encoding": {
+          "kind": "bits",
+          "width": 3
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "101"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "001"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "011"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "010"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "mixed": {
+        "encoding": {
+          "kind": "bits",
+          "width": 5
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "xx1xx"
+                }
+              },
+              {
+                "time": "5",
+                "value": {
+                  "bits": "101xx"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "10101"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "11001"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "110xz"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "000xz"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "00000"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "never": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": []
+          }
+        ],
+        "samples": [
+          {
+            "time": "0",
+            "missing": true
+          },
+          {
+            "time": "4",
+            "missing": true
+          },
+          {
+            "time": "5",
+            "missing": true
+          },
+          {
+            "time": "10",
+            "missing": true
+          },
+          {
+            "time": "15",
+            "missing": true
+          },
+          {
+            "time": "20",
+            "missing": true
+          },
+          {
+            "time": "25",
+            "missing": true
+          },
+          {
+            "time": "30",
+            "missing": true
+          },
+          {
+            "time": "35",
+            "missing": true
+          },
+          {
+            "time": "40",
+            "missing": true
+          }
+        ]
+      },
+      "reversed": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "xx10"
+                }
+              },
+              {
+                "time": "10",
+                "value": {
+                  "bits": "0110"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "0111"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "xz11"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "xz00"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "0000"
+                }
+              }
+            ]
+          }
+        ],
+        "samples": [
+          {
+            "time": "0",
+            "missing": true
+          },
+          {
+            "time": "4",
+            "missing": true
+          }
+        ]
+      },
+      "repeated": {
+        "encoding": {
+          "kind": "bits",
+          "width": 4
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "1010"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "1111"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "0000"
+                }
+              }
+            ]
+          }
+        ],
+        "samples": [
+          {
+            "time": "0",
+            "missing": true
+          },
+          {
+            "time": "4",
+            "missing": true
+          }
+        ]
+      },
+      "a": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "5",
+                "value": {
+                  "bits": "10"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "00"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "30",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "b": {
+        "encoding": {
+          "kind": "bits",
+          "width": 2
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "10",
+                "value": {
+                  "bits": "01"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "xz"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "11"
+                }
+              },
+              {
+                "time": "25",
+                "value": {
+                  "bits": "xz"
+                }
+              },
+              {
+                "time": "35",
+                "value": {
+                  "bits": "00"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "h": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "1"
+                }
+              },
+              {
+                "time": "15",
+                "value": {
+                  "bits": "0"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "i": {
+        "encoding": {
+          "kind": "bits",
+          "width": 1
+        },
+        "windows": [
+          {
+            "start": "0",
+            "end": "40",
+            "initial": null,
+            "changes": [
+              {
+                "time": "0",
+                "value": {
+                  "bits": "0"
+                }
+              },
+              {
+                "time": "20",
+                "value": {
+                  "bits": "1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
