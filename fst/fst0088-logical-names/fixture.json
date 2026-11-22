@@ -1,17 +1,17 @@
 {
   "schema": 1,
-  "description": "Exact logical components with literal punctuation, backslashes, and scalar ranges.",
+  "description": "Exact logical names with literal punctuation and literal or indexed instance scopes.",
   "artifact": {
     "file": "waveform.fst",
     "format": "fst",
-    "size": 783,
-    "sha256": "f49e5da601f6634b41cee6551afd31a0ba99d252dbcb1ab9be3f92c2043403d2"
+    "size": 818,
+    "sha256": "b4b52e9966cd77e161d3b781a1f909027f8e33fb1776fc7915907ea16c1e9c6b"
   },
   "provenance": {
     "kind": "authored",
     "license": "MIT",
-    "source": "ondas-fixtures-oracle commit c21b3aad0563e2a402f4b1fe5d2634623c94b6b8, sources/logical-names/contract.json",
-    "transform": "Generate semantic VCD with canonical.py; no simulation; convert VCD with GTKWave vcd2fst 3.3.116; test logical-names"
+    "source": "Logical-names producer commit ae07febec12a3d1b1b36b86c1844a39588c3df17, names.v and contract.json",
+    "transform": "Convert the logical-names indexed-scope control VCD with GTKWave vcd2fst 3.3.116."
   },
   "tags": [
     "authored",
@@ -21,7 +21,8 @@
     "range",
     "conformance",
     "bits",
-    "hierarchy"
+    "hierarchy",
+    "instance-array"
   ],
   "oracle": {
     "schema": 1,
