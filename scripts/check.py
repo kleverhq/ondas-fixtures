@@ -28,7 +28,7 @@ def check_fixture(sidecar, data, hashes, names):
     if digest in hashes:
         raise ValueError(f"{label}: duplicate artifact checksum with {hashes[digest]}")
     hashes[digest] = label
-    if format == "shm":
+    if format in install.DIRECTORY_FORMATS:
         install.validate_components(artifact)
     for relation in data.get("relations", []):
         if relation["fixture"] not in names:

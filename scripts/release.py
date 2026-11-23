@@ -8,7 +8,7 @@ import subprocess
 import tarfile
 import tempfile
 
-from install import REPOSITORY, asset_name, file_matches, load_fixtures
+from install import DIRECTORY_FORMATS, REPOSITORY, asset_name, file_matches, load_fixtures
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -58,8 +58,9 @@ def compress(fixture, directory):
     target = directory / asset_name(fixture)
     with target.open("wb") as output:
         with gzip.GzipFile(filename="", mode="wb", fileobj=output, mtime=0) as archive:
-            if fixture["format"] == "shm":
-                with tarfile.open(fileobj=archive, mode="w|", format=tarfile.USTAR_FORMAT) as bundle:
+            if fixture["format"] in DIRECTORY_FORMATS:
+                archive_format = tarfile.USTAR_FORMAT if fixture["format"] == "shm" else tarfile.PAX_FORMAT
+                with tarfile.open(fileobj=archive, mode="w|", format=archive_format) as bundle:
                     for component in sorted(fixture["files"], key=lambda item: item["file"]):
                         member = tarfile.TarInfo(component["file"])
                         member.size = component["size"]
