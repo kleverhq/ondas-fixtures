@@ -78,18 +78,24 @@ class InstallTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "format directory mismatch"):
                     install.load_fixtures()
 
-    def directory_fixture(self, root):
-        payloads = {"waves.dsn": b"design bytes", "waves.trn": b"transaction bytes",
-                    "waves-1.trn": b"continued transactions"}
-        directory = root / "waveform.shm"
+    def directory_fixture(self, root, format_name="shm"):
+        if format_name == "vwdb":
+            payloads = {"vwdb_info.json": b"{}", "dsn_0/design": b"design bytes",
+                        "trn_0_0/history": b"transaction bytes", "trn_0_0/empty": b""}
+        else:
+            payloads = {"waves.dsn": b"design bytes", "waves.trn": b"transaction bytes",
+                        "waves-1.trn": b"continued transactions"}
+        directory = root / f"waveform.{format_name}"
         directory.mkdir()
         files = []
         for name, payload in payloads.items():
-            (directory / name).write_bytes(payload)
+            component = directory / name
+            component.parent.mkdir(parents=True, exist_ok=True)
+            component.write_bytes(payload)
             files.append({"file": name, "size": len(payload),
                           "sha256": hashlib.sha256(payload).hexdigest()})
-        return {"name": "shm0000-test", "path": directory, "file": directory.name,
-                "format": "shm", "size": sum(item["size"] for item in files),
+        return {"name": f"{format_name}0000-test", "path": directory, "file": directory.name,
+                "format": format_name, "size": sum(item["size"] for item in files),
                 "sha256": install.directory_sha256(files), "files": files}, payloads
 
     def tar_asset(self, members):
@@ -161,6 +167,39 @@ class InstallTests(unittest.TestCase):
                         install.install(fixture, "https://example.com/shm.gz")
                     self.assertTrue(install.file_matches(fixture))
                     self.assertEqual(sorted(item.name for item in root.iterdir()), ["waveform.shm"])
+
+    def test_vwdb_nested_directory_round_trip(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            directory = root / "vwdb" / "vwdb0000-test"
+            directory.mkdir(parents=True)
+            fixture, payloads = self.directory_fixture(directory, "vwdb")
+            (directory / "fixture.json").write_text(json.dumps({"artifact": {
+                key: value for key, value in fixture.items() if key not in {"name", "path"}
+            }}))
+            with patch.object(install, "ROOT", root):
+                loaded, = release.selected_fixtures(["vwdb/vwdb0000-test"])
+            compressed = release.compress(loaded, directory).read_bytes()
+            with tarfile.open(fileobj=io.BytesIO(compressed), mode="r:gz") as archive:
+                self.assertEqual(archive.getnames(), sorted(payloads))
+            installed = {**loaded, "path": root / "waveform.vwdb"}
+            with patch.object(install, "request", return_value=io.BytesIO(compressed)):
+                install.install(installed, "https://example.com/vwdb.gz")
+            self.assertTrue(install.file_matches(installed))
+            extra = installed["path"] / "trn_0_0" / "extra"
+            extra.touch()
+            self.assertFalse(install.file_matches(installed))
+            extra.unlink()
+            extra.symlink_to(fixture["path"] / "trn_0_0" / "empty")
+            self.assertFalse(install.file_matches(installed))
+
+    def test_vwdb_rejects_invalid_manifest_paths(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            fixture, _ = self.directory_fixture(Path(temporary), "vwdb")
+            for name in ("dsn_0/../outside", "/outside", "dsn_0//design", "dsn_0/./design", "dsn_0"):
+                with self.subTest(name=name), self.assertRaisesRegex(ValueError, "VWDB"):
+                    files = [*fixture["files"], {**fixture["files"][1], "file": name}]
+                    install.validate_components({**fixture, "files": files})
 
     def test_directory_manifest_rejects_unsafe_names_and_inconsistent_hashes(self):
         with tempfile.TemporaryDirectory() as temporary:

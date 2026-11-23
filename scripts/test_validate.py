@@ -285,6 +285,28 @@ class ValidationTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "files.*required"):
             list(validated_documents(self.root))
 
+    def test_vwdb_payload_json_does_not_enter_sidecar_validation(self):
+        directory = self.root / "vwdb" / "vwdb0000-test"
+        payload = directory / "waveform.vwdb"
+        payload.mkdir(parents=True)
+        local = self.root / ".bb" / "raw"
+        local.mkdir(parents=True)
+        (local / "vwdb_info.json").write_text("{}")
+        (payload / "vwdb_info.json").write_text("{}")
+        files = [{"file": "vwdb_info.json", "size": 2,
+                  "sha256": hashlib.sha256(b"{}").hexdigest()}]
+        data = copy.deepcopy(self.data)
+        data["artifact"] = {"format": "vwdb", "file": "waveform.vwdb", "files": files,
+                            "size": 2, "sha256": install.directory_sha256(files)}
+        sidecar = directory / "fixture.json"
+        sidecar.write_text(json.dumps(data))
+        self.assertEqual(len(list(validated_documents(self.root))), 3)
+        self.assertTrue(check_fixture(sidecar, data, {}, {directory.name}))
+        data["artifact"]["files"].append({**files[0], "file": "dsn_0/../outside"})
+        sidecar.write_text(json.dumps(data))
+        with self.assertRaisesRegex(ValueError, r"artifact.files"):
+            list(validated_documents(self.root))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -27,7 +27,8 @@ Run `just setup` before validation, checks, or tests. `just check` also works wi
 ## Fixture format
 
 - Put each fixture under `<format>/` at the repository root, using the lowercase artifact format. Each fixture directory must contain only `fixture.json` and `waveform.<format>`.
-- For SHM, `waveform.shm` is a directory containing unchanged DSN/TRN components. Record each component's name, size, and SHA-256 in `artifact.files`; the artifact size is their sum. Hash the component list sorted by `file`, serialized as UTF-8 JSON with sorted keys, ASCII escapes, no whitespace, and no trailing newline, for the directory's `artifact.sha256`.
+- For SHM, `waveform.shm` is a directory containing unchanged DSN/TRN components. For VWDB, `waveform.vwdb` contains `vwdb_info.json` at its root and all required files at their original relative paths.
+- For directory artifacts, record each component's relative path, size, and SHA-256 in `artifact.files`. The artifact size is their sum. Hash the component list sorted by `file`, serialized as UTF-8 JSON with sorted keys, ASCII escapes, no whitespace, and no trailing newline, for `artifact.sha256`.
 - Name directories `<format><NNNN>-<slug>`, for example `vcd0000-counter` or `fst0000-counter`. Use the lowercase artifact format, a zero-padded sequence number for that format, and the existing readable slug. Assign the next unused number. Never renumber fixtures or repeat the format at the end of the slug.
 - Do not keep duplicate waveform content.
 - Keep waveform files in the working tree, but never commit them. The root `.gitignore` allows only JSON files inside fixture directories.
@@ -48,7 +49,7 @@ Run `just setup` before validation, checks, or tests. `just check` also works wi
 
 ## Delivery format
 
-- Name release assets `<fixture>.<sha256>.<format>.gz`. Each gzip stream must expand directly to the raw waveform bytes declared in `fixture.json`, or, for SHM directories, to a tar archive containing exactly the declared component files at its root.
+- Name release assets `<fixture>.<sha256>.<format>.gz`. Each gzip stream must expand directly to the raw waveform bytes declared in `fixture.json`, or, for directory artifacts, to a tar archive containing exactly the declared component files at their listed relative paths.
 - Do not add delivery fields to fixture metadata. `scripts/install.py` derives asset names from the directory and artifact fields. Without fixture arguments it installs every fixture; explicit directory names select a subset. It does not filter by tags.
 - Keep `scripts/install.py` and `scripts/release.py` compatible with the Python standard library. Declare validation dependencies in `scripts/requirements.txt` and install them with `just setup`.
 

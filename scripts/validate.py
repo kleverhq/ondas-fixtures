@@ -23,7 +23,13 @@ def read_json(path):
 
 def json_files(root):
     for directory, folders, files in os.walk(root):
-        folders[:] = sorted(name for name in folders if name not in {".git", ".venv", "__pycache__"})
+        relative = Path(directory).relative_to(root).parts
+        ignored = {".git", ".venv", "__pycache__"}
+        if not relative:
+            ignored.add(".bb")
+        elif len(relative) == 2 and relative[0] == "vwdb" and "fixture.json" in files:
+            ignored.add("waveform.vwdb")
+        folders[:] = sorted(name for name in folders if name not in ignored)
         for name in sorted(files):
             if name.endswith(".json"):
                 yield Path(directory) / name

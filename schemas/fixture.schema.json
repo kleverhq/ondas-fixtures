@@ -10,8 +10,8 @@
       "type": "object",
       "required": ["file", "format", "size", "sha256"],
       "properties": {
-        "file": {"type": "string", "pattern": "^waveform\\.(fsdb|fst|ghw|shm|vcd|wdb|wlf)$"},
-        "format": {"enum": ["fsdb", "fst", "ghw", "shm", "vcd", "wdb", "wlf"]},
+        "file": {"type": "string", "pattern": "^waveform\\.(fsdb|fst|ghw|shm|vcd|vwdb|wdb|wlf)$"},
+        "format": {"enum": ["fsdb", "fst", "ghw", "shm", "vcd", "vwdb", "wdb", "wlf"]},
         "size": {"type": "integer", "minimum": 0},
         "sha256": {"$ref": "#/$defs/sha256"},
         "files": {
@@ -21,22 +21,44 @@
             "type": "object",
             "required": ["file", "size", "sha256"],
             "properties": {
-              "file": {"type": "string", "pattern": "^[^/\\\\]+\\.(dsn|trn)$"},
-              "size": {"type": "integer", "minimum": 1},
+              "file": {"type": "string", "minLength": 1},
+              "size": {"type": "integer", "minimum": 0},
               "sha256": {"$ref": "#/$defs/sha256"}
             },
             "additionalProperties": false
           }
         }
       },
-      "if": {"properties": {"format": {"const": "shm"}}},
-      "then": {"required": ["files"], "properties": {"file": {"const": "waveform.shm"}}},
+      "if": {"properties": {"format": {"enum": ["shm", "vwdb"]}}},
+      "then": {"required": ["files"]},
       "else": {"not": {"required": ["files"]}},
       "allOf": [
         {"if": {"properties": {"format": {"const": "fsdb"}}}, "then": {"properties": {"file": {"const": "waveform.fsdb"}}}},
         {"if": {"properties": {"format": {"const": "fst"}}}, "then": {"properties": {"file": {"const": "waveform.fst"}}}},
         {"if": {"properties": {"format": {"const": "ghw"}}}, "then": {"properties": {"file": {"const": "waveform.ghw"}}}},
+        {
+          "if": {"properties": {"format": {"const": "shm"}}},
+          "then": {"properties": {
+            "file": {"const": "waveform.shm"},
+            "files": {"items": {"properties": {
+              "file": {"pattern": "^[^/\\\\]+\\.(dsn|trn)$"},
+              "size": {"minimum": 1}
+            }}}
+          }}
+        },
         {"if": {"properties": {"format": {"const": "vcd"}}}, "then": {"properties": {"file": {"const": "waveform.vcd"}}}},
+        {
+          "if": {"properties": {"format": {"const": "vwdb"}}},
+          "then": {"properties": {
+            "file": {"const": "waveform.vwdb"},
+            "files": {
+              "contains": {"properties": {"file": {"const": "vwdb_info.json"}}},
+              "items": {"properties": {
+                "file": {"pattern": "^(?!\\.{1,2}(?:/|$))[A-Za-z0-9_.-]+(?:/(?!\\.{1,2}(?:/|$))[A-Za-z0-9_.-]+)*$"}
+              }}
+            }
+          }}
+        },
         {"if": {"properties": {"format": {"const": "wdb"}}}, "then": {"properties": {"file": {"const": "waveform.wdb"}}}},
         {"if": {"properties": {"format": {"const": "wlf"}}}, "then": {"properties": {"file": {"const": "waveform.wlf"}}}}
       ],

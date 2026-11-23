@@ -5,7 +5,7 @@ import gzip
 import hashlib
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import sys
 import tarfile
@@ -17,6 +17,8 @@ REPOSITORY = "kleverhq/ondas-fixtures"
 API_URL = f"https://api.github.com/repos/{REPOSITORY}"
 ROOT = Path(__file__).resolve().parent.parent
 SHA256 = re.compile(r"[0-9a-f]{64}")
+DIRECTORY_FORMATS = {"shm", "vwdb"}
+VWDB_PATH = re.compile(r"[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*")
 
 
 def directory_sha256(files):
@@ -25,24 +27,36 @@ def directory_sha256(files):
     return hashlib.sha256(manifest.encode("utf-8")).hexdigest()
 
 
+def component_directories(names):
+    return {parent.as_posix() for name in names for parent in PurePosixPath(name).parents
+            if parent != PurePosixPath(".")}
+
+
 def validate_components(artifact):
     files = artifact["files"]
+    format_name = artifact["format"]
     names = set()
     if not isinstance(files, list) or not files:
-        raise ValueError("empty SHM component manifest")
+        raise ValueError(f"empty {format_name.upper()} component manifest")
     for component in files:
-        name = component["file"]
-        if (set(component) != {"file", "size", "sha256"}
-                or not isinstance(name, str) or Path(name).name != name
-                or "\\" in name or name in {".", ".."} or name in names
-                or Path(name).suffix not in {".dsn", ".trn"}
-                or type(component["size"]) is not int or component["size"] <= 0
-                or not SHA256.fullmatch(component["sha256"])):
-            raise ValueError("invalid SHM component manifest")
+        if not isinstance(component, dict) or set(component) != {"file", "size", "sha256"}:
+            raise ValueError(f"invalid {format_name.upper()} component manifest")
+        name, size, digest = component["file"], component["size"], component["sha256"]
+        if (not isinstance(name, str) or name in names or type(size) is not int or size < 0
+                or not isinstance(digest, str) or not SHA256.fullmatch(digest)):
+            raise ValueError(f"invalid {format_name.upper()} component manifest")
+        if format_name == "shm":
+            if (Path(name).name != name or "\\" in name or "\0" in name
+                    or Path(name).suffix not in {".dsn", ".trn"} or size == 0):
+                raise ValueError("invalid SHM component manifest")
+        elif not VWDB_PATH.fullmatch(name) or any(part in {".", ".."} for part in name.split("/")):
+            raise ValueError(f"invalid VWDB component path: {name}")
         names.add(name)
+    if format_name == "vwdb" and ("vwdb_info.json" not in names or names & component_directories(names)):
+        raise ValueError("invalid VWDB directory layout")
     if (sum(item["size"] for item in files) != artifact["size"]
             or directory_sha256(files) != artifact["sha256"]):
-        raise ValueError("SHM directory checksum mismatch")
+        raise ValueError(f"{format_name.upper()} directory checksum mismatch")
 
 
 def arguments():
@@ -90,24 +104,25 @@ def load_fixtures(names=()):
     for sidecar in sidecars:
         data = json.loads(sidecar.read_text())
         artifact = data["artifact"]
-        if sidecar.parent.parent.name != artifact["format"]:
+        format_name = artifact["format"]
+        if sidecar.parent.parent.name != format_name:
             raise ValueError(f"format directory mismatch in {sidecar}")
         filename = artifact["file"]
         digest = artifact["sha256"]
         if Path(filename).name != filename or not SHA256.fullmatch(digest):
             raise ValueError(f"invalid artifact metadata in {sidecar}")
-        if artifact["format"] == "shm":
-            if filename != "waveform.shm":
-                raise ValueError(f"invalid SHM artifact name in {sidecar}")
+        if format_name in DIRECTORY_FORMATS:
+            if filename != f"waveform.{format_name}":
+                raise ValueError(f"invalid {format_name.upper()} artifact name in {sidecar}")
             validate_components(artifact)
         fixtures.append(
             {
                 "name": sidecar.parent.name,
                 "path": sidecar.parent / filename,
-                "format": artifact["format"],
+                "format": format_name,
                 "size": artifact["size"],
                 "sha256": digest,
-                **({"files": artifact["files"]} if artifact["format"] == "shm" else {}),
+                **({"files": artifact["files"]} if format_name in DIRECTORY_FORMATS else {}),
             }
         )
     return fixtures
@@ -152,11 +167,15 @@ def find_assets(names):
 
 def file_matches(fixture):
     path = fixture["path"]
-    if fixture["format"] == "shm":
+    if fixture["format"] in DIRECTORY_FORMATS:
         if not path.is_dir() or path.is_symlink():
             return False
-        if {item.name for item in path.iterdir()} != {item["file"] for item in fixture["files"]}:
-            return False
+        names = {item["file"] for item in fixture["files"]}
+        directories = component_directories(names)
+        for entry in path.rglob("*"):
+            relative = entry.relative_to(path).as_posix()
+            if entry.is_symlink() or relative not in (directories if entry.is_dir() else names):
+                return False
         return all(file_matches({**item, "path": path / item["file"], "format": "component"})
                    for item in fixture["files"])
     if path.is_symlink():
@@ -171,9 +190,11 @@ def file_matches(fixture):
 
 
 def install_directory(fixture, source):
+    validate_components(fixture)
     target = fixture["path"]
+    format_name = fixture["format"]
     expected = {item["file"]: item for item in fixture["files"]}
-    with tempfile.TemporaryDirectory(prefix=".waveform-shm-", dir=target.parent) as work:
+    with tempfile.TemporaryDirectory(prefix=f".waveform-{format_name}-", dir=target.parent) as work:
         work = Path(work)
         directory = work / "new"
         directory.mkdir()
@@ -182,11 +203,13 @@ def install_directory(fixture, source):
             for member in archive:
                 if (member.name not in expected or member.name in seen or not member.isfile()
                         or member.size != expected[member.name]["size"]):
-                    raise ValueError(f"invalid SHM archive member: {member.name}")
+                    raise ValueError(f"invalid {format_name.upper()} archive member: {member.name}")
                 seen.add(member.name)
                 digest = hashlib.sha256()
                 size = 0
-                with archive.extractfile(member) as stream, (directory / member.name).open("wb") as output:
+                path = directory / member.name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                with archive.extractfile(member) as stream, path.open("wb") as output:
                     while chunk := stream.read(1024 * 1024):
                         output.write(chunk)
                         digest.update(chunk)
@@ -198,7 +221,7 @@ def install_directory(fixture, source):
         while source.read(1024 * 1024):
             pass
         if seen != expected.keys():
-            raise ValueError(f"missing SHM archive components for {fixture['name']}")
+            raise ValueError(f"missing {format_name.upper()} archive components for {fixture['name']}")
         backup = work / "old"
         if target.exists() or target.is_symlink():
             os.replace(target, backup)
@@ -211,7 +234,7 @@ def install_directory(fixture, source):
 
 
 def install(fixture, url):
-    if fixture["format"] == "shm":
+    if fixture["format"] in DIRECTORY_FORMATS:
         with request(url, "application/octet-stream") as response, gzip.GzipFile(fileobj=response) as source:
             install_directory(fixture, source)
         return
